@@ -23,16 +23,22 @@ function stageScroll(id, direction) {
 		$('#intro').css('z-index','1');
 		$('.nav-positioner').css('z-index','2');
 		$('.navigation li a').css('opacity', '.2');
+		$('.stage-positioner').css('cursor', 'pointer');
 		$('.scroll').hide();
+		$('.meta').show();
 	} else if ((id == "intro") && (direction == "up")) {
 		$('#intro').css('z-index','3');
 		$('.nav-positioner').css('z-index','0');
 		$('.navigation li a').css('opacity', '.2');
+		$('.stage-positioner').css('cursor', 'default');
 		$('.stage video').hide();
+		$('.meta').hide();
 	} else if (direction == "down") {
 		if ($('.stage source').attr('src') != 'films/' + id.split('-')[1] + '.mp4') {
 			$('.stage video').attr('poster', 'frames/' + id.split('-')[1] + '.jpg');
 			$('.stage source').attr('src', 'films/' + id.split('-')[1] + '.mp4');
+			$('.meta .title').html(id.split('-')[1]);
+			$('.meta .description').html($('#' + id + ' img').attr('alt'));
 			$('.stage video').load().show();
 		} else if ($('.stage video').is(":hidden")) {
 			$('.stage video').load().show();
@@ -43,6 +49,8 @@ function stageScroll(id, direction) {
 		if ($('.stage source').attr('src') != 'films/' + id.split('-')[1] + '.mp4') {
 			$('.stage video').attr('poster', 'frames/' + id.split('-')[1] + '.jpg');
 			$('.stage source').attr('src', 'films/' + id.split('-')[1] + '.mp4');
+			$('.meta .title').html(id.split('-')[1]);
+			$('.meta .description').html($('#' + id + ' img').attr('alt'));
 			$('.stage video').load().show();
 		}
 		$('.navigation li a').css('opacity', '.2');

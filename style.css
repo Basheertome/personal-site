@@ -159,6 +159,28 @@ body {
   display: none;
 }
 
+.meta {
+  position: absolute;
+  top: 480px;
+  left: 400px;
+  width: 800px;
+  color: #fff;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.meta .title {
+  display: inline-block;
+  text-transform: capitalize;
+  font-family:'Karbon-Medium',Sans-Serif;
+}
+
+.meta .description {
+  display: inline-block;
+  float: right;
+  text-align: right;
+}
+
 .filmstrip {
   position: relative;
   width: 800px;
