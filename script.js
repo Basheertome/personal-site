@@ -26,6 +26,7 @@ function stageScroll(id, direction) {
 		$('.stage-positioner').css('cursor', 'pointer');
 		$('.scroll').hide();
 		$('.meta').show();
+		history.pushState({}, '', '/');
 	} else if ((id == "intro") && (direction == "up")) {
 		$('#intro').css('z-index','3');
 		$('.nav-positioner').css('z-index','0');
@@ -33,6 +34,7 @@ function stageScroll(id, direction) {
 		$('.stage-positioner').css('cursor', 'default');
 		$('.stage video').hide();
 		$('.meta').hide();
+		history.pushState({}, '', '/');
 	} else if (direction == "down") {
 		if ($('.stage source').attr('src') != 'films/' + id.split('-')[1] + '.mp4') {
 			$('.stage video').attr('poster', 'frames/' + id.split('-')[1] + '.jpg');
@@ -40,8 +42,10 @@ function stageScroll(id, direction) {
 			$('.meta .title').html(id.split('-')[1]);
 			$('.meta .description').html($('#' + id + ' img').attr('alt'));
 			$('.stage video').load().show();
+			history.pushState({}, '', '#' + id.split('-')[1]);
 		} else if ($('.stage video').is(":hidden")) {
 			$('.stage video').load().show();
+			history.pushState({}, '', '#' + id.split('-')[1]);
 		}
 		$('.navigation li a').css('opacity', '.2');
 		$('#nav-' + id.split('-')[1] + ' a').css('opacity', '1');
@@ -52,6 +56,7 @@ function stageScroll(id, direction) {
 			$('.meta .title').html(id.split('-')[1]);
 			$('.meta .description').html($('#' + id + ' img').attr('alt'));
 			$('.stage video').load().show();
+			history.pushState({}, '', '#' + id.split('-')[1]);
 		}
 		$('.navigation li a').css('opacity', '.2');
 		$('#nav-' + id.split('-')[1] + ' a').css('opacity', '1');
