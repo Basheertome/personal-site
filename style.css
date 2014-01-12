@@ -87,10 +87,10 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index: 2;
   -webkit-animation: hover 10s ease-out infinite;
   -moz-animation: hover 10s ease-out infinite;
   animation: hover 10s ease-out infinite;
+  z-index: 2;
 }
 
 .header {
@@ -99,11 +99,11 @@ body {
   top: 0;
   left: 0;
   padding: 2em 3em;
-  z-index: 3;
   text-transform: uppercase;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  z-index: 3;
 }
 
 .header a {
@@ -122,7 +122,7 @@ body {
 .header a:active {
   position: relative; top: 1px; }
 
-.header h1, .header ul, .header li {
+.header h1, .header li {
   display: inline-block;
 }
 
@@ -299,4 +299,28 @@ keyframes notice {
   font-family:'Karbon-Light',Sans-Serif;
   font-size: 60px;
   -webkit-transform: scale(1,.2);
+}
+
+@media (max-width: 600px) {
+  .header h1, .header ul {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header h1 {
+    margin-bottom: 1em;
+  }
+
+  .header li:first-child {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .header li {
+    margin-left: 0;
+    display: block;
+  }
 }
