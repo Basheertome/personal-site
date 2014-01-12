@@ -159,6 +159,7 @@ body {
 
 .stage video {
   display: none;
+  background: #000;
 }
 
 .meta {
@@ -220,12 +221,10 @@ body {
 }
 
 .filmstrip li h2 {
-  display: inline-block;
   font-family:'Karbon-Medium',Sans-Serif;
 }
 
 .filmstrip h3 {
-  display: block;
   float: right;
   text-align: right;
 }
