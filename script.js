@@ -8,6 +8,8 @@ $(document).ready(function(){
 		$('.filmstrip').css({'margin-top': window.innerHeight});
 
 		curtainCall();
+	} else if ($('.filmstrip').css('margin-top') != '0') {
+		$('.filmstrip').css({'margin-top': 0});
 	}
 
 	$('.navigation li').click(function(event) {
@@ -17,13 +19,17 @@ $(document).ready(function(){
 	});
 
 	$('.filmstrip li').waypoint(function(direction){
-		stageScroll($(this), $(this).attr('id').split('-')[1], direction);
+		if (window.innerWidth > breakPoint) {
+			stageScroll($(this), $(this).attr('id').split('-')[1], direction);
+		}
 	}, {
 		offset: frameSpace
 	});
 });
 
 $(window).resize(function(){
+	frameSpace = window.innerHeight / 2.0 - 160;
+
 	if (window.innerWidth > breakPoint) {
 		$('.filmstrip').css({'margin-top': window.innerHeight});
 	} else if ($('.filmstrip').css('margin-top') != '0') {
