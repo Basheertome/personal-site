@@ -335,6 +335,8 @@ keyframes notice {
   }
 
   .frame .intro {
+    display: block !important;
+    opacity: 1 !important;
     position: static;
     width: auto;
     max-width: 600px;
@@ -355,6 +357,7 @@ keyframes notice {
   }
 
   .filmstrip li {
+    opacity: 1 !important;
     margin-bottom: 50px;
   }
 
