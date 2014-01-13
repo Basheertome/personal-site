@@ -48,7 +48,7 @@ function curtainCall() {
 		if ($('.photo').is(':hidden')) {
 			$('.photo, .intro').show();
 			$('.frame').removeClass('ghost');
-			closedCurtain();
+			closeCurtain();
 		}
 		$('.photo, .intro').css('opacity',1 - $(window).scrollTop() / frameSpace);
 	} else if ($('.photo').is(':visible')) {
@@ -57,7 +57,7 @@ function curtainCall() {
 	}
 }
 
-function closedCurtain() {
+function closeCurtain() {
 	$('.navigation li').css('opacity', '.2');
 	$('.stage video').removeAttr('poster');
 	$('.stage source').removeAttr('src');
@@ -66,7 +66,7 @@ function closedCurtain() {
 	$('.meta .title, .meta .description').empty();
 }
 
-function newAct(id) {
+function openCurtain(id) {
 	$('.stage').attr('href', $('#film-' + id + ' a').attr('href'));
 	$('.stage video').attr('poster', 'frames/' + id + '.jpg');
 	$('.stage source').attr('src', 'films/' + id + '.mp4');
@@ -81,15 +81,15 @@ function newAct(id) {
 function stageScroll(that, id, direction) {
 	if ($(that).is(':first-child') && direction == 'up') {
 		$(that).css('opacity', '1');
-		closedCurtain();
+		closeCurtain();
 	} else if (direction == 'down') {
 		$(that).delay(1).queue(function(){
 			$(this).css('opacity', '0');
 			$(this).dequeue();
 		});
-		newAct(id);
+		openCurtain(id);
 	} else if (direction == 'up') {
 		$(that).css('opacity', '1');
-		newAct($(that).prev().attr('id').split('-')[1]);
+		openCurtain($(that).prev().attr('id').split('-')[1]);
 	}
 }
