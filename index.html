@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 	<script src='jquery.min.js'></script>
 	<script src='waypoints.min.js'></script>
+	<script src='throttle-debounce.min.js'></script>
 	<script src='script.js'></script>
 <!--	<script src="http://stats.basheertome.com/?js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -42,6 +43,10 @@
 <div class="frame">
 	<h2 class="intro">What do we want people to feel or touch, when using technology? Pixels are just the beginning.</h2>
 	<div class="scroll">scroll</div>
+	<div class="meta">
+		<h2 class="title"></h2>
+		<h3 class="description"></h3>
+	</div>
 </div>
 
 <div class="photo"></div>
@@ -50,13 +55,10 @@
 	<video width="800" height="320" autoplay loop>
 		<source type="video/mp4">
 	</video>
-	<div class="meta">
-		<h2 class="title"></h2>
-		<h3 class="description"></h3>
-	</div>
 </a>
 
 <div class="shade"></div>
+<div class="backshade"></div>
 
 <ul class="filmstrip ghost">
 	<li id="film-hue"><a href="/hue">
