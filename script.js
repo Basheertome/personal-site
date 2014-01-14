@@ -47,16 +47,18 @@ $(window).scroll($.debounce(100, function (){
 	var nextFilm = $('.filmstrip li').filter(function(){return $(this).css('opacity') == '1'});
 	var gap = nextFilm.offset().top - frameSpace - $(window).scrollTop();
 
-	if ($(window).scrollTop() > frameSpace) {
-	    if (gap < frameSpace + 320) {
-	    	$('body').animate({
-	    		scrollTop: nextFilm.offset().top - (window.innerHeight / 2.0) + 160
-			}, 200);
-	    } else {
-	    	$('body').animate({
-	    		scrollTop: nextFilm.prev().offset().top - (window.innerHeight / 2.0) + 160
-			}, 200);
-	    }
+	if (window.innerWidth > breakPoint) {
+		if ($(window).scrollTop() > frameSpace) {
+		    if (gap < frameSpace + 320) {
+		    	$('body').animate({
+		    		scrollTop: nextFilm.offset().top - (window.innerHeight / 2.0) + 160
+				}, 200);
+		    } else {
+		    	$('body').animate({
+		    		scrollTop: nextFilm.prev().offset().top - (window.innerHeight / 2.0) + 160
+				}, 200);
+		    }
+		}
 	}
 }));
 
