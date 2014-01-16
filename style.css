@@ -331,5 +331,6 @@ body {
 
   .navigation li a {
     font-size: 40px;
+    height: 50px;
   }
 }
