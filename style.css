@@ -212,7 +212,7 @@ body {
   top: 1px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-height: 500px) {
   body {
     background: url('starry.jpg') no-repeat center center;
     -webkit-background-size: cover;
