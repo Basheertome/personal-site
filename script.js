@@ -54,7 +54,7 @@ $(window).scroll($.debounce(100, function (){
 			var thisFilm = $('.navigation li a[href*="' + $('.frame').attr('href') + '"]');
 			var prevFilm = thisFilm.parent().prev().children();
 			var nextFilm = thisFilm.parent().next().children();
-			var gap = $('body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 60 + thisFilm.height());
+			var gap = $('body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
 
 			if (window.innerWidth > breakPoint) {
 				if (Math.abs(gap) <= thisFilm.height() / 2.0) {
