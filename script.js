@@ -3,15 +3,11 @@ var wbreakPoint = 900;
 var vbreakPoint = 500;
 var frameOver = false;
 
-if('ontouchstart' in document.documentElement) {
-    alert('hello');
-}
-
 $(document).ready(function(){
 	laughTrack();
 
 	$('.navigation li a, .frame').hover(function(){
-		if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+		if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 			frameOver = true;
 			if ($(window).scrollTop() < frameSpace) {
 				$('.frame').removeAttr('href');
@@ -24,7 +20,7 @@ $(document).ready(function(){
 			$(this).css('opacity','1');
 		}
 	}, function(){
-		if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+		if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 			frameOver = false;
 			closeCurtain();
 		} else {
@@ -54,14 +50,14 @@ $(window).scroll(function() {
 });
 
 $(window).scroll($.debounce(100, function (){
-	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 		if ($('.frame').attr('href')) {
 			var thisFilm = $('.navigation li a[href*="' + $('.frame').attr('href') + '"]');
 			var prevFilm = thisFilm.parent().prev().children();
 			var nextFilm = thisFilm.parent().next().children();
 			var gap = $('body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
 
-			if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+			if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 				if (Math.abs(gap) <= thisFilm.height() / 2.0) {
 					$('body').animate({
 						scrollTop: (gap - $('body').scrollTop()) * -1
@@ -97,7 +93,7 @@ $(window).scroll($.debounce(100, function (){
 
 
 function curtainCall() {
-	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 		var percent = $(window).scrollTop() / frameSpace;
 
 		if ($(window).scrollTop() < frameSpace) {
@@ -125,7 +121,7 @@ function curtainCall() {
 }
 
 function laughTrack() {
-	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 		$('.navigation').css({'padding-bottom': (window.innerHeight - $('.navigation li').height()) / 2});
 		if ($('.stage video').width() < window.innerWidth) {
 			$('.stage video').removeAttr('height');
@@ -143,7 +139,7 @@ function laughTrack() {
 }
 
 function frameScroll(that, id, direction) {
-	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint) {
+	if (window.innerWidth > wbreakPoint || window.innerHeight > vbreakPoint || 'ontouchstart' in document.documentElement) {
 		if (id == 'hue' && direction == 'up') {
 			$('.frame').removeAttr('href');
 		} else {
