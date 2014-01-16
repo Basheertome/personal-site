@@ -158,8 +158,9 @@ body {
   position: fixed;
   font-family:'karbonregular',Sans-Serif;
   font-size: 32px;
+  line-height: 38px;
   width: 600px;
-  top: calc(50% - 30px);
+  top: calc(50% - 34px);
   left: 0;
   right: 0;
   margin: auto;
