@@ -3,7 +3,7 @@ var breakPoint = 900;
 var frameOver = false;
 
 $(document).ready(function(){
-	padBottom();
+	laughTrack();
 
 	$('.navigation li a, .frame').hover(function(){
 		if (window.innerWidth > breakPoint) {
@@ -39,7 +39,7 @@ $(document).ready(function(){
 $(window).resize(function(){
 	frameSpace = window.innerHeight / 2.0 - 160;
 
-	padBottom();
+	laughTrack();
 
 	curtainCall();
 });
@@ -119,9 +119,18 @@ function curtainCall() {
 	}
 }
 
-function padBottom() {
+function laughTrack() {
 	if (window.innerWidth > breakPoint) {
 		$('.navigation').css({'padding-bottom': (window.innerHeight - $('.navigation li').height()) / 2});
+		if ($('.stage video').width() < window.innerWidth) {
+			$('.stage video').removeAttr('height');
+			$('.stage video').attr('width','100%');
+			$('.stage video').css('left',0);
+		} else {
+			$('.stage video').removeAttr('width');
+			$('.stage video').attr('height','100%');
+			$('.stage video').css('left',-1 * ($('.stage video').width()-window.innerWidth));
+		}
 		curtainCall();
 	} else if ($('.navigation').css('padding-bottom') != '20px') {
 		$('.navigation').css({'padding-bottom': '20px'});
