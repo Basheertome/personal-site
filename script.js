@@ -4,6 +4,10 @@ var vbreakPoint = 500;
 var frameOver = false;
 
 $(document).ready(function(){
+	if ('ontouchstart' in document.documentElement) {
+		$('html').addClass('touch');
+	}
+
 	laughTrack();
 
 	$('.navigation li a, .frame').hover(function(){

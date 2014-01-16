@@ -223,6 +223,47 @@ body {
   top: 1px;
 }
 
+html.touch body {
+  background: url('starry.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+html.touch .header {
+  position: static;
+}
+
+html.touch .ghost {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+html.touch .frame, html.touch .photo, html.touch .stage {
+  display: none !important;
+}
+
+html.touch .navigation {
+  position: static;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html.touch .navigation li {
+  display: inline;
+}
+
+html.touch .navigation li::after {
+  content:"\a";
+  white-space: pre;
+}
+
 @media (max-width: 900px), (max-height: 500px) {
   body {
     background: url('starry.jpg') no-repeat center center;
@@ -260,7 +301,7 @@ body {
     display: inline;
   }
 
-  .navigation li::after{
+  .navigation li::after {
     content:"\a";
     white-space: pre;
   }
