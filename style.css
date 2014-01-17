@@ -252,14 +252,6 @@ body {
   0% {top: calc(50% + 180px);}
   50% {top: calc(50% + 195px);}
   100% {top: calc(50% + 180px);} }
-@-moz-keyframes notice {
-  0% {top: calc(50% + 180px);}
-  50% {top: calc(50% + 195px);}
-  100% {top: 0} }
-keyframes notice {
-  0% {top: calc(50% + 180px);}
-  50% {top: calc(50% + 195px);}
-  100% {top: calc(50% + 180px);} }
 
 .scroll::before, .scroll::after {
   content: "v";
@@ -268,7 +260,7 @@ keyframes notice {
   text-align: center;
   width: 100%;
   top: -5px;
-  font-family:'Karbon-Light',Sans-Serif;
+  font-family:'karbonlight',Sans-Serif;
   font-size: 60px;
   -webkit-transform: scale(1,.2);
   -moz-transform: scale(1,.2);
@@ -434,4 +426,14 @@ html.touch .navigation li::after {
     font-size: 40px;
     height: 50px;
   }
+}
+
+@-moz-document url-prefix() {
+  body, .frame .intro, .navigation li a {
+    font-family:'karbonlight',Sans-Serif;
+  }
+
+  .header a {
+    font-family: 'karbonregular',Sans-Serif;
+   }
 }

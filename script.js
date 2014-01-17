@@ -12,7 +12,7 @@ $(document).ready(function(){
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
 		$('.scroll').click(function(){
 			$(this).hide();
-			$('body').animate({
+			$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
 				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height() + 5
 			}, 100);
 	    });
@@ -71,12 +71,12 @@ $(window).scroll($.debounce(100, function (){
 			var thisFilm = $('.navigation li a[href*="' + $('.frame').attr('href') + '"]');
 			var prevFilm = thisFilm.parent().prev().children();
 			var nextFilm = thisFilm.parent().next().children();
-			var gap = $('body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
+			var gap = $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
 
 			if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
 				if (Math.abs(gap) <= thisFilm.height() / 2.0) {
-					$('body').animate({
-						scrollTop: (gap - $('body').scrollTop()) * -1
+					$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+						scrollTop: (gap - $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop()) * -1
 					}, 100);
 					$('.frame').attr('href',thisFilm.attr('href'));
 					if ($('.frame').attr('href') == '/photography') {
@@ -87,7 +87,7 @@ $(window).scroll($.debounce(100, function (){
 					$('.stage').css('background',colorWheel[thisFilm.parent().index()]);
 				} else if (gap < 0) {
 					if (prevFilm.attr('href') !== undefined) {
-						$('body').animate({
+						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
 							scrollTop: prevFilm.offset().top - (window.innerHeight / 2.0) - 60 + prevFilm.height()
 						}, 100);
 						$('.frame').attr('href',prevFilm.attr('href'));
@@ -100,7 +100,7 @@ $(window).scroll($.debounce(100, function (){
 					}
 				} else if (gap > 0) {
 					if (nextFilm.attr('href') !== undefined) {
-						$('body').animate({
+						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
 							scrollTop: nextFilm.offset().top - (window.innerHeight / 2.0) - 60 + nextFilm.height()
 						}, 100);
 						$('.frame').attr('href',nextFilm.attr('href'));
@@ -116,8 +116,8 @@ $(window).scroll($.debounce(100, function (){
 					openCurtain(thisFilm.attr('href').split('/')[1]);
 				}
 			}
-		} else if ($('body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) >= -1 * $('.navigation li a[href*="hue"]').height() / 2.0 && $('body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) < 0) {
-			$('body').animate({
+		} else if ($(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) >= -1 * $('.navigation li a[href*="hue"]').height() / 2.0 && $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) < 0) {
+			$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
 				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()
 			}, 100);
 			$('.frame').attr('href',$('.navigation li a[href*="hue"]').attr('href'));
