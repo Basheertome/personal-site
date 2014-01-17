@@ -9,6 +9,15 @@ $(document).ready(function(){
 		$('html').addClass('touch');
 	}
 
+	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+		$('.scroll').click(function(){
+			$(this).hide();
+			$('body').animate({
+				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height() + 5
+			}, 100);
+	    });
+	}
+
 	laughTrack();
 
 	$('.navigation li a, .frame').hover(function(){
@@ -142,7 +151,7 @@ function curtainCall() {
 				$('.frame').css('bottom','calc(50% - ' + 160 + 'px)');
 			}
 		} else if ($('.intro').is(':visible')) {
-			$('.intro').hide();
+			$('.intro, .scroll').hide();
 			$('.frame').css('height',120);
 			$('.frame').css('bottom','calc(50% - ' + 60 + 'px)');
 			$('.frame .arrow').css('opacity',1);

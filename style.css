@@ -41,6 +41,15 @@ body {
          url('fonts/karbon-semibold-webfont.svg#karbonsemibold') format('svg');
     font-weight: normal;
     font-style: normal; }
+@font-face {
+    font-family: 'karbonlight';
+    src: url('fonts/karbon-light-webfont.eot');
+    src: url('fonts/karbon-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/karbon-light-webfont.woff') format('woff'),
+         url('fonts/karbon-light-webfont.ttf') format('truetype'),
+         url('fonts/karbon-light-webfont.svg#karbonlight') format('svg');
+    font-weight: normal;
+    font-style: normal; }
 
 ::selection {
   background: rgba(255,216,0,.7);
@@ -224,6 +233,49 @@ body {
   top: 1px;
 }
 
+.scroll {
+  position: fixed;
+  top: calc(50% + 180px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  text-shadow: 0 2px 3px rgba(0,0,0,.25);
+  z-index: 4;
+  -webkit-animation: notice 2s infinite alternate ease-in-out;
+  -moz-animation: notice 2s infinite alternate ease-in-out;
+  animation: notice 2s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes notice {
+  0% {top: calc(50% + 180px);}
+  50% {top: calc(50% + 195px);}
+  100% {top: calc(50% + 180px);} }
+@-moz-keyframes notice {
+  0% {top: calc(50% + 180px);}
+  50% {top: calc(50% + 195px);}
+  100% {top: 0} }
+keyframes notice {
+  0% {top: calc(50% + 180px);}
+  50% {top: calc(50% + 195px);}
+  100% {top: calc(50% + 180px);} }
+
+.scroll::before, .scroll::after {
+  content: "v";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: -5px;
+  font-family:'Karbon-Light',Sans-Serif;
+  font-size: 60px;
+  -webkit-transform: scale(1,.2);
+  -moz-transform: scale(1,.2);
+  transform: scale(1,.2); }
+.scroll::after {
+  top: 0; }
+
 html.touch {
   background: #000 url('background.jpg') no-repeat 55% center;
   -webkit-background-size: cover;
@@ -242,7 +294,7 @@ html.touch .ghost {
   pointer-events: auto;
 }
 
-html.touch .frame, html.touch .photo, html.touch .stage {
+html.touch .frame, html.touch .scroll, html.touch .photo, html.touch .stage {
   display: none !important;
 }
 
@@ -287,7 +339,7 @@ html.touch .navigation li::after {
     pointer-events: auto;
   }
 
-  .frame, .photo, .stage {
+  .frame, .scroll, .photo, .stage {
     display: none !important;
   }
 
