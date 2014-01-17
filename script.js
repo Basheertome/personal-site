@@ -151,10 +151,18 @@ function curtainCall() {
 }
 
 function laughTrack() {
-	if ($('.header h1').height() * 2 + $('.header ul').height() + 20 + $('.navigation').height() < window.innerHeight) {
-		$('html').css('height', '100%');
+	if ($('.navigation').css('-webkit-column-count') > 1) {
+		if ($('.header h1').height() * 2 + $('.header ul').height() + 20 + ($('.navigation').height() / 2) < window.innerHeight) {
+			$('html').css('height', '100%');
+		} else {
+			$('html').css('height', 'auto');
+		}
 	} else {
-		$('html').css('height', 'auto');
+		if ($('.header h1').height() * 2 + $('.header ul').height() + 20 + $('.navigation').height() < window.innerHeight) {
+			$('html').css('height', '100%');
+		} else {
+			$('html').css('height', 'auto');
+		}
 	}
 
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
