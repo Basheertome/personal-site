@@ -225,7 +225,7 @@ body {
 }
 
 html.touch {
-  background: #000 url('background-bw.jpg') no-repeat 55% center;
+  background: #000 url('background.jpg') no-repeat 55% center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -270,7 +270,7 @@ html.touch .navigation li::after {
 
 @media (max-width: 900px), (max-height: 500px) {
   html {
-    background: url('background-bw.jpg') no-repeat 55% center;
+    background: url('background.jpg') no-repeat 55% center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
