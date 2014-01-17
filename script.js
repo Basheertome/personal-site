@@ -51,6 +51,33 @@ $(document).ready(function(){
 			return frameSpace + 220 - $(this).height();
 		}
 	});
+
+	var loader = html5Preloader('frames/hue.jpg',
+								'frames/instinct.jpg',
+								'frames/chroma.jpg',
+								'frames/fuse.jpg',
+								'frames/fabrication.jpg',
+								'frames/visualization.jpg',
+								'frames/electronics.jpg',
+								'frames/software.jpg',
+								'frames/photography.jpg',
+								'frames/archive.jpg',
+								'films/hue.mp4',
+								'films/instinct.mp4',
+								'films/chroma.mp4',
+								'films/fuse.mp4',
+								'films/fabrication.mp4',
+								'films/visualization.mp4',
+								'films/electronics.mp4',
+								'films/software.mp4',
+								'films/photography.mp4',
+								'films/archive.mp4');
+	loader.on('finish', function(){
+		console.log('All assets loaded.');
+	});
+	loader.on('error', function(e){
+		console.error(e);
+	});
 });
 
 $(window).resize(function(){
