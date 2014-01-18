@@ -1,1 +1,1 @@
-RewriteRule ^?/ http://click.basheertome.com/ [R=301,L]
+RedirectMatch 301 ^/ http://click.basheertome.com/
