@@ -157,6 +157,7 @@ $(window).scroll($.debounce(100, function (){
 				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()
 			}, 100);
 			$('.frame').attr('href',$('.navigation li a[href*="hue"]').attr('href'));
+			$('.frame').removeAttr('target');
 		}
 	}
 }));
@@ -236,6 +237,11 @@ function frameScroll(that, id, direction) {
 			$('.stage').css('background','transparent');
 		} else {
 			$('.frame').attr('href',that.attr('href'));
+			if ($('.frame').attr('href') == '/photography') {
+				$('.frame').attr('target','_blank');
+			} else {
+				$('.frame').removeAttr('target');
+			}
 			$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()]);
 		}
 		if (id == 'visualization') {
