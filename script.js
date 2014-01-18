@@ -1,4 +1,4 @@
-var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#93C84A', '#F7E261', '#3C92CF', '#514099', '#E83791', '#888888', '#333333'];
+var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#93C84A', '#F7E261', '#3C92CF', '#514099', '#E83791', '#888888', 'transparent'];
 var frameSpace = window.innerHeight / 2.0 - 160;
 var wbreakPoint = 900;
 var vbreakPoint = 500;
@@ -159,7 +159,7 @@ function stageCue(member) {
 
 function curtainCall() {
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-		var percent = $(window).scrollTop() / frameSpace;
+		var percentage = $(window).scrollTop() / frameSpace;
 
 		if ($(window).scrollTop() < frameSpace) {
 			if ($('.intro').is(':hidden')) {
@@ -167,10 +167,10 @@ function curtainCall() {
 				$('.frame .arrow').css('opacity',0);
 				closeCurtain();
 			}
-			if (percent > 0) {
-				$('.intro').css('opacity',1 - percent);
-				$('.frame').css('height',320-200*percent);
-				$('.frame').css('bottom','calc(50% - 160px + ' + 100*percent + 'px)');
+			if (percentage > 0) {
+				$('.intro').css('opacity',1 - percentage);
+				$('.frame').css('height',320-200*percentage);
+				$('.frame').css('bottom','calc(50% - 160px + ' + 100*percentage + 'px)');
 			} else {
 				$('.intro').css('opacity',1);
 				$('.frame').css('height',320);
@@ -201,7 +201,7 @@ function laughTrack() {
 	}
 
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-		$('.navigation').css({'padding-bottom': (window.innerHeight - $('.navigation li').height()) / 2.0});
+		$('.navigation').css({'padding-bottom': (window.innerHeight - $('.navigation li').height()) / 2});
 		if ($('.stage video').width() < window.innerWidth) {
 			$('.stage video').removeAttr('height');
 			$('.stage video').attr('width','100%');
@@ -225,6 +225,13 @@ function frameScroll(that, id, direction) {
 		} else {
 			$('.frame').attr('href',that.attr('href'));
 			$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()]);
+		}
+		if (id == 'visualization') {
+			if (direction == 'down') {
+				$('.photo').css('background-image','url("wood.jpg")');
+			} else {
+				$('.photo').css('background-image','url("background.jpg")');
+			}
 		}
 	}
 }

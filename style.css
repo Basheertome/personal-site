@@ -367,7 +367,7 @@ html.touch .navigation li::after {
 
 @media (max-width: 600px) {
   .header {
-    padding: 30px;
+    padding: 30px !important;
   }
 
   .header h1 a {
@@ -391,8 +391,8 @@ html.touch .navigation li::after {
 
   .navigation {
     clear: both;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
 
   .filmstrip li h3 {
@@ -436,7 +436,7 @@ html.touch .navigation li::after {
 }
 
 @-moz-document url-prefix() {
-  body, .frame .intro, .navigation li a {
+  body, .frame .intro, .navigation li a, .footer p2 {
     font-family:'karbonlight',Sans-Serif;
   }
 

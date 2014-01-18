@@ -39,6 +39,10 @@
 	"source": "frames/archive.jpg",
 	"size": 50736
 	}, {
+	"type": "IMAGE",
+	"source": "wood.jpg",
+	"size": 251590
+	}, {
 	"type": "VIDEO",
 	"sources": {
 		"mp4": {
