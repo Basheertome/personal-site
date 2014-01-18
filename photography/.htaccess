@@ -1,1 +1,1 @@
-RewriteRule ^(.*).html$ http://click.basheertome.com/ [R=301,NC,L]
+RewriteRule ^?/ http://click.basheertome.com/ [R=301,L]
