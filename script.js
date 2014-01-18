@@ -8,6 +8,14 @@ $(document).ready(function(){
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
 	}
+	if (window.location.hash.split('#')[1]) {
+		var id = window.location.hash.split('#')[1];
+		window.location.replace("#");  
+		if (typeof window.history.replaceState == 'function') {
+		  history.replaceState({}, '', window.location.href.slice(0, -1));
+		}
+		stageCue($('.navigation li a[href*="' + id + '"]'));
+	}
 	
 	laughTrack();
 
