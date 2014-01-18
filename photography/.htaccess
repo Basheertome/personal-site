@@ -1,1 +1,1 @@
-Redirect 302 / http://click.basheertome.com/index.html
+RewriteRule ^(.*).html$ http://click.basheertome.com/ [R=301,NC,L]
