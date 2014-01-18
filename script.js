@@ -8,19 +8,33 @@ $(document).ready(function(){
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
 	}
-
-	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-		$('.scroll').click(function(){
-			$(this).hide();
-			$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height() + 5
-			}, 100);
-	    });
-	}
-
+	
 	laughTrack();
 
-	$('.navigation li a, .frame').hover(function(){
+	$('.scroll').click(function(){
+		$(this).hide();
+		stageCue($('.navigation li a[href*="hue"]'));
+    });
+
+	$('.navigation li a').click(function(event){
+		if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+			event.preventDefault();
+		}
+		stageCue($(this));
+    });	
+
+	$('.navigation li a').hover(function(){
+		$('.navigation li a').css('opacity','.5');
+		$(this).css('opacity','1');
+		if (!((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement))) {
+			$('body').css('background',colorWheel[$(this).parent().index()] + ' no-repeat 55% center');
+		}
+	}, function(){
+		$('.navigation li a').css('opacity','1');
+		$('body').css('background','rgba(0,0,0,.3)');
+	});
+
+	$('.frame').hover(function(){
 		if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
 			frameOver = true;
 			if ($(window).scrollTop() < frameSpace) {
@@ -29,18 +43,11 @@ $(document).ready(function(){
 			if ($(this).attr('href')) {
 				openCurtain($(this).attr('href').split('/')[1]);
 			}
-		} else {
-			$('.navigation li a').css('opacity','.5');
-			$(this).css('opacity','1');
-			$('body').css('background',colorWheel[$(this).parent().index()] + ' no-repeat 55% center');
 		}
 	}, function(){
 		if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
 			frameOver = false;
 			closeCurtain();
-		} else {
-			$('.navigation li a').css('opacity','1');
-			$('body').css('background','rgba(0,0,0,.3)');
 		}
 	});
 
@@ -129,15 +136,17 @@ $(window).scroll($.debounce(100, function (){
 				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()
 			}, 100);
 			$('.frame').attr('href',$('.navigation li a[href*="hue"]').attr('href'));
-			if ($('.frame').attr('href') == '/photography') {
-				$('.frame').attr('target','_blank');
-			} else {
-				$('.frame').removeAttr('target');
-			}
 		}
 	}
 }));
 
+function stageCue(member) {
+	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+		$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+			scrollTop: member.offset().top - (window.innerHeight / 2.0) - 60 + member.height()
+		}, 100);
+	}
+}
 
 function curtainCall() {
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
