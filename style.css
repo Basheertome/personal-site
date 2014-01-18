@@ -126,6 +126,13 @@ body {
 .header a:active {
   position: relative; top: 1px; }
 
+.header h1, .header .links {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  pointer-events: auto;
+}
+
 .header h1, .header li {
   display: inline-block;
 }
