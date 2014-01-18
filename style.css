@@ -12,7 +12,7 @@ html {
 body {
   background: rgba(0,0,0,.3);
   color: #fff;
-	font-family:'karbonregular',Sans-Serif;
+  font-family:'karbonregular',Sans-Serif;
   height: 100%;
   -webkit-transition: .2s linear background;
   -moz-transition: .2s linear background;
