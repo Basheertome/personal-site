@@ -54,18 +54,10 @@ $(document).ready(function(){
 
 	$.html5Loader({
 		filesToLoad: 'loader.json',
-		onBeforeLoad: function(){
-			console.log('starting...');
-		},
-		onComplete: function(){
-			console.log('done!');
-		},
-		onElementLoaded: function(obj, elm){
-			console.log(obj.source.split('/')[1].split('.')[0])
-		},
-		onUpdate: function(percentage){
-			console.log(percentage);
-		}
+		onBeforeLoad: function(){},
+		onComplete: function(){},
+		onElementLoaded: function(obj, elm){},
+		onUpdate: function(percentage){}
 	}); 
 });
 
