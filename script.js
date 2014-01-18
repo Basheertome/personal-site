@@ -25,7 +25,11 @@ $(document).ready(function(){
 
 	$('.navigation li a').hover(function(){
 		if (!((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement))) {
-			$('body').css('background',colorWheel[$(this).parent().index()] + ' no-repeat 55% center');
+			if ($(this).parent().is(':last-child')) {
+				$('body').css('background','#333333 no-repeat 55% center');
+			} else {
+				$('body').css('background',colorWheel[$(this).parent().index()] + ' no-repeat 55% center');
+			}
 		}
 	}, function(){
 		$('body').css('background','rgba(0,0,0,.3)');
