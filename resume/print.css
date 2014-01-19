@@ -12,6 +12,10 @@ body {
 	font-smoothing: antialiased;
 }
 
+.main-header {
+  display: none;
+}
+
 .page {
   max-width: 800px;
   margin: 0 auto;
