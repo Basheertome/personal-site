@@ -1,4 +1,4 @@
-var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#93C84A', '#F7E261', '#3C92CF', '#514099', '#E83791', '#888888', 'transparent'];
+var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#333', '#93C84A', '#F7E261', '#3C92CF', '#514099', '#888888', 'transparent'];
 var frameSpace = window.innerHeight / 2.0 - 160;
 var currentFilm = '';
 var wbreakPoint = 900;
@@ -168,7 +168,7 @@ function laughTrack() {
 		}
 	}
 
-	if (!((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint)) && 'ontouchstart' in document.documentElement && $('.navigation').css('padding-bottom') != '20px') {
+	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && 'ontouchstart' in document.documentElement && $('.navigation').css('padding-bottom') != '20px') {
 		$('.navigation').css({'padding-bottom': '20px'});
 	}
 }
@@ -194,9 +194,11 @@ function frameScroll(that, id, direction) {
 
 function closeCurtain() {
 	$('.navigation li a').css('opacity', '1');
+	$('.navigation li a span:last-child').css('opacity', '.6');
 }
 
 function openCurtain(that) {
 	$('.navigation li a').css('opacity', '.35');
+	that.children('span:last-child').css('opacity', '1');
 	that.css('opacity', '1');
 }

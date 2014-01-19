@@ -205,8 +205,8 @@ body {
 .navigation {
   position: absolute;
   top: 100%;
-  right: calc(50% - 350px);
-  width: 700px;
+  right: calc(50% - 400px);
+  width: 800px;
   z-index: 2;
   padding-bottom: 35%;
 }
@@ -216,7 +216,7 @@ body {
 }
 
 .navigation li a {
-  display: inline-block;
+  display: block;
   font-family: 'karbonregular',Sans-Serif;
   font-size: 80px;
   height: 96px;
@@ -229,6 +229,19 @@ body {
 .navigation li a:active {
   position: relative;
   top: 1px;
+}
+
+.navigation li a span:first-child {
+  display: inline-block;
+}
+
+.navigation li a span:last-child {
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 25px;
+  float: right;
+  line-height: 96px;
+  opacity: .6;
 }
 
 .scroll {
@@ -301,13 +314,21 @@ html.touch .navigation {
   column-count: 2;
 }
 
-html.touch .navigation li {
+html.touch .navigation li, html.touch .navigation li a span:first-child {
   display: inline;
 }
 
 html.touch .navigation li::after {
   content:"\a";
   white-space: pre;
+}
+
+html.touch .navigation li a {
+  display: inline-block;
+}
+
+html.touch .navigation li a span:last-child {
+  display: none;
 }
 
 @media (max-width: 900px), (max-height: 500px) {
@@ -338,6 +359,7 @@ html.touch .navigation li::after {
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -346,13 +368,21 @@ html.touch .navigation li::after {
     column-count: 1 !important;
   }
 
-  .navigation li {
+  .navigation li, .navigation li a span:first-child {
     display: inline;
   }
 
   .navigation li::after {
     content:"\a";
     white-space: pre;
+  }
+
+  .navigation li a {
+    display: inline-block;
+  }
+
+  .navigation li a span:last-child {
+    display: none;
   }
 }
 
@@ -384,10 +414,7 @@ html.touch .navigation li::after {
     clear: both;
     padding-left: 30px !important;
     padding-right: 30px !important;
-  }
-
-  .filmstrip li h3 {
-    padding-bottom: 30px;
+    padding-bottom: 15px !important;
   }
 }
 
