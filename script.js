@@ -138,6 +138,10 @@ function curtainCall() {
 				$('.intro, .frame').show();
 				closeCurtain();
 			}
+			if (currentFilm != '') {
+				currentFilm = '';
+				$('.stage').css('background','transparent');
+			}
 			if (percentage > 0) {
 				$('.frame').css('opacity',1 - percentage);
 			} else {
