@@ -8,13 +8,15 @@ $(document).ready(function(){
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
 	}
-	if (window.location.hash.split('#')[1]) {
+	if (window.location.hash.split('#')[1] != undefined) {
 		var id = window.location.hash.split('#')[1];
 		window.location.replace("#");  
 		if (typeof window.history.replaceState == 'function') {
 		  history.replaceState({}, '', window.location.href.slice(0, -1));
 		}
-		stageCue($('.navigation li a[href*="' + id + '"]'));
+		if ($('.navigation li a[href*="' + id + '"]').offset() != undefined) {
+			stageCue($('.navigation li a[href*="' + id + '"]'));
+		}
 	}
 	
 	laughTrack();
@@ -168,7 +170,9 @@ function laughTrack() {
 		}
 	}
 
-	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && 'ontouchstart' in document.documentElement && $('.navigation').css('padding-bottom') != '20px') {
+	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+		$('.navigation').css({'padding-bottom': (window.innerHeight - $('.navigation li').height()) / 2.0});
+	} else if ($('.navigation').css('padding-bottom') != '20px') {
 		$('.navigation').css({'padding-bottom': '20px'});
 	}
 }
