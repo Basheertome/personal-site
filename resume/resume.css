@@ -269,6 +269,10 @@ body > .header a:active {
 }
 
 @media (max-width: 525px) {
+  .page {
+    min-width: 0;
+  }
+
   .page h1 {
     font-size: 35px;
     line-height: 30px;
