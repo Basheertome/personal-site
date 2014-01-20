@@ -1,0 +1,207 @@
+* { margin:0; padding:0; outline: 0;}
+html { min-height: 100%; }
+h1,h2,h3 { font-size: 100%; font-weight: normal; }
+ol,ul { list-style: none; }
+img {border: 0;}
+a {text-decoration: none;}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family:'karbonregular',Sans-Serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'karbonregular';
+    src: url(../assets/fonts/karbon-regular-webfont.eot);
+    src: url(../assets/fonts/karbon-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../assets/fonts/karbon-regular-webfont.woff) format('woff'),
+         url(../assets/fonts/karbon-regular-webfont.ttf) format('truetype'),
+         url(../assets/fonts/karbon-regular-webfont.svg#karbonregular) format('svg');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'karbonsemibold';
+    src: url(../assets/fonts/karbon-semibold-webfont.eot);
+    src: url(../assets/fonts/karbon-semibold-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../assets/fonts/karbon-semibold-webfont.woff) format('woff'),
+         url(../assets/fonts/karbon-semibold-webfont.ttf) format('truetype'),
+         url(../assets/fonts/karbon-semibold-webfont.svg#karbonsemibold) format('svg');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'karbonlight';
+    src: url(../assets/fonts/karbon-light-webfont.eot);
+    src: url(../assets/fonts/karbon-light-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../assets/fonts/karbon-light-webfont.woff) format('woff'),
+         url(../assets/fonts/karbon-light-webfont.ttf) format('truetype'),
+         url(../assets/fonts/karbon-light-webfont.svg#karbonlight) format('svg');
+    font-weight: normal;
+    font-style: normal; }
+
+::selection {
+  background: rgba(255,216,0,.7);
+  color: rgba(0,0,0,.7);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: rgba(255,216,0,.7);
+  color: rgba(0,0,0,.7);
+  text-shadow: none;
+}
+
+body > .header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 50px;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+body > .header a {
+  font-family: 'karbonsemibold',Sans-Serif;
+  font-size: 17px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0);
+  -webkit-transition: .1s linear border-bottom;
+  -moz-transition: .1s linear border-bottom;
+  transition: .1s linear border-bottom;
+}
+
+body > .header a:hover {
+  border-bottom: 1px solid rgba(255,255,255,1); }
+body > .header a:active {
+  position: relative; top: 1px; }
+
+body > .header h1, body > .header .links {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+body > .header h1, body > .header li {
+  display: inline-block;
+}
+
+body > .header .links {
+  float: right;
+  text-align: right;
+}
+
+body > .header li {
+  margin-left: 2.25em;
+}
+
+body > .header li:first-child {
+  margin-left: 0;
+}
+
+.ghost {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+html.touch body > .header {
+  position: static;
+}
+
+html.touch .ghost {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px), (max-height: 500px) {
+  body > .header {
+    position: static;
+  }
+
+  .ghost {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body > .header {
+    padding: 30px !important;
+  }
+
+  body > .header h1 a {
+    border-bottom: 1px solid #fff;
+  }
+
+  body > .header h1, body > .header .links {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+  }
+
+  body > .header h1 {
+    margin-bottom: 1em;
+  }
+
+  body > .header .links {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  body > .header {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  body > .header li {
+    display: inline;
+    margin-left: 0;
+  }
+
+  body > .header li a {
+    display: inline-block;
+    margin-bottom: .5em;
+  }
+
+  body > .header li:nth-child(2n-1) {
+    text-align: left;
+    margin-right: 3em;
+  }
+  body > .header li:nth-child(2n) {
+    text-align: right;
+  }
+
+  body > .header li:nth-child(2n)::after {
+    content:"\a";
+    white-space: pre;
+  }
+}
+
+@-moz-document url-prefix() {
+  body {
+    font-family:'karbonlight',Sans-Serif;
+  }
+
+  body > .header a {
+    font-family: 'karbonregular',Sans-Serif;
+   }
+}

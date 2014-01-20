@@ -1,0 +1,15 @@
+body {
+  background: #2e2e2e;
+}
+
+.header a[href*='about'] {
+  border-bottom: 1px solid rgba(255,255,255,1);
+}
+
+.picture {
+  max-width: 100%;
+}
+
+.picture img {
+  width: 100%;
+}
