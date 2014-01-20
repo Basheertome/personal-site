@@ -1,15 +1,70 @@
+html {
+	height: auto;
+}
+
 body {
-  background: #2e2e2e;
+	height: 100%;
+	background: #797979 url('assets/about.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 }
 
-.header a[href*='about'] {
-  border-bottom: 1px solid rgba(255,255,255,1);
+.header {
+	position: static !important;
 }
 
-.picture {
-  max-width: 100%;
+.header a[href*='/about'] {
+	border-bottom: 1px solid rgba(255,255,255,1);
 }
 
-.picture img {
-  width: 100%;
+.bio {
+	font-family:'karbonlight',Sans-Serif;
+	font-size: 30px;
+	line-height: 38px;
+	max-width: 600px;
+	padding: 50px;
+	margin: 25px auto 0 auto;
+}
+
+.bio p {
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+.bio p:last-child {
+	margin-bottom: 0;
+}
+
+.bio a {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transition: .15s linear opacity;
+	-moz-transition: .15s linear opacity;
+	transition: .15s linear opacity;
+}
+
+.bio a:hover {
+	opacity: .5;
+}
+.bio a:active {
+	position: relative;
+	top: 1px;
+}
+
+@media (max-width: 600px) {
+	.bio {
+		font-family:'karbonregular',Sans-Serif;
+		font-size: 25px;
+		line-height: 32px;
+		max-width: 450px;
+		padding: 30px;
+		margin: 45px auto 0 auto;
+	}
+}
+
+@media (max-width: 500px) {
+	.bio {
+		margin: 45px auto 0 auto;
+	}
 }

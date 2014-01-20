@@ -47,7 +47,7 @@ $(document).ready(function(){
 	});
 
 	$.html5Loader({
-		filesToLoad: 'assets/loader.json',
+		filesToLoad: 'loader.json',
 		onBeforeLoad: function(){},
 		onComplete: function(){},
 		onElementLoaded: function(obj, elm){},

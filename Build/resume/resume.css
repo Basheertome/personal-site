@@ -16,7 +16,7 @@ body > .header a {
   color: #cecece;
 }
 
-body > .header a[href*='resume'] {
+body > .header a[href*='/resume'] {
   border-bottom: 1px solid #cecece;
 }
 
