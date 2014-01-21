@@ -1,4 +1,4 @@
-var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#333', '#93C84A', '#F7E261', '#3C92CF', '#514099', '#888888', 'transparent'];
+var colorWheel = ['#F68C1F', '#55C0A5', '#EF4D4D', '#4d4846', '#93C84A', '#896749', '#514099', '#3C92CF', '#888888', 'transparent'];
 var frameSpace = window.innerHeight / 2.0 - 160;
 var currentFilm = '';
 var wbreakPoint = 900;
@@ -188,9 +188,15 @@ function frameScroll(that, id, direction) {
 		}
 		if (id == 'visualization') {
 			if (direction == 'down') {
-				$('.photo').css('background-image','url("assets/wood.jpg")');
+				$('.photo').css({'background-image':'url("assets/wood.jpg")',
+								 '-webkit-animation':'none',
+								 '-moz-animation':'none',
+								 'animation':'none'});
 			} else {
-				$('.photo').css('background-image','url("assets/background.jpg")');
+				$('.photo').css({'background-image':'url("assets/background.jpg")',
+								 '-webkit-animation':'hover 8s ease-out infinite',
+								 '-moz-animation':'hover 8s ease-out infinite',
+								 'animation':'hover 8s ease-out infinite'});
 			}
 		}
 	}

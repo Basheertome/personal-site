@@ -1,0 +1,87 @@
+html {
+	height: auto;
+	background: #000 url('assets/glass.jpg') no-repeat top center;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	background-size: 100% auto;
+}
+
+body {
+	height: 100%;
+	background: transparent;
+}
+
+.header {
+	position: static !important;
+}
+
+.top {
+	font-family:'karbonlight',Sans-Serif;
+	font-size: 30px;
+	line-height: 38px;
+	max-width: 700px;
+	padding: 50px;
+	margin: 15% auto 10% auto;
+}
+
+.top h2, .top h3 {
+	text-align: center;
+}
+
+.top h2 {
+	font-size: 100px;
+	line-height: 100px;
+}
+
+.top h3 {
+	font-size: 40px;
+	line-height: 40px;
+}
+
+.top p {
+	margin-top: 25%;
+}
+
+@media (max-width: 900px) {
+	.top p {
+		margin-top: 14%;
+	}
+}
+
+@media (max-width: 600px) {
+	.top {
+		font-size: 25px;
+		line-height: 32px;
+		max-width: 450px;
+		padding: 30px;
+		margin: 45px auto 0 auto;
+	}
+
+	.top h2 {
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.top h3 {
+		font-size: 28px;
+		line-height: 28px;
+	}
+
+	.top p {
+		font-family:'karbonregular',Sans-Serif;
+	}
+}
+
+@media (max-width: 500px) {
+	html {
+		-webkit-background-size: 150% auto;
+		-moz-background-size: 150% auto;
+		background-size: 150% auto;
+	}
+	body {
+		background: rgba(0,0,0,.35);
+	}
+	.top {
+		margin: 45px auto 0 auto;
+	}
+}
