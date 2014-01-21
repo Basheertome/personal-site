@@ -1,0 +1,50 @@
+.page > p a {
+	background-color: #F68C1F;
+}
+
+.mentions {
+	font-size: 20px;
+	text-align: center;
+	color: #888;
+	margin: 20px auto;
+	max-width: 800px;
+	padding: 0 50px;
+}
+
+.mentions img {
+	height: 35px;
+	border: none;
+	box-shadow: none;
+	vertical-align: middle;
+}
+
+.mentions a {
+	opacity: 0.7;
+	margin-right: 0.5em;
+	-webkit-transition: .1s linear opacity;
+	-moz-transition: .1s linear opacity;
+	transition: .1s linear opacity;
+}
+
+.mentions a:first-child {
+	margin-left: 0.5em;
+}
+
+.mentions a:last-child {
+	margin-right: 0;
+}
+
+.mentions a:hover {
+	opacity: 1;
+}
+
+.mentions a:active {
+	position: relative;
+	top: 1px;
+}
+
+@media (max-width: 600px) {
+	.mentions {
+		padding: 0 30px;
+	}
+}
