@@ -1,7 +1,7 @@
-.picture {
-  max-width: 100%;
+.page > p a {
+	background-color: #3C92CF;
 }
 
-.picture img {
-  width: 100%;
+html {
+	background: #000 url(electronics-header.jpg) no-repeat top center;
 }

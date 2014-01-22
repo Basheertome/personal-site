@@ -4,16 +4,19 @@
 	<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 <title>Fabrication | Basheer Tome</title>
-<meta name="description" content="I build hardware and software technology that explores the convergence of industrial design, user experience, and applied science." />
+<meta name="description" content="Snippets of things I've built by hand" />
 <meta name="keywords" content="interaction, industrial, design, user experience, basheer, tome, san, francisco, california" />
 <link rel="shortcut icon" href="../assets/favicon.ico" />
 <link rel='stylesheet' href='../includes/header.css'>
 <link rel='stylesheet' href='fabrication.css'>
 <script src='../assets/js/jquery.min.js'></script>
 <!-- [disabled]javascript http://stats.basheertome.com/?js stats -->
+	<link rel='stylesheet' href='../includes/skilltop.css'>
+	<script src="http://a.vimeocdn.com/js/froogaloop2.min.js" type="text/javascript"></script>
 	<script src='../assets/js/waypoints.min.js'></script>
-<script src='../assets/js/throttle-debounce.min.js'></script>
-<script src='../assets/js/html5Loader.min.js'></script>
+<script src='../assets/js/fitvids.js'></script>
+<script src='../assets/js/responsiveslides.min.js'></script>
+<script src='../assets/js/skilltop.js'></script>
 </head>
 <body>
 
@@ -26,8 +29,78 @@
 		<li><a href="http://www.twitter.com/sheero" target="_blank">twitter</a></li>
 	</ul>
 </div>
+<div class="top">
+	<h2>fabrication</h2>
+	<h3>Snippets of things I've built by hand</h3>
+</div>
 
-<div class="picture"><img src="fabrication.png" /></div>
+<div class="page">
+
+	<h4 class="center">Little Moto Toy</h4>
+
+	<img src="motosketches.jpg" alt="Moto Sketches" />
+
+	<p>After nailing out a few ideas, I dove into Solidworks to do a rough draft so I could start thinking in 3-dimensions faster.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="motorender.jpg" alt="" /></li>
+		<li><img src="motohotrender.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>I ran my part as a quick draft on the Makerbot before dropping it in the nicer Dimension printer and I realized my tolerences for the friction fitting parts were waaay too tight, so I snuck in a quick change before the final was printed.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="motoroughmodel.jpg" alt="" /></li>
+		<li><img src="motoinvision.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>After playing around with the 3d prints, I decided to try something that would be easier to produce in larger scales and be more aesthetically pleasing: casting my own plastic.</p>
+
+	<img src="motowhiterender.jpg" alt="White Moto Render" />
+
+	<p>So I redesigned the toy to remove any undercuts post slicing in half, milled the positive out of wax, and created the final molds.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="motoprocess1.jpg" alt="" /></li>
+		<li><img src="motoprocess2.jpg" alt="" /></li>
+		<li><img src="motoprocess3.jpg" alt="" /></li>
+		<li><img src="motoprocess4.jpg" alt="" /></li>
+		<li><img src="motoprocess5.jpg" alt="" /></li>
+	</ul></div>
+
+	<img src="motofinal.jpg" alt="Final Moto" />
+
+	<h4 class="center">Large-scale Lens Aperture Diaphragm</h4>
+
+	<p>After kicking around a lot of design ideas and playing around with OSB material, I slowly realized that without any substantial flex in the material, it would be hard to do some of the more clever, space-saving iris designs which have the individual petals overlapping each other.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="aperturecomputer.jpg" alt="" /></li>
+		<li><img src="apertureshopbot.jpg" alt="" /></li>
+		<li><img src="aperturehardware.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>After a good amount of sanding on the edges to get rid of the intense flakes, filing down the holes to be fully cut through, and dropping in all the hardware, everything came together and it was super sweet seeing the full mechanism in action.</p>
+
+	<img src="aperturemotion.gif" alt="Aperture Movement GIF" />
+
+	<h4 class="center">Madeline: A serendipitous, electronic photo album built to explore</h4>
+
+	<div class="video"><iframe src="http://player.vimeo.com/video/33509257?api=1&amp;player_id=madeline&amp;color=896749" id="madeline" width="800" height="450" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+	<br />
+
+	<p>Madeline is an electronic photo album that employs your environment and context to help you explore a serendipitous assortment of your photos in a fun, simple, and engaging way.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="madelineprocess1.jpg" alt="" /></li>
+		<li><img src="madelinehero.jpg" alt="" /></li>
+		<li><img src="madelinehero2.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>Through physical prototyping I was able to create an interactive model of the book: a battling mix of classic and modern aesthetics with the leatherbound cover integrated with an array of leds. Download the Eagle file of the circuit board I designed or view the arduino code for the pulsing wave array effect on <a href="https://github.com/Basheertome/processing-and-arduino/tree/master/Madeline" target="_blank">Github</a>.</p>
+
+</div>
 
 </body>
 </html>

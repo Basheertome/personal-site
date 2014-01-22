@@ -4,16 +4,19 @@
 	<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 <title>Electronics | Basheer Tome</title>
-<meta name="description" content="I build hardware and software technology that explores the convergence of industrial design, user experience, and applied science." />
+<meta name="description" content="A dive into soldering and pcb design" />
 <meta name="keywords" content="interaction, industrial, design, user experience, basheer, tome, san, francisco, california" />
 <link rel="shortcut icon" href="../assets/favicon.ico" />
 <link rel='stylesheet' href='../includes/header.css'>
 <link rel='stylesheet' href='electronics.css'>
 <script src='../assets/js/jquery.min.js'></script>
 <!-- [disabled]javascript http://stats.basheertome.com/?js stats -->
+	<link rel='stylesheet' href='../includes/skilltop.css'>
+	<script src="http://a.vimeocdn.com/js/froogaloop2.min.js" type="text/javascript"></script>
 	<script src='../assets/js/waypoints.min.js'></script>
-<script src='../assets/js/throttle-debounce.min.js'></script>
-<script src='../assets/js/html5Loader.min.js'></script>
+<script src='../assets/js/fitvids.js'></script>
+<script src='../assets/js/responsiveslides.min.js'></script>
+<script src='../assets/js/skilltop.js'></script>
 </head>
 <body>
 
@@ -26,8 +29,77 @@
 		<li><a href="http://www.twitter.com/sheero" target="_blank">twitter</a></li>
 	</ul>
 </div>
+<div class="top">
+	<h2>electronics</h2>
+	<h3>A dive into soldering and pcb design</h3>
+</div>
 
-<div class="picture"><img src="electronics.png" /></div>
+<div class="page">
+
+	<p>I began learning how to work with custom circuit boards both on the programming and fabrication side. The first project itself focused on creating a programmer chip from a single-layer copper board, soldering some surface-mount components, and then finally programming it to run smoothly.</p>
+
+	<img src="process1.jpg" alt="Modella Machine" />
+
+	<img src="final.jpg" alt="Early Completed Board" />
+
+	<p>From there I dove into learning how to use Eagle, one of the more widely used circuit board design tools and used it to create a "simple" board that measures capacitance on a pole.</p>
+
+	<img src="eagleboard.jpg" alt="First Eagle Board" />
+
+	<img src="handlebars.jpg" alt="Capacitive Handlebar" />
+
+	<p>The next project progressed to controlling a few led's using two buttons. It was a lot easier with the full-sized already-built arduino but things get trickier once you go custom from the ground up</p>
+
+	<img src="eagleboard2.jpg" alt="Second Eagle Board" />
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="stuffed.jpg" alt="" /></li>
+		<li><img src="programmed.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>The last iteration to date gets rid of the buttons and opens up the leds to being controlled over a cable by another chip or another computer. This creates the groundwork for my Instinct project's add-on where the taillight acts as a turn signal.</p>
+
+	<img src="networking.jpg" alt="Networking" />
+
+	<p>The video below shows the simplified communication level by sending just a number and I cycle through "left turn", "right turn", and "braking". Future revisions will have more led's, better animations, and possibly wireless.</p>
+
+	<br />
+
+	<div class="video">
+		<div class="poster">
+			<div class="container"><div class="description">
+				<p class="title">Basic Networking Boards</p>
+				<p class="subtitle">Two-node serial communicated board set</p>
+			</div></div>
+			<img src="networking-poster.jpg" alt="" />
+			<div class="play"></div>
+			<div class="timestamp">00:20</div>
+		</div>
+		<div class="video"><iframe src="http://player.vimeo.com/video/80441802?api=1&color= 3C92CF" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+	</div>
+
+	<br /><br />
+
+	<p>Finally, I wrote a nicer more graphical interface for testing and playing with the board.</p>
+
+	<img src="arduino.jpg" alt="Arduino" />
+
+	<img src="processing.gif" alt="Processing" />
+
+	<h4 class="center">Optielastic: Designing &amp; converting simple GIF's to drive a 3d shape display</h4>
+
+	<div class="video"><iframe src="http://player.vimeo.com/video/81084879?api=1&color=3C92CF" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+	<p>Trying to design test patterns and interactions for the elastic shape display was tedious and difficult, so while my teammates were working on the lower-level hardware for the air pumps, I designed the Processing &amp; Arduino scripts above.</p>
+
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="optielastic1.jpg" alt="" /></li>
+		<li><img src="optielastic2.jpg" alt="" /></li>
+	</ul></div>
+
+	<p>These scripts take a 5x10 pixel animated GIF as an input, using each frame as literal frames, the top half for color information, and the bottom half as a depth map. This is then both visualized on screen in 3d for debugging and sent to the hardware as an array. Take a look at the Processing script on <a href="https://github.com/Basheertome/processing-and-arduino/tree/master/OptielasticTable" target="_blank">Github</a>.</p>
+
+</div>
 
 </body>
 </html>

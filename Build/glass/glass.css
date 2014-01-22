@@ -39,11 +39,15 @@ body {
 }
 
 .top p {
+	margin-top: 1em;
+}
+
+.top p:first-child {
 	margin-top: 25%;
 }
 
 @media (max-width: 900px) {
-	.top p {
+	.top p:first-child {
 		margin-top: 14%;
 	}
 }

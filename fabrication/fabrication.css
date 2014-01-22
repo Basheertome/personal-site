@@ -1,7 +1,7 @@
-.picture {
-  max-width: 100%;
+.page > p a {
+	background-color: #896749;
 }
 
-.picture img {
-  width: 100%;
+html {
+	background: #000 url('assets/fabrication-header.jpg') no-repeat top center;
 }
