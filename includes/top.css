@@ -61,12 +61,6 @@
   padding-bottom: 30px;
 }
 
-.page h4 {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
 .page > img {
   max-width: 900px;
   width: 100%;
@@ -74,15 +68,16 @@
 }
 
 .page h4 {
+  max-width: 800px;
   font-family:'karbonlight',Sans-Serif;
   font-size: 32px;
   line-height: 38px;
   margin: 30px auto;
+  padding: 0 50px;
 }
 
 .page h4.center {
   text-align: center;
-  margin: 10px auto;
 }
 
 .page > p {
@@ -116,13 +111,23 @@
 
 .page .columns {
   max-width: 800px;
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
+  padding-top: 30px;
 }
 
 .page .columns::after {
   content: '';
   display: block;
   clear: both;
+}
+
+.page .columns p::before, .page .columns p::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  margin-bottom: 10px;
 }
 
 .page .column {
@@ -158,7 +163,7 @@
   color: #bbb;
 }
 
-.page .column:first-child {
+.page .w3-1:first-child {
   padding-left: 0;
 }
 
@@ -209,7 +214,6 @@
 
 .video {
   position: relative;
-  padding: 30px 0;
 }
 
 .video .poster {
@@ -277,6 +281,16 @@
   line-height: 20px;
   text-align: right;
   z-index: 6;
+}
+
+.video .caption {
+  font-family:'karbonmedium',Sans-Serif;
+  text-align: center;
+  color: #aaa;
+  margin-top: 15px;
+  letter-spacing: .3px;
+  line-height: 20px;
+  padding: 0 50px;
 }
 
 .slideshow {
@@ -409,7 +423,7 @@
   }
 
   .page .columns {
-    margin: 30px 50px;
+    margin: 0 50px 30px 50px;
   }
 }
 
@@ -434,6 +448,17 @@
   }
 }
 
+@media (max-width: 700px) {
+  .page .w2-1 {
+    padding: 0 0.5em !important;
+  }
+  
+  .page .w2-1 img {
+    position: static;
+    margin: 1.25em auto;
+  }
+}
+
 @media (max-width: 600px) {
   body > .header {
     position: static;
@@ -445,6 +470,10 @@
 
   .top {
     position: static;
+    padding: 0;
+  }
+
+  .top h2, .top h3, .top p {
     padding: 0 30px;
   }
 
@@ -457,6 +486,10 @@
   .video .timestamp {
     bottom: 30px;
     right: 30px;
+  }
+
+  .video .caption {
+    padding: 0 30px;
   }
 
   .page {
@@ -502,7 +535,8 @@
   }
 
   .page .columns {
-    margin: 30px;
+    margin: 15px 30px 30px;
+    padding-top: 15px;
   }
 
   .page .column {
