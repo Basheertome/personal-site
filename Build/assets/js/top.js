@@ -34,16 +34,4 @@ $(document).ready(function(){
 			offset: 'bottom-in-view'
 		});
 	}
-
-	var bgcolor = ['#000000', '#111111', '#1a1a1a'];
-	var i = 000000;
-
-	$('body').bind( "touchstart", function(){
-		$('body').css('background', bgcolor[i]);
-		if (i > 1) {
-			i = 0;
-		} else {
-			i++;
-		}
-	});
 });

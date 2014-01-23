@@ -161,7 +161,7 @@ body {
   top: 0; }
 
 html.touch {
-  background: #000 url('assets/background.jpg') no-repeat 55% center;
+  background: #1a1a1a url('assets/background.jpg') no-repeat 55% center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
