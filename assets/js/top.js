@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	if ('ontouchstart' in document.documentElement) {
+		$('.video .poster').hide();
+	}
+
 	$('.page').fitVids();
 	$('.video .poster').each(function(){
 		that = $(this);

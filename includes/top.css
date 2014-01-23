@@ -474,14 +474,18 @@
 @media (max-width: 600px) {
   body > .header {
     position: static;
+    width: auto;
+    background: #000;
   }
 
   body > .header .links {
+    position: relative;
+    z-index: 10;
     padding-bottom: 0;
   }
 
   .top {
-    position: static;
+    top: 0;
     padding: 0;
   }
 
@@ -564,6 +568,10 @@
 
   .page .column:last-child {
     padding-bottom: 0;
+  }
+
+  .video .poster {
+    display: none;
   }
 }
 
