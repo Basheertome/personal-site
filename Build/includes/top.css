@@ -52,7 +52,7 @@
   font-family:'karbonregular',Sans-Serif;
   font-size: 22px;
   line-height: 26px;
-  color: #666;
+  color: #ccc;
 }
 
 .page {
@@ -160,7 +160,6 @@
   font-family:'karbonregular',Sans-Serif;
   font-size: 17px;
   line-height: 22px;
-  color: #bbb;
 }
 
 .page .w3-1:first-child {
