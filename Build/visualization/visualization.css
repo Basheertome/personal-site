@@ -1,3 +1,11 @@
+.page h4.center:first-child {
+	margin-bottom: 10px;
+}
+
+.page h4.center {
+	margin-bottom: 15px;
+}
+
 .page > p a {
 	background-color: #514099;
 }
