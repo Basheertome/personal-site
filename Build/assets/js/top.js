@@ -19,7 +19,11 @@ $(document).ready(function(){
 	$('.video .poster').click(function(){
 		$(this).fadeOut();
 		thisVideo = $f($(this).next().find('iframe')[0]);
-		thisVideo.api('play');
+		if ($(this).next().find('iframe').attr('id') == 'ytplayer') {
+			player.playVideo();
+		} else {
+			thisVideo.api('play');
+		}
 	});
 
 	if ($('.slideshow').length > 0) {
