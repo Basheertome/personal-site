@@ -1,6 +1,14 @@
 $(document).ready(function(){
 	if ('ontouchstart' in document.documentElement) {
 		$('.video .poster').hide();
+		startSlides($('.slideshow'));
+	} else {
+	    $('.slideshow').waypoint(function() {
+			startSlides($(this));
+		}, {
+			triggerOnce: 'true',
+			offset: 'bottom-in-view'
+		});
 	}
 
 	$('.page').fitVids();
@@ -25,21 +33,18 @@ $(document).ready(function(){
 			thisVideo.api('play');
 		}
 	});
+});
 
+function startSlides(that) {
 	if ($('.slideshow').length > 0) {
-	    $('.slideshow').waypoint(function() {
-			$(this).responsiveSlides({
-				speed: 500,
-				pager: true,
-				nav: true,
-				pause: true,
-				pauseControls: true,
-				maxwidth: 900,
-				namespace: "centered-btns"
-			});
-		}, {
-			triggerOnce: 'true',
-			offset: 'bottom-in-view'
+		that.responsiveSlides({
+			speed: 500,
+			pager: true,
+			nav: true,
+			pause: true,
+			pauseControls: true,
+			maxwidth: 900,
+			namespace: "centered-btns"
 		});
 	}
-});
+}
