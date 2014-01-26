@@ -270,7 +270,7 @@ body > .header a:active {
 
 @media (max-width: 525px) {
   .page {
-    min-width: 0;
+    min-width: 100px;
   }
 
   .page h1 {

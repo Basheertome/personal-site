@@ -571,7 +571,7 @@
   }
 
   .video .poster {
-    display: none;
+    display: none !important;
   }
 }
 
