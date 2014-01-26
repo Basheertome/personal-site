@@ -13,9 +13,9 @@ $(document).ready(function(){
 
 	$('.page').fitVids();
 	$('.video .poster').each(function(){
-		that = $(this);
+		var that = $(this);
 		$(this).next().find('iframe').load(function(){
-			thisVideo = $f($(this)[0]);
+			var thisVideo = $f($(this)[0]);
 			thisVideo.addEvent('ready', function(){
 				thisVideo.addEvent('finish', function() {
 					that.fadeIn();
