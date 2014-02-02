@@ -32,7 +32,7 @@ $(document).ready(function(){
 			if ($(this).parent().is(':last-child')) {
 				$('body').css('background','#333333 no-repeat 55% center');
 			} else {
-				$('body').css('background',colorWheel[$(this).parent().index()] + ' no-repeat 55% center');
+				$('body').css('background',colorWheel[$(this).parent().index()-1] + ' no-repeat 55% center');
 			}
 		}
 	}, function(){
@@ -87,7 +87,7 @@ $(window).scroll($.debounce(100, function (){
 							currentFilm = thisFilm.attr('href');
 						}
 					}
-					$('.stage').css('background',colorWheel[thisFilm.parent().index()]);
+					$('.stage').css('background',colorWheel[thisFilm.parent().index()-1]);
 				} else if (gap < 0) {
 					if (prevFilm.attr('href') !== undefined) {
 						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
@@ -98,7 +98,7 @@ $(window).scroll($.debounce(100, function (){
 								currentFilm = prevFilm.attr('href');
 							}
 						}
-						$('.stage').css('background',colorWheel[prevFilm.parent().index()]);
+						$('.stage').css('background',colorWheel[prevFilm.parent().index()-1]);
 					}
 				} else if (gap > 0) {
 					if (nextFilm.attr('href') !== undefined) {
@@ -110,7 +110,7 @@ $(window).scroll($.debounce(100, function (){
 								currentFilm = nextFilm.attr('href');
 							}
 						}
-						$('.stage').css('background',colorWheel[nextFilm.parent().index()]);
+						$('.stage').css('background',colorWheel[nextFilm.parent().index()-1]);
 					}
 				}
 			}
@@ -184,7 +184,7 @@ function frameScroll(that, id, direction) {
 			$('.stage').css('background','transparent');
 		} else {
 			currentFilm = that.attr('href');
-			$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()]);
+			$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()-1]);
 		}
 		if (id == 'visualization') {
 			if (direction == 'down') {

@@ -33,6 +33,12 @@ $(document).ready(function(){
 			thisVideo.api('play');
 		}
 	});
+
+	$('.header h1 a').hover(function(){
+		$(this).html('<span>←</span> Project List');
+	}, function() {
+		$(this).html('Basheer Tome');
+	})
 });
 
 function startSlides(that) {
