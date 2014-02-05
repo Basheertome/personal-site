@@ -68,6 +68,56 @@
   color: #ccc;
 }
 
+body > .previous, body > .next {
+  position: fixed;
+  top: 49%;
+  font-size: 2em;
+  z-index: 1;
+}
+
+body > .previous a, body > .next a {
+  display: block;
+  color: #fff;
+  opacity: 0.33;
+  border: 0;
+  line-height: 1em;
+  vertical-align: top;
+  padding: 0.5em 1em;
+  -o-transition: opacity 0.15s 0 ease;
+  -moz-transition: opacity 0.15s 0 ease;
+  -webkit-transition: opacity 0.15s 0 ease;
+  transition: opacity 0.15s 0 ease;
+  -webkit-backface-visibility: hidden;
+}
+
+body > .previous a span, body > .next a span {
+  display: none;
+  -webkit-transition: opacity 0.15s 0 ease;
+  -moz-transition: opacity 0.15s 0 ease;
+  transition: opacity 0.15s 0 ease;
+  -webkit-backface-visibility: hidden;
+  opacity: 0;
+  font-size: 27px;
+  position: relative;
+}
+
+body > .previous a:hover, body > .next a:hover {
+  opacity: 1;
+}
+
+body > .previous a:active, body > .next a:active {
+  position: relative;
+  top: 1px;
+}
+
+body > .previous {
+  left: 0;
+}
+
+body > .next {
+  right: 0;
+}
+
 .page {
   max-width: 900px;
   margin: 4em auto 0 auto;
@@ -106,7 +156,7 @@
 .page > p a {
   display: inline-block;
   padding: 0 0.35em;
-  color: white;
+  color: #fff;
   opacity: 1;
   -webkit-transition: .1s linear opacity;
   -moz-transition: .1s linear opacity;
@@ -401,7 +451,40 @@
   opacity: 1 !important;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1200px) {
+  body > .previous a, body > .next a {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 0 50px;
+  }
+
+  body > .previous a span, body > .next a span {
+    display: inline-block;
+  }
+
+  body > .previous a:hover span, body > .next a:hover span {
+    opacity: 1;
+  }
+
+  body > .previous span {
+    margin-left: 0.1em;
+    bottom: 0.2em;
+  }
+
+  body > .next span {
+    margin-right: 0.1em;
+    bottom: 0.15em;
+  }
+}
+
+@media (max-width: 1000px) {
+  body > .previous, body > .next {
+    display: none;
+  }
+}
+
+@media (max-width: 900px), (max-height: 500px) {
   body > .header {
     position: relative;
   }
