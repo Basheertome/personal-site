@@ -69,64 +69,64 @@ $(window).scroll(function() {
 	curtainCall();
 });
 
-$(window).scroll($.debounce(100, function (){
-	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-		if (currentFilm != '') {
-			var thisFilm = $('.navigation li a[href*="' + currentFilm + '"]');
-			var prevFilm = thisFilm.parent().prev().children();
-			var nextFilm = thisFilm.parent().next().children();
-			var gap = $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
+// $(window).scroll($.debounce(100, function (){
+// 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+// 		if (currentFilm != '') {
+// 			var thisFilm = $('.navigation li a[href*="' + currentFilm + '"]');
+// 			var prevFilm = thisFilm.parent().prev().children();
+// 			var nextFilm = thisFilm.parent().next().children();
+// 			var gap = $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - (thisFilm.offset().top - (window.innerHeight / 2.0) - 52 + thisFilm.height());
 
-			if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-				if (Math.abs(gap) <= thisFilm.height() / 2.0) {
-					$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-						scrollTop: (gap - $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop()) * -1
-					}, 100);
-					if (currentFilm != '') {
-						if (currentFilm != thisFilm.attr('href')) {
-							currentFilm = thisFilm.attr('href');
-						}
-					}
-					$('.stage').css('background',colorWheel[thisFilm.parent().index()-1]);
-				} else if (gap < 0) {
-					if (prevFilm.attr('href') !== undefined) {
-						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-							scrollTop: prevFilm.offset().top - (window.innerHeight / 2.0) - 60 + prevFilm.height()
-						}, 100);
-						if (currentFilm != '') {
-							if (currentFilm != prevFilm.attr('href')) {
-								currentFilm = prevFilm.attr('href');
-							}
-						}
-						$('.stage').css('background',colorWheel[prevFilm.parent().index()-1]);
-					}
-				} else if (gap > 0) {
-					if (nextFilm.attr('href') !== undefined) {
-						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-							scrollTop: nextFilm.offset().top - (window.innerHeight / 2.0) - 60 + nextFilm.height()
-						}, 100);
-						if (currentFilm != '') {
-							if (currentFilm != nextFilm.attr('href')) {
-								currentFilm = nextFilm.attr('href');
-							}
-						}
-						$('.stage').css('background',colorWheel[nextFilm.parent().index()-1]);
-					}
-				}
-			}
-		} else if ($(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) >= -1 * $('.navigation li a[href*="hue"]').height() / 2.0 && $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) < 0) {
-			$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()
-			}, 100);
-			currentFilm = $('.navigation li a[href*="hue"]').attr('href');
-		}
-	}
-}));
+// 			if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
+// 				if (Math.abs(gap) <= thisFilm.height() / 2.0) {
+// 					$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+// 						scrollTop: (gap - $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop()) * -1
+// 					}, 100);
+// 					if (currentFilm != '') {
+// 						if (currentFilm != thisFilm.attr('href')) {
+// 							currentFilm = thisFilm.attr('href');
+// 						}
+// 					}
+// 					$('.stage').css('background',colorWheel[thisFilm.parent().index()-1]);
+// 				} else if (gap < 0) {
+// 					if (prevFilm.attr('href') !== undefined) {
+// 						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+// 							scrollTop: prevFilm.offset().top - (window.innerHeight / 2.0) - 60 + prevFilm.height()
+// 						}, 100);
+// 						if (currentFilm != '') {
+// 							if (currentFilm != prevFilm.attr('href')) {
+// 								currentFilm = prevFilm.attr('href');
+// 							}
+// 						}
+// 						$('.stage').css('background',colorWheel[prevFilm.parent().index()-1]);
+// 					}
+// 				} else if (gap > 0) {
+// 					if (nextFilm.attr('href') !== undefined) {
+// 						$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+// 							scrollTop: nextFilm.offset().top - (window.innerHeight / 2.0) - 60 + nextFilm.height()
+// 						}, 100);
+// 						if (currentFilm != '') {
+// 							if (currentFilm != nextFilm.attr('href')) {
+// 								currentFilm = nextFilm.attr('href');
+// 							}
+// 						}
+// 						$('.stage').css('background',colorWheel[nextFilm.parent().index()-1]);
+// 					}
+// 				}
+// 			}
+// 		} else if ($(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) >= -1 * $('.navigation li a[href*="hue"]').height() / 2.0 && $(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').scrollTop() - ($('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()) < 0) {
+// 			$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
+// 				scrollTop: $('.navigation li a[href*="hue"]').offset().top - (window.innerHeight / 2.0) - 60 + $('.navigation li a[href*="hue"]').height()
+// 			}, 100);
+// 			currentFilm = $('.navigation li a[href*="hue"]').attr('href');
+// 		}
+// 	}
+// }));
 
 function stageCue(member) {
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
 		$(~navigator.userAgent.indexOf('Firefox') ? 'html' : 'body').animate({
-			scrollTop: member.offset().top - (window.innerHeight / 2.0) - 60 + member.height() - 1
+			scrollTop: member.offset().top - (window.innerHeight / 2.0) - 60 + member.height() + 2
 		}, 100);
 	}
 }
