@@ -179,22 +179,21 @@ function laughTrack() {
 
 function frameScroll(that, id, direction) {
 	if ((window.innerWidth > wbreakPoint) && (window.innerHeight > vbreakPoint) && !('ontouchstart' in document.documentElement)) {
-		if (id == 'hue' && direction == 'up') {
-			currentFilm = '';
-			$('.stage').css('background','transparent');
-		} else {
-			currentFilm = that.attr('href');
-			$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()-1]);
-		}
-		if (id == 'visualization') {
+		// if (id == 'hue' && direction == 'up') {
+		// 	currentFilm = '';
+		// 	$('.stage').css('background','transparent');
+		// }
+		currentFilm = that.attr('href');
+		$('.stage').css('background',colorWheel[$('.navigation li a[href*="' + id + '"]').parent().index()-1]);
+		if (id == 'archive') {
 			if (direction == 'down') {
-				$('.photo').css({'background-image':'url("assets/wood.jpg")',
-								 '-webkit-animation':'none',
+				$('.photo span').css('opacity', '1');
+				$('.photo').css({'-webkit-animation':'none',
 								 '-moz-animation':'none',
 								 'animation':'none'});
 			} else {
-				$('.photo').css({'background-image':'url("assets/background.jpg")',
-								 '-webkit-animation':'hover 8s ease-out infinite',
+				$('.photo span').css('opacity', '0');
+				$('.photo').css({'-webkit-animation':'hover 8s ease-out infinite',
 								 '-moz-animation':'hover 8s ease-out infinite',
 								 'animation':'hover 8s ease-out infinite'});
 			}
