@@ -314,109 +314,111 @@ body {
 .scroll::after {
   top: 0; }
 
-html.touch body > .header {
-  position: relative !important;
-}
+@media (min-width: 900px), (min-height: 500px) {
+  html.touch body > .header {
+    position: relative !important;
+  }
 
-html.touch .frame {
-  position: absolute;
-  width: 800px;
-  height: 320px;
-  bottom: 75%;
-  margin-bottom: -160px;
-  box-shadow: none;
-}
+  html.touch .frame {
+    position: absolute;
+    width: 800px;
+    height: 320px;
+    bottom: 75%;
+    margin-bottom: -160px;
+    box-shadow: none;
+  }
 
-html.touch .scroll {
-  display: none !important;
-}
+  html.touch .scroll {
+    display: none !important;
+  }
 
-html.touch .positioner {
-  top: 50%;
-}
+  html.touch .positioner {
+    top: 50%;
+  }
 
-html.touch .navigation {
-  padding: 0;
-}
+  html.touch .navigation {
+    padding: 0;
+  }
 
-html.touch .navigation li {
-  margin: 0 !important;
-}
+  html.touch .navigation li {
+    margin: 0 !important;
+  }
 
-html.touch .navigation li:nth-child(1) { width: 60%; }
-html.touch .navigation li:nth-child(4) { width: 60%; }
-html.touch .navigation li:nth-child(5) { width: 50%; }
-html.touch .navigation li:nth-child(6) { width: 50%; }
-html.touch .navigation li:nth-child(7) { width: 67%; }
-html.touch .navigation li:nth-child(10) { width: 60%; }
+  html.touch .navigation li:nth-child(1) { width: 60%; }
+  html.touch .navigation li:nth-child(4) { width: 60%; }
+  html.touch .navigation li:nth-child(5) { width: 50%; }
+  html.touch .navigation li:nth-child(6) { width: 50%; }
+  html.touch .navigation li:nth-child(7) { width: 67%; }
+  html.touch .navigation li:nth-child(10) { width: 60%; }
 
-html.touch .navigation li a .bw {
-  opacity: 0 !important;
-}
+  html.touch .navigation li a .bw {
+    opacity: 0 !important;
+  }
 
-html.touch .navigation li:nth-child(1) a .overlay {
-  background: rgba(246,140,31,.9); }
-html.touch .navigation li:nth-child(2) a .overlay {
-  background: rgba(85,192,165,.9); }
-html.touch .navigation li:nth-child(3) a .overlay {
-  background: rgba(77,72,70,.9); }
-html.touch .navigation li:nth-child(4) a .overlay {
-  background: rgba(239,77,77,.9); }
-html.touch .navigation li:nth-child(5) a .overlay {
-  background: rgba(147,200,74,.9); }
-html.touch .navigation li:nth-child(6) a .overlay {
-  background: rgba(137,103,73,.9); }
-html.touch .navigation li:nth-child(7) a .overlay {
-  background: rgba(81,64,153,.9); }
-html.touch .navigation li:nth-child(8) a .overlay {
-  background: rgba(60,146,207,.9); }
-html.touch .navigation li:nth-child(9) a .overlay {
-  background: rgba(229,203,119,.9); }
-html.touch .navigation li:nth-child(10) a .overlay {
-  background: rgba(136,136,136,.9); }
+  html.touch .navigation li:nth-child(1) a .overlay {
+    background: rgba(246,140,31,.9); }
+  html.touch .navigation li:nth-child(2) a .overlay {
+    background: rgba(85,192,165,.9); }
+  html.touch .navigation li:nth-child(3) a .overlay {
+    background: rgba(77,72,70,.9); }
+  html.touch .navigation li:nth-child(4) a .overlay {
+    background: rgba(239,77,77,.9); }
+  html.touch .navigation li:nth-child(5) a .overlay {
+    background: rgba(147,200,74,.9); }
+  html.touch .navigation li:nth-child(6) a .overlay {
+    background: rgba(137,103,73,.9); }
+  html.touch .navigation li:nth-child(7) a .overlay {
+    background: rgba(81,64,153,.9); }
+  html.touch .navigation li:nth-child(8) a .overlay {
+    background: rgba(60,146,207,.9); }
+  html.touch .navigation li:nth-child(9) a .overlay {
+    background: rgba(229,203,119,.9); }
+  html.touch .navigation li:nth-child(10) a .overlay {
+    background: rgba(136,136,136,.9); }
 
-html.touch .navigation li a .overlay {
-  padding: 30px;
-  opacity: 1 !important;
-}
+  html.touch .navigation li a .overlay {
+    padding: 30px;
+    opacity: 1 !important;
+  }
 
-html.touch .navigation li:nth-child(1) a .overlay {
-  background: rgba(246,140,31,.9); }
-html.touch .navigation li:nth-child(2) a .overlay {
-  background: rgba(85,192,165,.9); }
-html.touch .navigation li:nth-child(3) a .overlay {
-  background: rgba(77,72,70,.9); }
-html.touch .navigation li:nth-child(4) a .overlay {
-  background: rgba(239,77,77,.9); }
-html.touch .navigation li:nth-child(5) a .overlay {
-  background: rgba(147,200,74,.9); }
-html.touch .navigation li:nth-child(6) a .overlay {
-  background: rgba(137,103,73,.9); }
-html.touch .navigation li:nth-child(7) a .overlay {
-  background: rgba(81,64,153,.9); }
-html.touch .navigation li:nth-child(8) a .overlay {
-  background: rgba(60,146,207,.9); }
-html.touch .navigation li:nth-child(9) a .overlay {
-  background: rgba(229,203,119,.9); }
-html.touch .navigation li:nth-child(10) a .overlay {
-  background: rgba(136,136,136,.9); }
+  html.touch .navigation li:nth-child(1) a .overlay {
+    background: rgba(246,140,31,.9); }
+  html.touch .navigation li:nth-child(2) a .overlay {
+    background: rgba(85,192,165,.9); }
+  html.touch .navigation li:nth-child(3) a .overlay {
+    background: rgba(77,72,70,.9); }
+  html.touch .navigation li:nth-child(4) a .overlay {
+    background: rgba(239,77,77,.9); }
+  html.touch .navigation li:nth-child(5) a .overlay {
+    background: rgba(147,200,74,.9); }
+  html.touch .navigation li:nth-child(6) a .overlay {
+    background: rgba(137,103,73,.9); }
+  html.touch .navigation li:nth-child(7) a .overlay {
+    background: rgba(81,64,153,.9); }
+  html.touch .navigation li:nth-child(8) a .overlay {
+    background: rgba(60,146,207,.9); }
+  html.touch .navigation li:nth-child(9) a .overlay {
+    background: rgba(229,203,119,.9); }
+  html.touch .navigation li:nth-child(10) a .overlay {
+    background: rgba(136,136,136,.9); }
 
-html.touch .navigation li a .overlay h3 {
-  font-size: 40px;
-}
+  html.touch .navigation li a .overlay h3 {
+    font-size: 40px;
+  }
 
-html.touch .navigation li a .overlay h4 {
-  font-size: 20px;
-}
+  html.touch .navigation li a .overlay h4 {
+    font-size: 20px;
+  }
 
-html.touch .photo {
-  height: 50%;
-}
+  html.touch .photo {
+    height: 50%;
+  }
 
-html.touch .photo span {
-  -webkit-animation: hover 16s ease-out infinite;
-  -moz-animation: hover 16s ease-out infinite;
-  animation: hover 16s ease-out infinite;
+  html.touch .photo span {
+    -webkit-animation: hover 16s ease-out infinite;
+    -moz-animation: hover 16s ease-out infinite;
+    animation: hover 16s ease-out infinite;
+  }
 }
 
 @media (max-width: 900px), (max-height: 500px) {
@@ -502,6 +504,24 @@ html.touch .photo span {
     -webkit-animation: hover 16s ease-out infinite;
     -moz-animation: hover 16s ease-out infinite;
     animation: hover 16s ease-out infinite;
+  }
+}
+
+@media (max-height: 500px) {
+  html {
+    background: #303030 url('assets/background.jpg') no-repeat 50% top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+  }
+  
+  .photo, .frame {
+    display: none !important;
+  }
+
+  .positioner {
+    position: relative;
+    top: 0 !important;
   }
 }
 
