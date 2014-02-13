@@ -207,7 +207,7 @@ function closeCurtain() {
 }
 
 function openCurtain(that) {
-	$('.navigation li a').css('opacity', '.35');
+	$('.navigation li a').css('opacity', '.7');
 	that.children('span:last-child').css('opacity', '1');
 	that.css('opacity', '1');
 }
