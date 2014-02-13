@@ -71,6 +71,11 @@ body > .header {
   z-index: 6;
 }
 
+body > .header .headcenter {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 body > .header a {
   font-family: 'karbonsemibold',Sans-Serif;
   font-size: 17px;
