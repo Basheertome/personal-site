@@ -110,19 +110,6 @@ body {
   transition: 1.5s linear background;
 }
 
-.thumbnail {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  z-index: 50;
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-}
-
 .navigation {
   position: absolute;
   top: 100%;
