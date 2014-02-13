@@ -152,5 +152,4 @@ function openCurtain(that) {
 	$('.navigation li a').css('opacity', '.7');
 	that.children('span:last-child').css('opacity', '1');
 	that.css('opacity', '1');
-	$('.photo').css('background-image', 'url(\'assets/thumbnails/' + that.attr('href').split('/')[1] + '-color.jpg\')');
 }
