@@ -74,8 +74,10 @@ body {
 
 .frame {
   position: fixed;
-  bottom: calc(50% - 160px);
-  right: calc(50% - 400px);
+  bottom: 50%;
+  right: 50%;
+  margin-bottom: -160px;
+  margin-right: -400px;
   width: 800px;
   height: 320px;
   color: #fff;
@@ -89,10 +91,11 @@ body {
   font-size: 32px;
   line-height: 38px;
   width: 600px;
-  top: calc(50% - 34px);
+  top: 50%;
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: -34px;
 }
 
 .stage {
@@ -113,7 +116,8 @@ body {
 .navigation {
   position: absolute;
   top: 100%;
-  right: calc(50% - 400px);
+  right: 50%;
+  margin-right: -400px;
   width: 800px;
   z-index: 2;
   padding-bottom: 35%;
@@ -176,7 +180,8 @@ body {
 
 .scroll {
   position: fixed;
-  top: calc(50% + 180px);
+  top: 50%;
+  margin-top: 180px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -190,9 +195,9 @@ body {
 }
 
 @-webkit-keyframes notice {
-  0% {top: calc(50% + 180px);}
-  50% {top: calc(50% + 195px);}
-  100% {top: calc(50% + 180px);} }
+  0% {margin-top: 180px;}
+  50% {margin-top: 195px;}
+  100% {margin-top: 180px;} }
 
 .scroll::before, .scroll::after {
   content: "v";
