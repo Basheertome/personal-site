@@ -112,7 +112,7 @@ body > .header a:active {
 }
 
 .main > div, .sidebar > div {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 .main div:first-child h3 {margin-top: 0;}
