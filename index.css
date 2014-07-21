@@ -22,7 +22,7 @@ body {
 
 .intro {
   text-align: center;
-  padding-top: 8em;
+  margin-top: 8em;
 }
 
 .horse {
@@ -45,8 +45,110 @@ body {
   font-size: 26px; 
 }
 
-.navigation {
-  display: none;
+.thumbnails {
+  max-width: 950px;
+  margin: 6em auto 0 auto;
+}
+
+.thumbnails li {
+  display: inline-block;
+  width: 300px;
+  margin: 0 25px 25px 0;
+  text-align: center;
+}
+
+.thumbnails li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.thumbnails img {
+  width: 300px;
+  margin-bottom: -25px;
+}
+
+.thumbnails h4 {
+  font-family:'karbonlight',Sans-Serif;
+  font-size: 26px;
+  color: #fff;
+  -webkit-transition: .1s linear text-shadow;
+  -moz-transition: .1s linear text-shadow;
+  transition: .1s linear text-shadow
+}
+
+.thumbnails h5 {
+  font-family:'karbonregularitalic',Sans-Serif;
+  font-size: 16px;
+  color: #fff;
+  opacity: .6;
+  -webkit-transition: .1s linear opacity, .1s linear text-shadow;
+  -moz-transition: .1s linear opacity, .1s linear text-shadow;
+  transition: .1s linear opacity, .1s linear text-shadow;
+}
+
+.thumbnails a:hover {
+  position: relative;
+  bottom: 1px;
+}
+
+.thumbnails a:hover h4 {
+  text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 50px #fff;
+}
+
+.thumbnails a:hover h5 {
+  opacity: .7;
+  text-shadow: 0 0 10px #fff, 0 0 30px #fff;
+}
+
+.thumbnails a:active {
+  position: relative;
+  bottom: -1px;
+}
+
+.archive {
+  display: block;
+  max-width: 950px;
+  margin: 3em auto 6em auto;
+  padding-top: 2em;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.archive h4 {
+  font-family:'karbonlight',Sans-Serif;
+  font-size: 26px;
+  color: #fff;
+  -webkit-transition: .1s linear text-shadow;
+  -moz-transition: .1s linear text-shadow;
+  transition: .1s linear text-shadow
+}
+
+.archive h5 {
+  font-family:'karbonregularitalic',Sans-Serif;
+  font-size: 16px;
+  color: #fff;
+  opacity: .6;
+  -webkit-transition: .1s linear opacity, .1s linear text-shadow;
+  -moz-transition: .1s linear opacity, .1s linear text-shadow;
+  transition: .1s linear opacity, .1s linear text-shadow;
+}
+
+.archive:hover h4, .archive:hover h5 {
+  position: relative;
+  bottom: 1px;
+}
+
+.archive:hover h4 {
+  text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 50px #fff;
+}
+
+.archive:hover h5 {
+  opacity: .7;
+  text-shadow: 0 0 10px #fff, 0 0 30px #fff;
+}
+
+.archive:active h4, .archive:active h5 {
+  position: relative;
+  bottom: -1px;
 }
 
 @-moz-document url-prefix() {
