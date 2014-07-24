@@ -13,48 +13,71 @@ html {
 }
 
 body {
-  height: 100%;
-  background: #000 url(assets/chalkboard.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  background: #000;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  pointer-events: text;
 }
 
 .intro {
+  position: absolute;
+  display: table;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   text-align: center;
-  margin-top: 8em;
 }
 
-.horse {
-  display: block;
-  width: 150px;
-  height: 89px;
-  background: url(assets/muybridge.png) center 0px no-repeat;
-  background-size: 150px 938px;
-  margin: 0 auto;
-}
-
-.horse:active {
-  position: relative;
-  bottom: -2px;
+.bio {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .intro h2 {
-  text-transform: uppercase;
+  position: relative;
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
   font-family:'karbonlight',Sans-Serif;
-  font-size: 60px;
-  line-height: 75px;
-  letter-spacing: 2px;
+  font-size: 45px;
+  line-height: 50px;
+  text-align: left;
 }
 
-.intro h3 {
-  font-family:'karbonlight',Sans-Serif;
-  font-size: 26px; 
+.firefly {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  margin-right: -250px;
+  margin-bottom: -250px;
+  opacity: .25;
+  border-radius: 200px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 5%;
+  right: 50%;
+  margin-right: -18px;
+  width: 36px;
+  opacity: .25;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
 }
 
 .thumbnails {
   max-width: 950px;
-  margin: 6em auto 0 auto;
+  margin: 0 auto;
 }
 
 .thumbnails li {
@@ -179,66 +202,102 @@ body {
 }
 
 @media (max-width: 900px) {
-  .intro {
-    margin-top: 0;
-  }
-
   .thumbnails {
-    margin: 4em auto 0 auto;
-  }
-
-  .horse {
-    -webkit-transform: scale(.75);
-    -moz-transform: scale(.75);
-    transform: scale(.75);
-    margin-bottom: -.6em;
+    margin: 0 auto;
   }
 
   .intro h2 {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 35px;
+    line-height: 40px;
+    max-width: 530px;
   }
 
-  .intro h3 {
-    font-size: 20px; 
+  .firefly {
+    width: 400px;
+    margin-right: -200px;
+    margin-bottom: -200px;
+    opacity: .25;
+    border-radius: 200px;
   }
 }
 
 @media (max-width: 675px) {
   .intro {
     clear: both;
+    position: relative;
+    display: block;
+    height: auto;
+    padding-top: 15px;
+  }
+
+  .bio {
+    display: block;
+    margin: 7em 0;
   }
 
   .intro h2 {
-    display: inline-block;
-    width: 200px;
-    margin: 0 10%;
-    text-align: left;
+    width: 420px;
   }
 
-  .intro h3 {
-    display: inline-block;
-    width: 200px;
-    margin: 15px 10% 0 10%;
-    text-align: left;
+  .arrow {
+    display: none;
   }
 
-  .horse {
-    margin-bottom: -.3em;
+  .wrapper {
+    position: static;
+    margin-top: 30px;
   }
 
   .thumbnails {
+    width: 100%;
     max-width: 300px;
-    margin-top: 1em;
   }
 
   .thumbnails li {
     margin: 0 0 25px 0;
+    width: 100%;
+  }
+
+  .thumbnails img {
+    width: 100%;
   }
 
   .archive {
     margin: 3em 30px 0 30px;
     padding-bottom: 3em;
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    overflow: hidden;
+  }
+
+  .intro h2 {
+    width: 200px;
+  }
+
+  .bio {
+    margin: 0;
+  }
+
+  .thumbnails li {
+    margin: 0 auto 25px auto;
+    width: 90%;
+  }
+}
+
+@media (max-height: 400px) and (min-width: 675px) {
+  .intro {
+    height: 400px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .wrapper {
+    top: 400px;
   }
 }
 
