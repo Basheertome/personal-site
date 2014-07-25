@@ -53,7 +53,6 @@ body {
   margin-right: -250px;
   margin-bottom: -250px;
   opacity: .25;
-  border-radius: 200px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -70,9 +69,16 @@ body {
 }
 
 .wrapper {
+  display: table;
   position: absolute;
   top: 100%;
   width: 100%;
+  min-height: 100%;
+}
+
+.page {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .thumbnails {
@@ -138,7 +144,7 @@ body {
   display: block;
   max-width: 950px;
   margin: 3em auto 0 auto;
-  padding: 2em 0 6em 0;
+  padding-top: 2em;
   text-align: center;
   border-top: 1px solid #333;
 }
@@ -197,7 +203,8 @@ body {
   .archive {
     max-width: 625px;
     margin: 2em auto 0 auto;
-    padding: 3em 0 6em 0;
+    padding-top: 3em;
+    padding-bottom: 3em;
   }
 }
 
@@ -264,7 +271,6 @@ body {
 
   .archive {
     margin: 3em 30px 0 30px;
-    padding-bottom: 3em;
   }
 }
 
@@ -298,6 +304,12 @@ body {
 
   .wrapper {
     top: 400px;
+  }
+}
+
+@media (max-height: 950px) {
+  .archive {
+    padding-bottom: 3em;
   }
 }
 
