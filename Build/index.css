@@ -52,7 +52,7 @@ body {
   right: 50%;
   margin-right: -250px;
   margin-bottom: -250px;
-  opacity: .25;
+  opacity: .35;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -100,7 +100,7 @@ thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'
 thumbnails a[href*='glass'] .thumbimage { background-image: url(glass/glass.jpg); }
 .thumbnails a[href*='fabrication'] .thumbimage { background-image: url(assets/thumbs/fabrication.jpg); }
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url(assets/thumbs/visualization.jpg); }
-.thumbnails a[href*='electronics'] .thumbimage { background-image: url('assets/electronics.jpg'); }
+.thumbnails a[href*='electronics'] .thumbimage { background-image: url(assets/thumbs/electronics.jpg); }
 
 .thumbnails {
   max-width: 950px;
