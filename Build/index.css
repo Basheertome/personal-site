@@ -28,7 +28,18 @@ body {
   top: 0;
   left: 0;
   text-align: center;
+  opacity: 0;
+  -moz-animation: fadeIn ease-in 1s;
+  -webkit-animation: fadeIn ease-in 1s;
+  animation: fadeIn ease-in 1s;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .bio {
   display: table-cell;
@@ -52,7 +63,7 @@ body {
   right: 50%;
   margin-right: -250px;
   margin-bottom: -250px;
-  opacity: .35;
+  opacity: .25;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -95,9 +106,9 @@ body {
 .thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
 .thumbnails a[href*='hue'] .thumbimage { background-image: url(assets/thumbs/hue.jpg); }
 .thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
-thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/chroma.jpg'); }
-thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
-thumbnails a[href*='glass'] .thumbimage { background-image: url(glass/glass.jpg); }
+.thumbnails a[href*='chroma'] .thumbimage { background-image: url(assets/thumbs/chroma.jpg); }
+.thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
+.thumbnails a[href*='glass'] .thumbimage { background-image: url('assets/glass.jpg'); }
 .thumbnails a[href*='fabrication'] .thumbimage { background-image: url(assets/thumbs/fabrication.jpg); }
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url(assets/thumbs/visualization.jpg); }
 .thumbnails a[href*='electronics'] .thumbimage { background-image: url(assets/thumbs/electronics.jpg); }
@@ -208,9 +219,14 @@ thumbnails a[href*='glass'] .thumbimage { background-image: url(glass/glass.jpg)
   bottom: -1px;
 }
 
-html.touch .intro {
-  position: absolute;
-  opacity: 1 !important;
+@media (min-width: 675px) {
+  html.touch .intro {
+    position: absolute;
+    opacity: 1 !important;
+    -moz-animation: none;
+    -webkit-animation: none;
+    animation: none;
+  }
 }
 
 @media (max-width: 1000px) {
