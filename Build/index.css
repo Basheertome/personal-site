@@ -63,7 +63,7 @@ body {
   right: 50%;
   margin-right: -250px;
   margin-bottom: -250px;
-  opacity: .25;
+  opacity: .1;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -108,7 +108,7 @@ body {
 .thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
 .thumbnails a[href*='chroma'] .thumbimage { background-image: url(assets/thumbs/chroma.jpg); }
 .thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
-.thumbnails a[href*='glass'] .thumbimage { background-image: url('assets/glass.jpg'); }
+.thumbnails a[href*='glass'] .thumbimage { background-image: url(assets/thumbs/glass.jpg); }
 .thumbnails a[href*='fabrication'] .thumbimage { background-image: url(assets/thumbs/fabrication.jpg); }
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url(assets/thumbs/visualization.jpg); }
 .thumbnails a[href*='electronics'] .thumbimage { background-image: url(assets/thumbs/electronics.jpg); }
@@ -270,7 +270,7 @@ body {
     width: 400px;
     margin-right: -200px;
     margin-bottom: -200px;
-    opacity: .25;
+    opacity: .1;
     border-radius: 200px;
   }
 }
@@ -279,7 +279,6 @@ body {
   .intro {
     clear: both;
     position: relative;
-    display: block;
     height: auto;
     padding-top: 15px;
   }

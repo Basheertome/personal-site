@@ -63,7 +63,7 @@ body {
   right: 50%;
   margin-right: -250px;
   margin-bottom: -250px;
-  opacity: .25;
+  opacity: .1;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -270,7 +270,7 @@ body {
     width: 400px;
     margin-right: -200px;
     margin-bottom: -200px;
-    opacity: .25;
+    opacity: .1;
     border-radius: 200px;
   }
 }
@@ -279,7 +279,6 @@ body {
   .intro {
     clear: both;
     position: relative;
-    display: block;
     height: auto;
     padding-top: 15px;
   }
