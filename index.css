@@ -36,6 +36,20 @@ body {
   vertical-align: middle;
 }
 
+.bio a {
+  color: #fff;
+}
+
+.bio a:hover {
+  position: relative;
+  bottom: 1px;
+  text-shadow: 0 0 30px rgba(255,255,255,1);
+}
+
+.bio a:active {
+  top: 1px;
+}
+
 .intro h2 {
   position: relative;
   display: block;
