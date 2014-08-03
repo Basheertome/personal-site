@@ -263,6 +263,10 @@ body {
 }
 
 @media (max-width: 675px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  
   .intro {
     clear: both;
     position: relative;
@@ -331,7 +335,6 @@ body {
 
   .thumbnails li {
     margin: 0 auto 25px auto;
-    width: 90%;
   }
 }
 
