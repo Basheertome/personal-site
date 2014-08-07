@@ -62,6 +62,7 @@ body {
 }
 
 .firefly {
+  display: none;
   position: absolute;
   bottom: 50%;
   right: 50%;
