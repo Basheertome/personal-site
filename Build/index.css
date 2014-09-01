@@ -260,6 +260,7 @@ body {
   .intro {
     position: absolute;
     opacity: 1 !important;
+    z-index: -1;
   }
 
   .intro h2 {
@@ -304,7 +305,7 @@ body {
 
   .wrapper {
     position: static;
-    margin-top: 30px;
+    margin-top: 120px;
   }
 
   .thumbnails {
@@ -356,6 +357,7 @@ body {
 @media (max-height: 400px) and (min-width: 675px) {
   .intro {
     height: 400px;
+    z-index: -1;
   }
 
   .arrow {
