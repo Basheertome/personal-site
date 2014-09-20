@@ -52,4 +52,15 @@ $(document).ready(function(){
 		showSeconds: false
 	}));
 
+	$('.fullscreen').click(function() {
+		$(this).fadeOut();
+		if (this.requestFullscreen) {
+		  document.documentElement.requestFullscreen
+		} else if (this.mozRequestFullScreen) {
+		  document.documentElement.mozRequestFullScreen();
+		} else if (this.webkitRequestFullscreen) {
+		  document.documentElement.webkitRequestFullscreen();
+		}
+	});
+
 });
