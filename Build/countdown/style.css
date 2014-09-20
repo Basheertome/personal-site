@@ -1,0 +1,62 @@
+* { margin:0; padding:0; }
+h1,h2,h3 { font-size: 100%; font-weight: normal; }
+ol,ul { list-style: none; }
+img {border: 0;}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: black;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	text-align: center;
+	overflow: hidden;
+}
+.center {
+	display: table;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: scale(1.5);
+}
+
+.container {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+ul {
+	display: inline-block;
+	overflow: hidden;
+}
+
+li {
+	width: 505px;
+}
+
+li > div {
+	margin: 20px !important;
+}
+
+h2 {
+	text-align: center;
+	color: #aaa;
+	font-weight: 400;
+	font-size: 20px;
+	letter-spacing: .5px;
+}
+
+.flip-clock-label {
+	color: #222 !important;
+	font-weight: 600 !important;
+}
+
+.flip-clock-wrapper .flip:nth-child(2) .up .inn,
+.flip-clock-wrapper .flip:nth-child(3) .up .inn {
+	color: #ffff55;
+}
+
+.flip-clock-wrapper .flip:nth-child(2) .down .inn,
+.flip-clock-wrapper .flip:nth-child(3) .down .inn {
+	color: #dddd44;
+}
