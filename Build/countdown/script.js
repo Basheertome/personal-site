@@ -4,9 +4,9 @@ $(document).ready(function(){
 
 	var currentDate = new Date();
 
-	var chiDate  = new Date("September 28, 2014 08:00:00");
+	var chiDate  = new Date("October 31, 2014 08:00:00");
 	var chiDiff = chiDate.getTime() / 1000 - currentDate.getTime() / 1000;
-	clocks.push($('.chi').FlipClock(chiDiff, {
+	clocks.push($('.halloween').FlipClock(chiDiff, {
 		clockFace: 'DailyCounter',
 		countdown: true,
 		showSeconds: false
