@@ -38,12 +38,13 @@ body {
 
 .bio a {
   color: #fff;
+  border-bottom: 1px solid #222;
 }
 
 .bio a:hover {
   position: relative;
   bottom: 1px;
-  text-shadow: 0 0 30px rgba(255,255,255,1);
+  border-bottom: 1px solid #777;
 }
 
 .bio a:active {
@@ -77,11 +78,31 @@ body {
 
 .arrow {
   position: absolute;
-  bottom: 5%;
+  bottom: 20%;
   right: 50%;
   margin-right: -18px;
   width: 36px;
   opacity: .25;
+  cursor: pointer;
+  -webkit-animation: notice 2s infinite alternate ease-in-out;
+  -moz-animation: notice 2s infinite alternate ease-in-out;
+  animation: notice 2s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes notice {
+  0% {bottom: 20%;}
+  50% {bottom: calc(20% + 10px)}
+  100% {bottom: 20%}
+}
+@-moz-keyframes notice {
+  0% {bottom: 20%;}
+  50% {bottom: calc(20% + 10px)}
+  100% {bottom: 20%}
+}
+keyframes notice {
+  0% {bottom: 20%;}
+  50% {bottom: calc(20% + 10px)}
+  100% {bottom: 20%}
 }
 
 .wrapper {

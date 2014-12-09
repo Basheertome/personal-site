@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$(window).scrollTop($('.intro').height()-100);
 	}
 
+    $('.arrow').click(function() {
+    	$('body, html').animate({scrollTop: $('.intro').height()-100});
+    });
+
 	$('.intro').animate({'opacity': 1}, 1000);
 
 	$('.firefly').load(function(){
