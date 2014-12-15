@@ -1,0 +1,7 @@
+.page > p a {
+	background-color: #896749;
+}
+
+html {
+	background: #1a1a1a url('assets/software-header.jpg') no-repeat top center;
+}

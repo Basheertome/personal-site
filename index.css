@@ -82,11 +82,20 @@ body {
   right: 50%;
   margin-right: -18px;
   width: 36px;
+  padding: 15px;
+  margin: 0 -33px -15px 0;
   opacity: .25;
   cursor: pointer;
   -webkit-animation: notice 2s infinite alternate ease-in-out;
   -moz-animation: notice 2s infinite alternate ease-in-out;
   animation: notice 2s infinite alternate ease-in-out;
+  -webkit-transition: opacity .15s linear;
+  -moz-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+.arrow:hover {
+  opacity: 1;
 }
 
 @-webkit-keyframes notice {
@@ -127,21 +136,27 @@ keyframes notice {
   background: transparent no-repeat left top;
   background-position: -2400px;
   background-size: 5700px 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
 .thumbnails a[href*='hue'] .thumbimage { background-image: url('assets/hue.jpg'); }
-.thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
+.thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
 .thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/chroma.jpg'); }
+.thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
 .thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
 .thumbnails a[href*='glass'] .thumbimage { background-image: url('assets/glass.jpg'); }
-.thumbnails a[href*='fabrication'] .thumbimage { background-image: url('assets/fabrication.jpg'); }
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url('assets/visualization.jpg'); }
+.thumbnails a[href*='fabrication'] .thumbimage { background-image: url('assets/fabrication.jpg'); }
 .thumbnails a[href*='electronics'] .thumbimage { background-image: url('assets/electronics.jpg'); }
+.thumbnails a[href*='screen'] .thumbimage { background-image: url('assets/screen.jpg'); }
+.thumbnails a.photography .thumbimage { background-image: url('assets/photography.jpg'); }
+.thumbnails a[href*='archive'] .thumbimage { background-image: url('assets/archive.jpg'); }
 
 .thumbnails {
   max-width: 950px;
   margin: 0 auto;
+  padding-bottom: 4em;
 }
 
 .thumbnails li {
@@ -193,58 +208,6 @@ keyframes notice {
   bottom: -1px;
 }
 
-.under {
-  display: block;
-  max-width: 950px;
-  margin: 3em auto 0 auto;
-  padding-top: 2em;
-  text-align: center;
-  border-top: 1px solid #333;
-}
-
-.under li {
-  display: inline-block;
-  width: 50%;
-}
-
-.under h4 {
-  font-family:'karbonlight',Sans-Serif;
-  font-size: 26px;
-  color: #fff;
-  -webkit-transition: .1s linear text-shadow;
-  -moz-transition: .1s linear text-shadow;
-  transition: .1s linear text-shadow
-}
-
-.under h5 {
-  font-family:'karbonregularitalic',Sans-Serif;
-  font-size: 16px;
-  color: #fff;
-  opacity: .6;
-  -webkit-transition: .1s linear opacity, .1s linear text-shadow;
-  -moz-transition: .1s linear opacity, .1s linear text-shadow;
-  transition: .1s linear opacity, .1s linear text-shadow;
-}
-
-.under li:hover h4, .under li:hover h5 {
-  position: relative;
-  bottom: 1px;
-}
-
-.under li:hover h4 {
-  text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 50px #fff;
-}
-
-.under li:hover h5 {
-  opacity: .7;
-  text-shadow: 0 0 10px #fff, 0 0 30px #fff;
-}
-
-.under li:active h4, .under li:active h5 {
-  position: relative;
-  bottom: -1px;
-}
-
 @media (min-width: 675px) {
   html.touch .intro {
     position: absolute;
@@ -255,6 +218,7 @@ keyframes notice {
 @media (max-width: 1000px) {
   .thumbnails {
     max-width: 625px;
+    padding-bottom: 3em;
   }
 
   .thumbnails li:nth-child(3n) {
@@ -263,13 +227,6 @@ keyframes notice {
 
   .thumbnails li:nth-child(2n) {
     margin-right: 0;
-  }
-
-  .under {
-    max-width: 625px;
-    margin: 2em auto 0 auto;
-    padding-top: 3em;
-    padding-bottom: 3em;
   }
 }
 
@@ -342,19 +299,6 @@ keyframes notice {
   .thumbnails img {
     width: 100%;
   }
-
-  .under {
-    margin: 3em 30px 0 30px;
-  }
-
-  .under li {
-    display: block;
-    width: 100%;
-  }
-
-  .under li:first-child {
-    margin-bottom: 2em;
-  }
 }
 
 @media (max-width: 500px) {
@@ -391,7 +335,7 @@ keyframes notice {
 }
 
 @media (max-height: 950px) {
-  .under {
+  .thumbnails {
     padding-bottom: 3em;
   }
 }
