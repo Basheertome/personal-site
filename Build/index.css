@@ -149,7 +149,7 @@ keyframes notice {
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url(assets/thumbs/visualization.jpg); }
 .thumbnails a[href*='fabrication'] .thumbimage { background-image: url(assets/thumbs/fabrication.jpg); }
 .thumbnails a[href*='electronics'] .thumbimage { background-image: url(assets/thumbs/electronics.jpg); }
-.thumbnails a[href*='screen'] .thumbimage { background-image: url('assets/screen.jpg'); }
+.thumbnails a[href*='screen'] .thumbimage { background-image: url(assets/thumbs/screen.jpg); }
 .thumbnails a.photography .thumbimage { background-image: url(assets/thumbs/photography.jpg); }
 .thumbnails a[href*='archive'] .thumbimage { background-image: url(assets/thumbs/archive.jpg); }
 
