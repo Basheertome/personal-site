@@ -8,6 +8,10 @@ body {
 	font-family: "myriad-pro",sans-serif;
 }
 
+.loading {
+  background-color: #fff;
+}
+
 body > .header {
   text-align: left;
 }

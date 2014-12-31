@@ -58,6 +58,25 @@ body {
   text-shadow: none;
 }
 
+.loading {
+  position: fixed;
+  display: table;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  z-index: 6;
+}
+
+.loader {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 75px;
+}
+
 body > .header {
   width: 100%;
   position: fixed;
@@ -127,7 +146,7 @@ body > .header li:first-child {
 }
 
 html.touch body > .header {
-  position: static;
+  position: relative;
 }
 
 html.touch .ghost {
@@ -139,7 +158,7 @@ html.touch .ghost {
 
 @media (max-width: 900px), (max-height: 500px) {
   body > .header {
-    position: static;
+    position: relative;
   }
 
   .ghost {

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+	$.pageLoader();
+	
 	if ('ontouchstart' in document.documentElement) {
 		$('.video .poster').hide();
 		startSlides($('.slideshow'));

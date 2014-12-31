@@ -556,7 +556,7 @@ body > .next {
 
 @media (max-width: 600px) {
   body > .header {
-    position: static;
+    position: relative;
     width: auto;
     background: #000;
   }
