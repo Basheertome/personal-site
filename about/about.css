@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-	position: relative !important;
+	position: static !important;
 }
 
 .header a[href*='/about'] {

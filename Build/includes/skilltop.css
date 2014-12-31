@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  position: relative !important;
+  position: static !important;
 }
 
 .top {
@@ -516,14 +516,14 @@ body > .next {
   }
   
   .page .w2-1 img {
-    position: relative;
+    position: static;
     margin: 1.25em auto;
   }
 }
 
 @media (max-width: 600px) {
   body > .header {
-    position: relative;
+    position: static;
   }
 
   body > .header .links {

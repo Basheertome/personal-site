@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	$.pageLoader();
-
 	if (window.location.hash.split('#')[1] != undefined) {
 		window.location.replace("#");  
 		if (typeof window.history.replaceState == 'function') {
