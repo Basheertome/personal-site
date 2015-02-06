@@ -27,6 +27,10 @@ body {
 	margin: 25px auto 0 auto;
 }
 
+.bio p img {
+	width: 100%;
+}
+
 .bio p {
 	display: inline-block;
 	margin-bottom: 1em;
