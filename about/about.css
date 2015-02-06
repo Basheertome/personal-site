@@ -23,7 +23,7 @@ body {
 	font-size: 30px;
 	line-height: 38px;
 	max-width: 600px;
-	padding: 50px;
+	padding: 50px 50px 100px 50px;
 	margin: 25px auto 0 auto;
 }
 
@@ -63,12 +63,6 @@ body {
 		line-height: 32px;
 		max-width: 450px;
 		padding: 30px;
-		margin: 45px auto 0 auto;
-	}
-}
-
-@media (max-width: 500px) {
-	.bio {
-		margin: 45px auto 0 auto;
+		margin: 45px auto 30px auto;
 	}
 }
