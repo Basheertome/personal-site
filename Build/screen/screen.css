@@ -1,4 +1,4 @@
-.page > p a {
+.page > p a::after {
 	background-color: #2242FF;
 }
 

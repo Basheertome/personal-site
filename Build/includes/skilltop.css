@@ -142,21 +142,37 @@ body > .next {
 }
 
 .page > p a {
+  position: relative;
   display: inline-block;
-  padding: 0 0.35em;
-  color: white;
+  color: #fff;
   opacity: 1;
   -webkit-transition: .1s linear opacity;
   -moz-transition: .1s linear opacity;
   transition: .1s linear opacity;
 }
 
-.page > p a:hover {
-  opacity: .9;
+.page > p a::after {
+  content: "";
+  position: absolute;
+  bottom: 3px; left: -3px;
+  width: calc(100% + 6px);
+  height: 3px;
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  -webkit-transform-origin: left center;
+  -webkit-transition: .1s linear all;
+  -moz-transition: .1s linear all;
+  transition: .1s linear all;
+}
+
+.page > p a:hover::after {
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
 
 .page > p a:active {
-  position: relative;
   top: 1px;
 }
 

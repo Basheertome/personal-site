@@ -6,7 +6,7 @@
 	margin-bottom: 15px;
 }
 
-.page > p a {
+.page > p a::after {
 	background-color: #514099;
 }
 
