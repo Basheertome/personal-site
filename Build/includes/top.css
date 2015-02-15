@@ -27,12 +27,12 @@
   width: 100%;
   height: 500px;
   background: url(../assets/black.png) repeat-x;
-  z-index: -10;
+  z-index: 0;
 }
 
 .top-image {
   text-align: center;
-  z-index: -1;
+  z-index: 1;
 }
 
 .top img {
@@ -72,7 +72,7 @@ body > .previous, body > .next {
   position: fixed;
   top: 49%;
   font-size: 2em;
-  z-index: 1;
+  z-index: 9;
 }
 
 body > .previous a, body > .next a {
@@ -119,9 +119,11 @@ body > .next {
 }
 
 .page {
+  position: relative;
   max-width: 900px;
   margin: 4em auto 0 auto;
   padding-bottom: 30px;
+  z-index: 2;
 }
 
 .page > img {
@@ -301,7 +303,7 @@ body > .next {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  z-index: 5;
+  z-index: 7;
 }
 
 .video .container {
@@ -315,7 +317,7 @@ body > .next {
   position: relative;
   vertical-align: middle;
   text-align: center;
-  z-index: 6;
+  z-index: 8;
 }
 
 .video .description .title {
@@ -347,7 +349,7 @@ body > .next {
   border-style: solid;
   border-width: 18px 0 18px 28px;
   border-color: transparent transparent transparent #ffffff;
-  z-index: 6;
+  z-index: 8;
 }
 
 .video .timestamp {
@@ -358,7 +360,7 @@ body > .next {
   font-size: 20px;
   line-height: 20px;
   text-align: right;
-  z-index: 6;
+  z-index: 8;
 }
 
 .video .caption {
