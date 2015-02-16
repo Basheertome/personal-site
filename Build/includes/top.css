@@ -126,7 +126,8 @@ body > .next {
   z-index: 2;
 }
 
-.page > img {
+.page > img, .page > a img,
+.page article > img, .page article > a img {
   max-width: 900px;
   width: 100%;
   margin: 30px auto;

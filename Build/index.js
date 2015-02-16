@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	if (window.location.hash.split('#')[1] != undefined) {
+	if (window.location.hash.split('#')[1] == 'projects') {
 		window.location.replace("#");  
 		if (typeof window.history.replaceState == 'function') {
 		  history.replaceState({}, '', window.location.href.slice(0, -1));
@@ -60,6 +60,24 @@ $(document).ready(function(){
 
 		$(this).css({'background-position': (hoverxo(name) * -300)});
 	});
+
+	$('.header h1 a').hover(function(){
+		$(window).on('keydown', function(e) {
+			if (e.keyCode == 27) {
+				// Escape
+				e.preventDefault();
+				goPresent();
+			}
+		});
+	}, function() {
+		$(window).off('keydown');
+	});
+
+	if (window.location.hash.split('#')[1] == 'present') {
+		goPresent();
+	} else if (window.location.hash.split('#')[1] == 'projects-present') {
+		goPresent('projects');
+	}
 
 });
 

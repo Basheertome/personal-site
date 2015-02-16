@@ -1,0 +1,88 @@
+body.present .header,
+body.present .arrow {
+  display: none;
+}
+
+body.present {
+  display: table;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+body.present .intro {
+  position: static;
+  display: inline-table;
+  width: 100vw;
+  max-width: inherit;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  white-space: normal;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.present .wrapper {
+  position: static;
+  display: inline-table;
+  width: 100vw;
+  max-width: inherit;
+  height: 100vh;
+  min-height: inherit;
+  max-height: inherit;
+  margin: 0 auto;
+  white-space: normal;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.present .page {
+  position: relative;
+  top: 50%;
+}
+
+body.present .thumbnails {
+  padding-bottom: 0;
+}
+
+body.present .toptouch,
+body.present .lefttouch,
+body.present .righttouch,
+body.present .bottomtouch,
+body.present .tlcornertouch,
+body.present .trcornertouch {
+  display: block;
+  position: fixed;
+  z-index: 100; }
+body.present .lefttouch,
+body.present .righttouch {
+  width: 10%;
+  height: 90%;
+  top: 10%; }
+body.present .toptouch,
+body.present .bottomtouch {
+  width: 80%;
+  height: 10%;
+  left: 10%; }
+body.present .tlcornertouch,
+body.present .trcornertouch {
+  width: 10%;
+  height: 10%;
+  top: 0; }
+body.present .toptouch {
+  top: 0; }
+body.present .lefttouch {
+  left: 0; }
+body.present .righttouch {
+  right: 0; }
+body.present .bottomtouch {
+  bottom: 0; }
+body.present .tlcornertouch {
+  left: 0; }
+body.present .trcornertouch {
+  right: 0; }

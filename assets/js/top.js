@@ -36,9 +36,21 @@ $(document).ready(function(){
 
 	$('.header h1 a').hover(function(){
 		$(this).html('<span>←</span> Project List');
+		$(window).on('keydown', function(e) {
+			if (e.keyCode == 27) {
+				// Escape
+				e.preventDefault();
+				goPresent();
+			}
+		});
 	}, function() {
 		$(this).html('Basheer Tome');
-	})
+		$(window).off('keydown');
+	});
+
+	if (window.location.hash.split('#')[1] == 'present') {
+		goPresent();
+	}
 });
 
 function startSlides(that) {

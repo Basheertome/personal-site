@@ -1,0 +1,157 @@
+body.present .header,
+body.present > .next,
+body.present > .previous,
+body.present .page > :not(section) {
+  display: none;
+}
+
+body.present {
+  display: table;
+  white-space: nowrap;
+  overflow-y: hidden;
+  background: transparent;
+}
+
+body.present .top {
+  display: inline-block;
+  width: 100vw;
+  white-space: normal;
+  vertical-align: top;
+  max-width: inherit;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.present .top::after {
+  display: none !important;
+}
+
+body.present .top h2:first-child {
+  margin-top: 20%;
+}
+
+body.present .top h3 {
+  font-size: 34px;
+}
+
+body.present .page {
+  display: inline-block;
+  max-width: inherit;
+  margin: 0 auto;
+  padding-bottom: 0;
+  vertical-align: top;
+}
+
+body.present .page > img,
+body.present .page article > img,
+body.present .page article > a img,
+body.present .slideshow {
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+body.present .slideshow-container {
+  padding: 0;
+}
+
+body.present section.slides .slideshow-container {
+  position: relative;
+  text-align: center;
+}
+
+body.present section.slides .slideshow {
+  display: inline-block;
+}
+
+body.present .page section.slides article,
+body.present section.slides .slideshow-container,
+body.present .page section.slides article > img,
+body.present section.slides .slideshow,
+body.present section.slides .slideshow li {
+  height: 100%;
+  max-height: 100% !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+body.present section.slides .slideshow img {
+  position: relative;
+  max-height: 100% !important;
+  width: auto !important;
+  max-width: 100% !important;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body.present .slideshow-container .centered-btns_tabs {
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+}
+
+body.present .page section {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  border: 0px solid transparent;
+  overflow: hidden;
+  margin: 0 10px;
+  white-space: normal; }
+body.present .page section:first-of-type {
+  margin-left: 20px; }
+body.present .page section:last-of-type {
+  margin-right: 0; }
+
+body.present .page section article {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+body.present .toptouch,
+body.present .lefttouch,
+body.present .righttouch,
+body.present .bottomtouch,
+body.present .tlcornertouch,
+body.present .trcornertouch {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+body.present .lefttouch,
+body.present .righttouch {
+  width: 10%;
+  height: 90%;
+  top: 10%; }
+body.present .toptouch,
+body.present .bottomtouch {
+  width: 80%;
+  height: 10%;
+  left: 10%; }
+body.present .tlcornertouch,
+body.present .trcornertouch {
+  width: 10%;
+  height: 10%;
+  top: 0; }
+body.present .toptouch {
+  top: 0; }
+body.present .lefttouch {
+  left: 0; }
+body.present .righttouch {
+  right: 0; }
+body.present .bottomtouch {
+  bottom: 0; }
+body.present .tlcornertouch {
+  left: 0; }
+body.present .trcornertouch {
+  right: 0; }
