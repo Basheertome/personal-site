@@ -1,3 +1,5 @@
+$.getScript('http://stats.basheertome.com/?js');
+
 var _gaq = _gaq || [];
 _gaq.push(["_setAccount", "UA-25940549-1"]);
 _gaq.push(["_setDomainName", "basheertome.com"]);
