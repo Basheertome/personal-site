@@ -1,0 +1,2 @@
+var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25940549-1"]),_gaq.push(["_setDomainName","basheertome.com"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://":"http://")+"stats.g.doubleclick.net/dc.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+;
