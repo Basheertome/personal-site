@@ -162,6 +162,8 @@ body > .next {
   -moz-transform: rotate(-1deg);
   transform: rotate(-1deg);
   -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  transform-origin: left center;
   -webkit-transition: .1s linear all;
   -moz-transition: .1s linear all;
   transition: .1s linear all;

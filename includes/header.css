@@ -93,6 +93,8 @@ body > .header a::after {
   -moz-transform: rotate(-3deg) scale(0,1);
   transform: rotate(-3deg) scale(0,1);
   -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  transform-origin: left center;
   -webkit-transition: .1s linear all;
   -moz-transition: .1s linear all;
   transition: .1s linear all;
