@@ -1,4 +1,9 @@
-h4,h5,h6 { font-size: 100%; font-weight: normal; }
+* { margin:0; padding:0; outline: 0;}
+html { min-height: 100%; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+ol,ul { list-style: none; }
+img {border: 0;}
+a {text-decoration: none;}
 
 body {
   background: #fff;
@@ -30,10 +35,9 @@ body > .header .links li:nth-child(2) a::after {
 
 .page {
   background: #fff;
-  max-width: 500px;
-  min-width: 300px;
+  max-width: 635px;
   margin: 0 auto;
-  padding: 50px 100px 100px;
+  padding: 50px;
   text-align: left;
   overflow: auto;
 }
@@ -42,6 +46,19 @@ body > .header .links li:nth-child(2) a::after {
   padding: .5em 0;
   margin-bottom: 2.75em;
   text-align: center;
+}
+
+.page ul {
+  margin-bottom: 3em;
+}
+
+.page ul:last-child {
+  margin-bottom: 0;
+}
+
+.page li span {
+  display: inline-block;
+  width: calc(100% - 135px);
 }
 
 .page h1 {
@@ -62,21 +79,11 @@ body > .header .links li:nth-child(2) a::after {
   text-decoration: none;
 }
 
-.page h3 {
-  font-size: 28px;
-  font-weight: 300;
-  font-style: italic;
-  padding: .1em 0;
-  margin: .5em 0 -.2em 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
-
 .page h4 {
   font-size: 21px;
-  line-height: 25px;
+  line-height: 22px;
   font-weight: 300;
   color: #999;
-  margin-top: .75em;
 }
 
 .page h4 strong, .page h4 emphasis {
@@ -94,12 +101,23 @@ body > .header .links li:nth-child(2) a::after {
 }
 
 .page h5 {
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
   font-size: 13px;
+  width: 110px;
+  margin: 1px 20px 0 0;
   color: #b2b2b2;
 }
 
+.page li span h5 {
+  display: none;
+  text-align: left;
+  max-width: none;
+  width: auto;
+}
+
 .page a {
-  -o-transition: opacity .15s linear;
   -moz-transition: opacity .15s linear;
   -webkit-transition: opacity .15s linear;
   transition: opacity .15s linear;
@@ -130,7 +148,7 @@ body > .header .links li:nth-child(2) a::after {
   border-bottom: none;
 }
 
-.main p {
+.main span > p {
   font-size: 16px;
   line-height: 20px;
   margin-top: .2em;
@@ -138,7 +156,6 @@ body > .header .links li:nth-child(2) a::after {
 
 .main ul {
   margin-top: .75em;
-  text-indent: .75em;
 }
 
 .main li {
@@ -146,7 +163,7 @@ body > .header .links li:nth-child(2) a::after {
   text-indent: 0;
   font-size: 15px;
   line-height: 18px;
-  margin-bottom: .4em;
+  margin-bottom: 1.1em;
 }
 
 .main .experience h4 {
@@ -158,93 +175,29 @@ body > .header .links li:nth-child(2) a::after {
   font-size: 17px;
 }
 
-.main .experience p {
+.main .experience > p {
   font-size: 14px;
   line-height: 18px;
 }
 
-.sidebar h3 {
-  font-size: 22px;
-  line-height: 28px;
-  margin: 0;
-  padding-top: .42em;
-}
-
-.sidebar p {
-  font-size: 14px;
-  line-height: 18px;
-  margin-top: .6em;
-}
-
-.sidebar ul {
-  margin-top: .8em;
-}
-
-.sidebar a {
-  color: #000;
-  text-decoration: none;
-}
-
-.sidebar .awards li {
-  position: relative;
-  text-indent: 0;
-  font-size: 14px;
-  line-height: 18px;
-  margin-bottom: .3em;
-}
-
-.sidebar .awards li a {
-  color: #555;
-}
-
-.sidebar .awards li strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.sidebar .awards li p {
-  margin: 0 0 .65em 0;
-  font-size: 13px;
-}
-
-.sidebar .courses ul {
-  padding-left: .75em;
-  text-indent: .75em;
-}
-
-.sidebar .courses li {
-  position: relative;
-  text-indent: 0;
-  font-size: 14px;
-  line-height: 18px;
-  margin-bottom: .3em;
-}
-
-.sidebar .courses li emphasis {
-  color: #888;
-  font-style: italic;
-}
-
-.sidebar .courses li:before {
-  content: "\2022";
-  position: absolute;
-  left: -.75em;
-  color: #b2b2b2;
-}
-
-.sidebar .skills li, .sidebar .software li {
-  display: inline-block;
-  width: 48%;
-  font-size: 14px;
-  line-height: 18px;
-  white-space: nowrap;
-  overflow-x: hidden;
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   body {
     padding: 0 0 25px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .page li span {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .page li h5 {
+    display: none;
+  }
+  .page li span h5 {
+    display: block;
   }
 }
 
@@ -258,16 +211,6 @@ body > .header .links li:nth-child(2) a::after {
     float: none;
     max-width: 100%;
     margin-right: 0;
-  }
-
-  .sidebar {
-    float: none;
-    color: #000;
-    max-width: 100%;
-  }
-
-  .sidebar h3 {
-    padding-top: 1em;
   }
 }
 
