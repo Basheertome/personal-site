@@ -171,7 +171,7 @@ keyframes notice {
 }
 
 .thumbnails a[href*='hue'] .thumbimage { background-image: url(assets/thumbs/hue.jpg); }
-.thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
+.thumbnails a[href*='cardinal'] .thumbimage { background-image: url(assets/thumbs/cardinal.jpg); }
 .thumbnails a[href*='chroma'] .thumbimage { background-image: url(assets/thumbs/chroma.jpg); }
 .thumbnails a[href*='instinct'] .thumbimage { background-image: url(assets/thumbs/instinct.jpg); }
 .thumbnails a[href*='fuse'] .thumbimage { background-image: url(assets/thumbs/fuse.jpg); }
