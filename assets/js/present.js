@@ -41,10 +41,6 @@ function goPresent(thumbnails) {
 		});
 	}
 
-	if ($('.next a').attr('href') == '/glass/') {
-		$('.next a').attr('href', '/visualization/');
-	} else if ($('.previous a').attr('href') == '/glass/') {
-		$('.previous a').attr('href', '/fuse/'); }
 	$('.next a').attr('href', $('.next a').attr('href') + '#present');
 	$('.previous a').attr('href', $('.previous a').attr('href') + '#present');
 	$('.thumbnails a').each(function(i, item) {
@@ -141,7 +137,7 @@ function goPresent(thumbnails) {
 			if (e.keyCode == 38) {
 				// Up Arrow
 				e.preventDefault();
-				window.location = '/archive/#present';
+				window.location = '/bitsnbobs/#present';
 			}
 			if (e.keyCode == 40) {
 				// Down Arrow

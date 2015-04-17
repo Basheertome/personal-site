@@ -175,18 +175,18 @@ keyframes notice {
 .thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/chroma.jpg'); }
 .thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
 .thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
-.thumbnails a[href*='glass'] .thumbimage { background-image: url('assets/glass.jpg'); }
 .thumbnails a[href*='visualization'] .thumbimage { background-image: url('assets/visualization.jpg'); }
 .thumbnails a[href*='fabrication'] .thumbimage { background-image: url('assets/fabrication.jpg'); }
 .thumbnails a[href*='electronics'] .thumbimage { background-image: url('assets/electronics.jpg'); }
 .thumbnails a[href*='screen'] .thumbimage { background-image: url('assets/screen.jpg'); }
 .thumbnails a.photography .thumbimage { background-image: url('assets/photography.jpg'); }
-.thumbnails a[href*='archive'] .thumbimage { background-image: url('assets/archive.jpg'); }
+.thumbnails a[href*='bitsnbobs'] .thumbimage { background-image: url('assets/bitsnbobs.jpg'); }
 
 .thumbnails {
   max-width: 950px;
   margin: 0 auto;
   padding-bottom: 4em;
+  text-align: center;
 }
 
 .thumbnails li {

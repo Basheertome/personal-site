@@ -1,7 +1,0 @@
-.page > p a::after {
-	background-color: #896749;
-}
-
-html {
-	background: #1a1a1a url('assets/archive-header.jpg') no-repeat top center;
-}
