@@ -172,6 +172,7 @@ keyframes notice {
 
 .thumbnails a[href*='hue'] .thumbimage { background-image: url('assets/hue.jpg'); }
 .thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
+.thumbnails a[href*='research'] .thumbimage { background-image: url('assets/research.jpg'); }
 .thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/chroma.jpg'); }
 .thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
 .thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
