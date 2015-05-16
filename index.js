@@ -14,10 +14,6 @@ $(document).ready(function(){
 
 	$('.intro').animate({'opacity': 1}, 1000);
 
-	$('.firefly').load(function(){
-		$(this).fadeIn();
-	});
-
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
 	}

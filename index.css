@@ -93,7 +93,6 @@ body > .header h1 a::after {
 }
 
 .firefly {
-  display: none;
   position: absolute;
   bottom: 50%;
   right: 50%;
