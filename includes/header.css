@@ -121,9 +121,9 @@ body > .header h1 a::after {
 body > .header .links li:nth-child(1) a::after {
   background: rgba(69,198,91,1); }
 body > .header .links li:nth-child(2) a::after {
-  background: rgba(255,11,89,1); }
-body > .header .links li:nth-child(3) a::after {
   background: rgba(255,228,50,1); }
+body > .header .links li:nth-child(3) a::after {
+  background: rgba(255,11,89,1); }
 body > .header .links li:nth-child(4) a::after {
   background: rgba(0,73,215,1); }
 

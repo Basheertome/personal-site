@@ -156,29 +156,7 @@ body > .header .links li:nth-child(2) a::after {
   -moz-transform: translate(-50%,-50%)scale(0.375);
   -webkit-transform: translate(-50%,-50%)scale(0.375);
   transform: translate(-50%,-50%)scale(0.375);
-  -webkit-animation: shake .5s infinite alternate linear;
-  -moz-animation: shake .5s infinite alternate linear;
-  animation: shake .5s infinite alternate linear;
 }
-
-@-webkit-keyframes shake {
-  0% { -webkit-transform: translate(-49.9%,-49.9%)scale(0.375); }
-  25% { -webkit-transform: translate(-50.1%,-50.1%)scale(0.375); }
-  50% { -webkit-transform: translate(-49.9%,-50.1%)scale(0.375); }
-  75% { -webkit-transform: translate(-50.1%,-49.9%)scale(0.375); }
-  100% { -webkit-transform: translate(-50%,-50%)scale(0.375); } }
-@-moz-keyframes shake {
-  0% { -moz-transform: translate(-49.9%,-49.9%)scale(0.375); }
-  25% { -moz-transform: translate(-50.1%,-50.1%)scale(0.375); }
-  50% { -moz-transform: translate(-49.9%,-50.1%)scale(0.375); }
-  75% { -moz-transform: translate(-50.1%,-49.9%)scale(0.375); }
-  100% { -moz-transform: translate(-50%,-50%)scale(0.375); } }
-@keyframes shake {
-  0% { transform: translate(-49.9%,-49.9%)scale(0.375); }
-  25% { transform: translate(-50.1%,-50.1%)scale(0.375); }
-  50% { transform: translate(-49.9%,-50.1%)scale(0.375); }
-  75% { transform: translate(-50.1%,-49.9%)scale(0.375); }
-  100% { transform: translate(-50%,-50%)scale(0.375); } }
 
 .main a[rel="medialab"]:hover::before {
   content: url(../assets/resume/medialab.png); }
