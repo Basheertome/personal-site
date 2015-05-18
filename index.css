@@ -137,7 +137,7 @@ body > .header h1 a::after {
   50% {bottom: calc(20% + 10px)}
   100% {bottom: 20%}
 }
-keyframes notice {
+@keyframes notice {
   0% {bottom: 20%;}
   50% {bottom: calc(20% + 10px)}
   100% {bottom: 20%}
