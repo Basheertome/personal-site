@@ -5,6 +5,10 @@ ol,ul { list-style: none; }
 img {border: 0;}
 a {text-decoration: none;}
 
+html {
+  -webkit-transform: translateY(-180px)scale(.6);
+}
+
 body {
   padding: 0;
   text-align: center;
@@ -52,15 +56,6 @@ h2 {
 h2 a {
   color: #8f8e8e;
   text-decoration: none;
-}
-
-h3 {
-  font-size: 28px;
-  font-weight: 300;
-  font-style: italic;
-  padding: .1em 0;
-  margin: .5em 0 -.2em 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 h4 {
@@ -115,6 +110,20 @@ a:active {
 
 .main div:first-child h3 {margin-top: 0;}
 
+.main h3 {
+  color: #bbb;
+  font-size: 21px;
+  font-style: italic;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+.main h3::before,
+.main h3::after { content: "—"; }
+
+.main h3::before { margin-right: .25em; }
+.main h3::after { margin-left: .25em; }
+
 .main a {
   color: #000;
   text-decoration: none;
@@ -163,13 +172,6 @@ a:active {
   color: #555;
   max-width: 25%;
   vertical-align: top;
-}
-
-.sidebar h3 {
-  font-size: 22px;
-  line-height: 28px;
-  margin: 0;
-  padding-top: .42em;
 }
 
 .sidebar p {
@@ -268,10 +270,6 @@ a:active {
     float: none;
     color: #000;
     max-width: 100%;
-  }
-
-  .sidebar h3 {
-    padding-top: 1em;
   }
 }
 

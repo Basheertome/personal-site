@@ -133,6 +133,20 @@ body > .header .links li:nth-child(2) a::after {
 
 .main div:first-child h3 {margin-top: 0;}
 
+.main h3 {
+  color: #bbb;
+  font-size: 21px;
+  font-style: italic;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+.main h3::before,
+.main h3::after { content: "—"; }
+
+.main h3::before { margin-right: .25em; }
+.main h3::after { margin-left: .25em; }
+
 .main a {
   color: #000;
   text-decoration: none;
