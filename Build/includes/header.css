@@ -29,6 +29,15 @@ body {
     font-weight: normal;
     font-style: normal; }
 @font-face {
+    font-family: 'karbonmedium';
+    src: url(../assets/fonts/karbon-medium-webfont.eot);
+    src: url(../assets/fonts/karbon-medium-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../assets/fonts/karbon-medium-webfont.woff) format('woff'),
+         url(../assets/fonts/karbon-medium-webfont.ttf) format('truetype'),
+         url(../assets/fonts/karbon-medium-webfont.svg#karbonsemibold) format('svg');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
     font-family: 'karbonsemibold';
     src: url(../assets/fonts/karbon-semibold-webfont.eot);
     src: url(../assets/fonts/karbon-semibold-webfont.eot?#iefix) format('embedded-opentype'),
@@ -64,7 +73,7 @@ body > .header {
   top: 0;
   left: 0;
   padding: 30px 50px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -78,8 +87,8 @@ body > .header .headcenter {
 
 body > .header a {
   position: relative;
-  font-family: 'karbonsemibold',Sans-Serif;
-  font-size: 17px;
+  font-family: 'karbonmedium',Sans-Serif;
+  font-size: 20px;
   color: #fff;
 }
 

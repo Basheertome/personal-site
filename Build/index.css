@@ -105,6 +105,21 @@ body > .header h1 a::after {
   pointer-events: none;
 }
 
+.texture {
+  position: absolute;
+  width: 1110px;
+  height: 905px;
+  bottom: 50%;
+  right: 50%;
+  margin-right: -555px;
+  margin-bottom: -452px;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 .arrow {
   position: absolute;
   bottom: 20%;
@@ -201,7 +216,7 @@ body > .header h1 a::after {
 }
 
 .thumbnails h4 {
-  font-family:'karbonlight',Sans-Serif;
+  font-family:'karbonregular',Sans-Serif;
   font-size: 26px;
   color: #fff;
   -webkit-transition: .1s linear text-shadow;
