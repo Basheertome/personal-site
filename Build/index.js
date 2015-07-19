@@ -12,6 +12,24 @@ $(document).ready(function(){
     	$('body, html').animate({scrollTop: $('.intro').height()-100});
     });
 
+    $('audio')[0].addEventListener('playing', function() {
+    	$('.mute').fadeIn();
+    });
+    $('.mute').click(function() {
+    	var audiostate = $('audio')[0].muted;
+    	if (audiostate == true) {
+    		$('audio')[0].muted = false;
+    		for (var i=0; i<20; i++) {
+    			$('.mute').animate({'background-position-x': -912+i*48 + 'px'}, 0).delay(30);
+    		}
+    	} else {
+    		$('audio')[0].muted = true;
+    		for (var i=0; i<20; i++) {
+    			$('.mute').animate({'background-position-x': i*-48 + 'px'}, 0).delay(30);
+    		}
+    	}
+    });
+
 	$('.intro').animate({'opacity': 1}, 1000);
 
 	if ('ontouchstart' in document.documentElement) {
