@@ -457,6 +457,10 @@ body > .header .links li:nth-child(2) a::after {
   margin-top: .2em;
 }
 
+.main p code {
+  letter-spacing: -.5px;
+}
+
 .main ul {
   margin-top: .75em;
 }
