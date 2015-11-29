@@ -493,18 +493,18 @@ body > .header h1 a::after {
   backface-visibility: hidden;
 }
 
-.thumbnails a[href*='hue'] .thumbimage { background-image: url('assets/hue.jpg'); }
-.thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/cardinal.jpg'); }
-.thumbnails a[href*='research'] .thumbimage { background-image: url('assets/research.jpg'); }
-.thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/chroma.jpg'); }
-.thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/instinct.jpg'); }
-.thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/fuse.jpg'); }
-.thumbnails a[href*='visualization'] .thumbimage { background-image: url('assets/visualization.jpg'); }
-.thumbnails a[href*='fabrication'] .thumbimage { background-image: url('assets/fabrication.jpg'); }
-.thumbnails a[href*='electronics'] .thumbimage { background-image: url('assets/electronics.jpg'); }
-.thumbnails a[href*='screen'] .thumbimage { background-image: url('assets/screen.jpg'); }
-.thumbnails a.photography .thumbimage { background-image: url('assets/photography.jpg'); }
-.thumbnails a[href*='bitsnbobs'] .thumbimage { background-image: url('assets/bitsnbobs.jpg'); }
+.thumbnails a[href*='hue'] .thumbimage { background-image: url(assets/thumbs/hue.jpg); }
+.thumbnails a[href*='cardinal'] .thumbimage { background-image: url(assets/thumbs/cardinal.jpg); }
+.thumbnails a[href*='research'] .thumbimage { background-image: url(assets/thumbs/research.jpg); }
+.thumbnails a[href*='chroma'] .thumbimage { background-image: url(assets/thumbs/chroma.jpg); }
+.thumbnails a[href*='instinct'] .thumbimage { background-image: url(assets/thumbs/instinct.jpg); }
+.thumbnails a[href*='fuse'] .thumbimage { background-image: url(assets/thumbs/fuse.jpg); }
+.thumbnails a[href*='visualization'] .thumbimage { background-image: url(assets/thumbs/visualization.jpg); }
+.thumbnails a[href*='fabrication'] .thumbimage { background-image: url(assets/thumbs/fabrication.jpg); }
+.thumbnails a[href*='electronics'] .thumbimage { background-image: url(assets/thumbs/electronics.jpg); }
+.thumbnails a[href*='screen'] .thumbimage { background-image: url(assets/thumbs/screen.jpg); }
+.thumbnails a.photography .thumbimage { background-image: url(assets/thumbs/photography.jpg); }
+.thumbnails a[href*='bitsnbobs'] .thumbimage { background-image: url(assets/thumbs/bitsnbobs.jpg); }
 
 .thumbnails {
   max-width: 950px;

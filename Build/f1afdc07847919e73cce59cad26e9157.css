@@ -268,9 +268,19 @@ html.touch .ghost {
 
 
 .page > p a::after {
-	background-color: #3C92CF;
+	background-color: #666;
 }
 
 html {
-	background: #1a1a1a url('assets/electronics-header.jpg') no-repeat top center;
+	background: #1a1a1a url(fabrication/fabrication-header.jpg) no-repeat top center;
+}
+
+
+
+.page > p a::after {
+	background-color: #666;
+}
+
+html {
+	background: #1a1a1a url(fabrication/fabrication-header.jpg) no-repeat top center;
 }

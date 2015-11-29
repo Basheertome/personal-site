@@ -268,13 +268,9 @@ html.touch .ghost {
 
 
 .page > p a::after {
-	background-color: #896749;
+	background-color: #2242FF;
 }
 
 html {
-	background: #1a1a1a url('assets/bitsnbobs-header.jpg') no-repeat top center;
-}
-
-.top h2 {
-	text-transform: none !important;
+	background: #1a1a1a url(screen/screen-header.jpg) no-repeat top center;
 }

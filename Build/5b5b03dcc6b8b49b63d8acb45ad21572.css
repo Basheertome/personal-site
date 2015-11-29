@@ -272,7 +272,7 @@ html.touch .ghost {
 }
 
 html {
-	background: #1a1a1a url('assets/electronics-header.jpg') no-repeat top center;
+	background: #1a1a1a url(electronics/electronics-header.jpg) no-repeat top center;
 }
 
 
@@ -282,5 +282,5 @@ html {
 }
 
 html {
-	background: #1a1a1a url('assets/electronics-header.jpg') no-repeat top center;
+	background: #1a1a1a url(electronics/electronics-header.jpg) no-repeat top center;
 }

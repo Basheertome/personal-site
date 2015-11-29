@@ -272,7 +272,7 @@ html.touch .ghost {
 }
 
 html {
-	background: #1a1a1a url('assets/bitsnbobs-header.jpg') no-repeat top center;
+	background: #1a1a1a url(bitsnbobs/bitsnbobs-header.jpg) no-repeat top center;
 }
 
 .top h2 {
@@ -286,7 +286,7 @@ html {
 }
 
 html {
-	background: #1a1a1a url('assets/bitsnbobs-header.jpg') no-repeat top center;
+	background: #1a1a1a url(bitsnbobs/bitsnbobs-header.jpg) no-repeat top center;
 }
 
 .top h2 {
