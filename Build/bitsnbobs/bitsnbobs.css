@@ -3,7 +3,7 @@
 }
 
 html {
-	background: #1a1a1a url(bitsnbobs-header.jpg) no-repeat top center;
+	background: #1a1a1a url('assets/bitsnbobs-header.jpg') no-repeat top center;
 }
 
 .top h2 {
