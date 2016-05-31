@@ -14,58 +14,16 @@
 
 <!-- @include _nav _skilltop -->
 
-<div class="previous"><a href="/fuse/">&#8676;<span>previous</span></a></div>
+<div class="previous"><a href="/instinct/">&#8676;<span>previous</span></a></div>
 <div class="next"><a href="/screen/"><span>next</span>&#8677;</a></div>
 
 <div class="page">
 
-	<h4 class="center">Exoskin</h4>
-
-	<p>A collection of various motion pieces I made this fall while delving deeper into Cinema 4D and avoiding other, more important work.</p>
-
-	<br />
-
-<section><article>
-	<div class="video">
-		<div class="poster">
-			<div class="container"><div class="description">
-				<p class="title">Exoskin</p>
-				<p class="subtitle">Prototype footage and concept application renders</p>
-			</div></div>
-			<img src="exoskin-poster.jpg" alt="" />
-			<div class="play"></div>
-			<div class="timestamp">01:10</div>
-		</div>
-		<iframe src="http://player.vimeo.com/video/155493155?api=1&amp;player_id=exoskin&amp;color=3C92CF" id="exoskin" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-	</div>
-</article></section>
-
-	<br /><br />
-
-	<p>Responsive hardware interfaces seek to incorporate the lessons and design patterns we’ve discovered in the interactive digital world and bringing them back to the physical--from hover states to context sensitivity.</p>
-
-<section class="slides"><article>
-	<div class="slideshow-container"><ul class="slideshow">
-		<li><img src="exoskin-mold-1.jpg" alt="" /></li>
-		<li><img src="exoskin-mold-2.jpg" alt="" /></li>
-		<li><img src="exoskin-mold-3.jpg" alt="" /></li>
-	</ul></div>
-</article></section>
-
-	<p>Responsive hardware interfaces seek to incorporate the lessons and design patterns we’ve discovered in the interactive digital world and bringing them back to the physical--from hover states to context sensitivity.</p>
-
-<section class="slides"><article>
-	<div class="slideshow-container"><ul class="slideshow">
-		<li><img src="exoskin-proto-1.jpg" alt="" /></li>
-		<li><img src="exoskin-proto-2.jpg" alt="" /></li>
-	</ul></div>
-</article></section>
-
-	<br /><br />
-
 	<h4 class="center">Exowheel</h4>
 
-	<p>A quick project exploring how to take a circuit board I'd designed and soldered for the Instinct project and transforming the digital EDA file into a more sellable image</p>
+	<p>Exowheel &amp; Exoskin are the subject my masters thesis at the <a href="http://tangible.media.mit.edu/" target="_blank">Tangible Media Group</a> at the <a href="http://media.mit.edu/" target="_blank">MIT Media Lab</a>, which you can <a href="Exoskin-Basheer-Tome-MIT-2015.pdf" target="_blank">read in full here</a>. Exowheel is a pneumatically augmented automotive steering wheel for tactile feedback.</p>
+
+	<p>Traditional research into the area has relied on haptic feedback to create a tactile interface. Shape &amp; texture change have a greater ability to create more perceivable, understandable, and intuitive stimuli and I sought to use recent advancements in programmable material prototyping to harness this.</p>
 
 	<br />
 
@@ -73,18 +31,22 @@
 	<div class="video">
 		<div class="poster">
 			<div class="container"><div class="description">
-				<p class="title">Exoskin</p>
-				<p class="subtitle">Prototype footage and concept application renders</p>
+				<p class="title">Exowheel</p>
+				<p class="subtitle">pneumatically augmented tactile steering wheel</p>
 			</div></div>
-			<img src="exoskin-poster.jpg" alt="" />
+			<img src="exowheel-poster.jpg" alt="" />
 			<div class="play"></div>
-			<div class="timestamp">01:10</div>
+			<div class="timestamp">01:35</div>
 		</div>
-		<iframe src="http://player.vimeo.com/video/155493155?api=1&amp;player_id=exoskin&amp;color=3C92CF" id="exoskin" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<iframe src="http://player.vimeo.com/video/168393026?api=1&amp;player_id=exowheel&amp;color=3C92CF" id="exowheel" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	</div>
 </article></section>
 
 	<br /><br />
+
+	<p>By incorporating Exoskin (shown next), Exowheel is able to transform its surface dynamically to create a customized grip for each individual user, on-the-fly, as well as to adapt the grip during the drive, as the car moves from congested city driving to rougher rural roads.</p>
+
+	<br />
 
 <section class="slides"><article>
 	<div class="slideshow-container"><ul class="slideshow">
@@ -94,7 +56,9 @@
 	</ul></div>
 </article></section>
 
-	<p>Responsive hardware interfaces seek to incorporate the lessons and design patterns we’ve discovered in the interactive digital world and bringing them back to the physical--from hover states to context sensitivity.</p>
+	<p>For the final panelization design and modeling, I used Grasshopper for Rhino, so that changes made to the design were instantly propagated through all parts of the model, avoiding the need for repetitive redrawing with each iteration.</p>
+
+	<p>This specific script used an accurately measured torus as the initial input. It then: (1) subdivides those surfaces into triangular panels (2) extrudes them (3) finds the 3 equidistant points of each trianglular surface and extrudes a cynlider between the faces and (4) finally connects everything together.</p>
 
 <section class="slides"><article>
 	<div class="slideshow-container"><ul class="slideshow">
@@ -104,36 +68,13 @@
 	</ul></div>
 </article></section>
 
-	<h4 class="center">Responsive Hardware Interfaces</h4>
+	<p>However, I envisioned Exoskin as a greater, more versatile platform for texture change, rather than purely focused for the automotive market. Because of its conformability, offloadable locus of actuation, and its integrability, Exoskin can be used in situations spanning wearable, product, and even furniture. By integrating different sets of inelastic materials and adjusting the overall scale of the composite, we can specifically tune Exoskin for each intended context.</p>
 
-	<p>Responsive hardware interfaces seek to incorporate the lessons and design patterns we’ve discovered in the interactive digital world and bringing them back to the physical--from hover states to context sensitivity.</p>
+	<br />
 
-<section><article>
-	<img src="clutch.jpg" alt="Volume knob prototype" />
-</article></section>
+	<h4 class="center">Exoskin</h4>
 
-	<p>While traditionally a context shift in responsive design relies upon a change in the user’s device or screen size, there are much more impactful determinants of context such as the user’s locus of attention, their emotional state, and even their current kinesthetic relationship with the interface.</p>
-
-<section><article>
-	<div class="video">
-		<div class="poster">
-			<div class="container"><div class="description">
-				<p class="title">Clutch Knob</p>
-				<p class="subtitle">Gaze-aware volume knob for automotive use</p>
-			</div></div>
-			<img src="clutch-poster.jpg" alt="" />
-			<div class="play"></div>
-			<div class="timestamp">0:22</div>
-		</div>
-		<iframe src="http://player.vimeo.com/video/88671003?api=1&amp;player_id=clutch&amp;color=3C92CF" id="clutch" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-	</div>
-</article></section>
-
-	<br /><br />
-
-	<h4 class="center">Soft Composite Shape Changing Interfaces</h4>
-
-	<p>A quick project exploring how to take a circuit board I'd designed and soldered for the Instinct project and transforming the digital EDA file into a more sellable image</p>
+	<p>Exoskin, provides a way to embed a multitude of static, rigid materials into actuatable, elastic membranes, allowing the new semi-rigid composites to sense, react, and compute. It is comprised of three key layers: (1) rigid layer: external “skin” controlling the perceived, tactile, and material qualities of the final composite (2) elastic layer: underlying driver to actuate system (3) sensing layer: provides capacitive feedback loop to sense interaction &amp; deformation.</p>
 
 	<br />
 
@@ -141,20 +82,47 @@
 	<div class="video">
 		<div class="poster">
 			<div class="container"><div class="description">
-				<p class="title">Optielastic</p>
-				<p class="subtitle">Custom-built Processing visualizer with realtime haptic output</p>
+				<p class="title">Exoskin</p>
+				<p class="subtitle">Prototype footage and concept application renders</p>
 			</div></div>
-			<img src="optielastic-poster.jpg" alt="" />
+			<img src="exoskin-poster.jpg" alt="" />
 			<div class="play"></div>
-			<div class="timestamp">0:27</div>
+			<div class="timestamp">01:10</div>
 		</div>
-		<iframe src="http://player.vimeo.com/video/81084879?api=1&amp;player_id=optielastic&amp;color=3C92CF" id="optielastic" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<iframe src="http://player.vimeo.com/video/155493155?api=1&amp;player_id=exoskin&amp;color=3C92CF" id="exoskin" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	</div>
 </article></section>
 
 	<br /><br />
 
+	<p>By being able to better integrate these programmable membranes into more rigid materials, we significantly expand the design space and palette by enabling industrial designers, architects, and more to consider these material values when integrating shape &amp; texture-change into their products: functionality, aesthetic quality, and emotional quality.</p>
+
+<section class="slides"><article>
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="exoskin-mold-1.jpg" alt="" /></li>
+		<li><img src="exoskin-mold-2.jpg" alt="" /></li>
+		<li><img src="exoskin-mold-3.jpg" alt="" /></li>
+	</ul></div>
+</article></section>
+
+	<p>For the implementation of the test prototype samples created for Exoskin, I began with a variety of panelization methods for the rigid material layer, but quickly narrowed down to using a matched triangular mesh pattern for its aesthetic value, ease of fabrication, and to explore its light permeability control.</p>
+
+	<p>One interesting discovery found during this implementation process was anisotropy in the flexure deformation of the material using this triangular panelization method. Flexure in the Y axis caused the scales to group like diamonds while flexure in the Z axis caused them to group in rows.</p>
+
+<section class="slides"><article>
+	<div class="slideshow-container"><ul class="slideshow">
+		<li><img src="exoskin-proto-1.jpg" alt="" /></li>
+		<li><img src="exoskin-proto-2.jpg" alt="" /></li>
+	</ul></div>
+</article></section>
+
+	<p>Finally, I produced our last iteration that combined many of the actuation and sensing features I wanted to explore in a single prototype. Through parallel use of the <a href="http://f3-h.de/pneuduino/" target="_blank">Pneuduino</a> platform and an Arduino, I was able to actively and dynamically drive the actuation of the air bladder as well as an embedded led. These both then responded to active capacitive input from copper pads below. This combination helped show how the composite’s light permeability is changed through the actuation and resulting separation of the panels in the rigid layer.</p>
+
+	<br /><br />
+
 	<h4 class="center">uniMorph</h4>
+
+	<p>uniMorph is an enabling technology for rapid digital fabrication of customized thin-film shape-changing interfaces, developed primarily by my friend &amp; labmate <a href="http://f3-h.de/" target="_blank">Felix Heibeck</a>. In this project, I was the Robin to his Batman, providing design, film, and intellectual support.</p>
 
 <section><article>
 	<div class="video">
@@ -173,7 +141,7 @@
 
 	<br /><br />
 
-	<p>uniMorph is an enabling technology for rapid digital fabrication of customized thin-film shape-changing interfaces. By combining the thermoelectric characteristics of copper with the high thermal expansion rate of ultra-high molecular weight polyethylene, we are able to actuate the shape of flexible circuit composites directly. The shape-changing actuation is enabled by a temperature driven mechanism and reduces the complexity of fabrication for thin shape-changing interfaces.</p>
+	<p>By combining the thermoelectric characteristics of copper with the high thermal expansion rate of ultra-high molecular weight polyethylene, we are able to actuate the shape of flexible circuit composites directly. The shape-changing actuation is enabled by a temperature driven mechanism and reduces the complexity of fabrication for thin shape-changing interfaces.</p>
 
 <section><article>
 	<img src="unimorph-compilation.jpg" alt="uniMorph Compilation" />
@@ -182,6 +150,68 @@
 	<p>uniMorph composites can be actuated by either environmental temperature changes or active heating of embedded structures and can actuate in different shape-changing primitives. Different sensing techniques that leverage the existing copper structures can be seamlessly embedded into the uniMorph composite.</p>
 
 	<br /><br />
+
+	<h4 class="center">Responsive Hardware Interfaces</h4>
+
+	<p>Responsive hardware interfaces seek to incorporate the lessons and design patterns we’ve discovered in the interactive digital world and bringing them back to the physical--from hover states to context sensitivity.</p>
+
+<section><article>
+	<img src="clutch.jpg" alt="Volume knob prototype" />
+</article></section>
+
+	<p>While traditionally a context shift in responsive design relies upon a change in the user’s device or screen size, there are much more impactful determinants of context such as the user’s locus of attention, their emotional state, and even their current kinesthetic relationship with the interface.</p>
+
+	<p>Here, I've created a prototype that represents but an instance of this. The Clutch Knob senses gaze and adapts both a visual &amp; physical interface to match the acuity of the user depending on their direct or indirect attention.</p>
+
+	<br /><br />
+
+<section><article>
+	<div class="video">
+		<div class="poster">
+			<div class="container"><div class="description">
+				<p class="title">Clutch Knob</p>
+				<p class="subtitle">Gaze-aware volume knob for automotive use</p>
+			</div></div>
+			<img src="clutch-poster.jpg" alt="" />
+			<div class="play"></div>
+			<div class="timestamp">0:22</div>
+		</div>
+		<iframe src="http://player.vimeo.com/video/88671003?api=1&amp;player_id=clutch&amp;color=3C92CF" id="clutch" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	</div>
+</article></section>
+
+	<br />
+
+	<p>You could imagine using this type of interface augmentation in a car dashboard. The interface allows speediness, precision, and expertise when the driver is paying full attention to the interface: looking at the screen provides him with smaller, more fine-grain volume adjustments and the physical knob adjusts its tactile detents to be more dense to match. Looking away while using the same interface forces it to adjust to your lower level of precision &amp; attention by increasing font-size, removing complex UI elements, and physically increasing the detent spacing.</p>
+
+	<br /><br /><br />
+
+	<h4 class="center">Optielastic: Pneuxel</h4>
+
+	<p>I worked with many from our research group to develop a hybrid physical display method using optical fibers. By adding them, one can unify the input sensing and new visual output functionalities in one material, to create a dynamic texture display called Pneuxel.</p>
+
+	<br />
+
+<section><article>
+	<div class="video">
+		<div class="poster">
+			<div class="container"><div class="description">
+				<p class="title">Optielastic</p>
+				<p class="subtitle">Custom-built Processing visualizer with realtime haptic output</p>
+			</div></div>
+			<img src="optielastic-poster.jpg" alt="" />
+			<div class="play"></div>
+			<div class="timestamp">0:27</div>
+		</div>
+		<iframe src="http://player.vimeo.com/video/81084879?api=1&amp;player_id=optielastic&amp;color=3C92CF" id="optielastic" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	</div>
+</article></section>
+
+	<br />
+
+	<p>Pneuxel is made of five by five individually controllable cells that can light up through an optical waveguide composite. I created a Processing app that can import specially-designed animated GIFS, preview them in 3D in software, and play them back in realtime on the Pneuxel display.</p>
+
+	<br /><br /><br /><br />
 
 </div>
 
