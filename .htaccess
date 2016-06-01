@@ -2,3 +2,4 @@ Options -Indexes
 
 Redirect 301 /archive /bitsnbobs
 Redirect 301 /visualization /bitsnbobs
+Redirect 301 /fabrication /electronics
