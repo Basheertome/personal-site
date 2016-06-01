@@ -395,6 +395,10 @@ body > .header h1 a::after {
   .thumbnails li {
     margin: 0 auto 25px auto;
   }
+
+  .thumbnails a .thumbimage {
+    background-size: 5700px 101%;
+  }
 }
 
 @media (max-height: 400px) and (min-width: 675px) {
