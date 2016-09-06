@@ -1,5 +1,15 @@
 Options -Indexes
 
-Redirect 301 /archive /bitsnbobs
-Redirect 301 /visualization /bitsnbobs
-Redirect 301 /fabrication /electronics
+Redirect 301 /about /
+Redirect 301 /archive http://student.basheertome.com/bitsnbobs
+Redirect 301 /visualization http://student.basheertome.com/bitsnbobs
+Redirect 301 /fabrication http://student.basheertome.com/electronics
+Redirect 301 /hue http://student.basheertome.com/hue
+Redirect 301 /chroma http://student.basheertome.com/chroma
+Redirect 301 /instinct http://student.basheertome.com/instinct
+Redirect 301 /research http://student.basheertome.com/research
+Redirect 301 /screen http://student.basheertome.com/screen
+Redirect 301 /electronics http://student.basheertome.com/electronics
+Redirect 301 /bitsnbobs http://student.basheertome.com/bitsnbobs
+Redirect 301 /cardinal http://student.basheertome.com/cardinal
+Redirect 301 /fuse http://student.basheertome.com/fuse
