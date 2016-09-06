@@ -11,20 +11,39 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style type="text/css">html { background: #000; }</style>
 <link rel="shortcut icon" href="assets/favicon.ico" />
-<link rel="apple-touch-icon" href="assets/touch.png" />
 <link rel='stylesheet' href='includes/header.css'>
 <link rel='stylesheet' href='index.css'>
 <script src='assets/js/jquery.min.js'></script>
-	<link rel='stylesheet' href='includes/present-index.css'>
 	<script src='index.js'></script>
-<script src='assets/js/present.js'></script>
+<script src='assets/js/paper-full.min.js'></script>
+	<script type="text/paperscript" canvas="canvas">
+	    var path = new Path();
+	    path.strokeColor = 'rgba(255,255,255,.1)';
+
+	    if ($('html').hasClass('touch')) {
+	    	var windowWidth = document.documentElement.clientWidth;
+	    	var windowHeight = document.documentElement.clientHeight;
+
+	    	for (i=0; i<10; i++) {
+	    		var randomPoint = new Point(Math.round(Math.random() * windowWidth), Math.round(Math.random() * windowHeight));
+	    		path.add(randomPoint);
+	    	}
+
+	    	path.smooth('continuous');
+	    } else {
+		    function onMouseMove(event) {
+		        path.add(event.point);
+		        path.smooth('continuous');
+		    }
+		}
+	</script>
 </head>
 <body>
 
 <div class="header ghost"><div class="headcenter">
-	<h1><a href="/#projects">Basheer Tome</a></h1>
+	<h1><a href="/">Basheer Tome</a></h1>
 	<ul class="links">
-		<li><a href="/about/">about</a></li>
+		<li><a href="http://student.basheertome.com/">work</a></li>
 		<li><a href="/resume/">resume</a></li>
 		<li><script type="text/javascript">document.write("<n uers=\"znvygb:onfurre\100onfurregbzr\056pbz\" qngn-gbbygvc=\"rznvy\">".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));</script><noscript><a href="mailto:email@enablejavascript.com" title="email"></noscript>email</a></li>
 		<li><a href="http://www.twitter.com/basheertome" target="_blank">twitter</a></li>
@@ -32,63 +51,16 @@
 </div></div>
 
 <div class="intro">
-	<img class="firefly" src="assets/firefly.gif" alt="" />
-	<div class="bio"><h2>Hi, I'm Basheer. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer crafting physical connections between people and technology.</h2></div>
-	<img class="arrow" src="assets/arrow.gif" alt="" />
+	<div class="bio">
+		<h2>Hi, I'm <span>Basheer<div class="aboutimage"></div></span>. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer cozying up to a calm, warm future with cooking &amp; technology.</h2>
+		<div class="about">
+			<p>I use a blend of filmmaking tools, electronics prototyping, and form finding techniques in order to create new hardware interfaces that transform purely digital processes into analog methods of interaction.</p>
+			<p>More often than not, you'll find me pointing my <a href="http://click.basheertome.com/land/" target="_blank">camera</a> into light sources, blowtorching <a href="http://thatwasdelicious.com/" target="_blank">food</a>, hoarding <a href="http://dragdrop.co/" target="_blank">imagery</a>, or rewatching Lurpak <a href="https://www.youtube.com/watch?v=dIl3pfnB_VA" target="_blank">butter commercials</a>.</p>
+		</div>
+	</div>
 </div>
 
-<div class="wrapper"><div class="page">
-	<ul class="thumbnails">
-		<li><a href="/hue/">
-			<div class="thumbimage"></div>
-			<h4>Hue</h4>
-			<h5>Toasts your bread by color</h5>
-		</a>
-		<!-- <li><a href="/cardinal/">
-			<div class="thumbimage"></div>
-			<h4>Cardinal</h4>
-			<h5>Analog watch with a digital heart</h5>
-		</a> -->
-		<li><a href="/chroma/">
-			<div class="thumbimage"></div>
-			<h4>Chroma</h4>
-			<h5>Digital kitchen timer</h5>
-		</a>
-		<li><a href="/instinct/">
-			<div class="thumbimage"></div>
-			<h4>Instinct</h4>
-			<h5>Haptic, gps-infused handlebars</h5>
-		</a>
-		<li><a href="/research/">
-			<div class="thumbimage"></div>
-			<h4>Research</h4>
-			<h5>Work from the Media Lab</h5>
-		</a>
-		<li><a href="/screen/">
-			<div class="thumbimage"></div>
-			<h4>Screen</h4>
-			<h5>Pixel-based design and code</h5>
-		</a>
-		<li><a href="/electronics/">
-			<div class="thumbimage"></div>
-			<h4>Electronics</h4>
-			<h5>Dive into soldering and pcb design</h5>
-		</a>
-		<li><a href="http://click.basheertome.com/land/" target="_blank" class="photography">
-			<div class="thumbimage"></div>
-			<h4>Photography</h4>
-			<h5>Visual memories you might have had</h5>
-		</a>
-		<li><a href="/bitsnbobs/">
-			<div class="thumbimage"></div>
-			<h4>Bits n' Bobs</h4>
-			<h5>Short films and side projects</h5>
-		</a>
-	</ul>
-</div></div>
-
-<audio loop autoplay><source src="assets/loop.mp3"></audio>
-<div class="mute"></div>
+<canvas id="canvas" resize></canvas>
   
 <script src='assets/js/stats.js'></script>
 </body>

@@ -1,23 +1,23 @@
-@font-face {
-    font-family: 'karbonregularitalic';
-    src: url('assets/fonts/karbon-regularitalic-webfont.eot');
-    src: url('assets/fonts/karbon-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/fonts/karbon-regularitalic-webfont.woff') format('woff'),
-         url('assets/fonts/karbon-regularitalic-webfont.ttf') format('truetype'),
-         url('assets/fonts/karbon-regularitalic-webfont.svg#karbonregularitalic') format('svg');
-    font-weight: normal;
-    font-style: normal; }
-
 html {
   height: 100%;
+  background: #404040;
 }
 
 body {
-  background: #000;
+  overflow-x: hidden;
+  background: #404040;
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
   pointer-events: text;
+}
+
+body > .header a {
+  color: #bfbfbf;
+}
+
+body > .header h1 a::after {
+  background: rgba(119,119,119,1);
 }
 
 body > .header h1 a::after {
@@ -26,26 +26,62 @@ body > .header h1 a::after {
   transform: rotate(-1deg) scale(1,1);
 }
 
-.intro {
+body > .header h1 a:hover::after {
+  background: rgba(255,13,5,1);
+}
+
+canvas[resize] {
   position: fixed;
   display: table;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  text-align: center;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.intro {
+  position: absolute;
+  display: table;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 30px 50px;
+  text-align: left;
   opacity: 0;
+  color: #bfbfbf;
   overflow-x: hidden;
+  z-index: -1;
 }
 
 .bio {
   display: table-cell;
   vertical-align: middle;
+  position: relative;
+}
+
+.bio span {
+  position: relative;
+  color: #bfbfbf;
+}
+
+.bio span::after {
+  content: "";
+  position: absolute;
+  bottom: 2px; left: 1px;
+  width: 100%;
+  height: 1px;
+  background: #5a5a5a;
 }
 
 .bio a {
   position: relative;
-  color: #fff;
+  color: #bfbfbf;
   bottom: 0px;
   -webkit-transition: .1s linear bottom;
   -moz-transition: .1s linear bottom;
@@ -58,7 +94,7 @@ body > .header h1 a::after {
   bottom: 2px; left: 1px;
   width: 100%;
   height: 1px;
-  background: #222;
+  background: #5a5a5a;
   -webkit-transform-origin: left center;
   -webkit-transition: .075s linear all;
   -moz-transition: .075s linear all;
@@ -71,7 +107,7 @@ body > .header h1 a::after {
 
 .bio a:hover::after {
   height: 3px;
-  bottom: 4px;
+  bottom: 2px;
   background: rgba(255,13,5,1);
   -webkit-transform: rotate(-1deg);
   -moz-transform: rotate(-1deg);
@@ -85,181 +121,65 @@ body > .header h1 a::after {
 .intro h2 {
   position: relative;
   display: block;
-  max-width: 700px;
-  margin: 0 auto;
-  font-family:'karbonlight',Sans-Serif;
-  font-size: 45px;
-  line-height: 50px;
+  max-width: 500px;
+  margin: 0;
+  font-family: 'Metric-Light', sans-serif;
+  font-size: 32px;
+  line-height: 39px;
   text-align: left;
 }
 
-.firefly {
+.intro .about {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-family: 'Metric-Regular', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.intro .about p {
+  margin: 18px 0;
+  max-width: 460px;
+}
+
+.intro .about p:last-child {
+  margin-bottom: 0;
+  max-width: 550px;
+}
+
+.intro .about p a::after {
+  background: #999;
+}
+
+.intro .about p a:nth-of-type(1):hover::after {
+  background: rgba(69,198,91,1); }
+.intro .about p a:nth-of-type(2):hover::after {
+  background: rgba(255,11,89,1); }
+.intro .about p a:nth-of-type(3):hover::after {
+  background: rgba(255,228,50,1); }
+.intro .about p a:nth-of-type(4):hover::after {
+  background: rgba(0,73,215,1); }
+
+.aboutimage {
   position: absolute;
-  bottom: 50%;
-  right: 50%;
-  margin-right: -250px;
-  margin-bottom: -250px;
-  opacity: .75;
+  left: 100%;
+  top: calc(100% - 7px);
+  display: block;
+  background: transparent url('me.jpg') no-repeat left top;
+  background-position: 50%;
+  background-size: 1900% 100%;
+  width: 600px;
+  height: 340px;
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   pointer-events: none;
-}
-
-.arrow {
-  position: absolute;
-  bottom: 20%;
-  right: 50%;
-  margin-right: -18px;
-  width: 36px;
-  padding: 15px;
-  margin: 0 -33px -15px 0;
-  opacity: .25;
-  cursor: pointer;
-  -webkit-animation: notice 2s infinite alternate ease-in-out;
-  -moz-animation: notice 2s infinite alternate ease-in-out;
-  animation: notice 2s infinite alternate ease-in-out;
-  -webkit-transition: opacity .15s linear;
-  -moz-transition: opacity .15s linear;
-  transition: opacity .15s linear;
-}
-
-.arrow:hover {
-  opacity: 1;
-}
-
-@-webkit-keyframes notice {
-  0% {bottom: 20%;}
-  50% {bottom: calc(20% + 10px)}
-  100% {bottom: 20%}
-}
-@-moz-keyframes notice {
-  0% {bottom: 20%;}
-  50% {bottom: calc(20% + 10px)}
-  100% {bottom: 20%}
-}
-@keyframes notice {
-  0% {bottom: 20%;}
-  50% {bottom: calc(20% + 10px)}
-  100% {bottom: 20%}
-}
-
-.mute {
-  display: none;
-  position: fixed;
-  width: 48px;
-  height: 48px;
-  bottom: 10px;
-  left: 10px;
-  background-repeat: no-repeat;
-  background-image: url('assets/sound.png');
-  background-size: cover;
-  background-position: 0px 50%;
-  opacity: .5;
-  z-index: 99;
-  cursor: pointer;
-  -webkit-transition: .15s linear opacity;
-  -moz-transition: .15s linear opacity;
-  transition: .15s linear opacity;
-}
-
-.mute:hover {
-  opacity: 1;
-}
-
-.wrapper {
-  display: table;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  min-height: 100%;
-  background: #000;
-  box-shadow: 0 0 100px 100px #000;
-}
-
-.page {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.thumbnails a .thumbimage {
-  display: block;
-  width: 300px;
-  height: 169px;
-  background: transparent no-repeat left top;
-  background-position: -2400px;
-  background-size: 5700px 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.thumbnails a[href*='hue'] .thumbimage { background-image: url('assets/thumbs/hue.jpg'); }
-.thumbnails a[href*='cardinal'] .thumbimage { background-image: url('assets/thumbs/cardinal.jpg'); }
-.thumbnails a[href*='research'] .thumbimage { background-image: url('assets/thumbs/research.jpg'); }
-.thumbnails a[href*='chroma'] .thumbimage { background-image: url('assets/thumbs/chroma.jpg'); }
-.thumbnails a[href*='instinct'] .thumbimage { background-image: url('assets/thumbs/instinct.jpg'); }
-.thumbnails a[href*='fuse'] .thumbimage { background-image: url('assets/thumbs/fuse.jpg'); }
-.thumbnails a[href*='visualization'] .thumbimage { background-image: url('assets/thumbs/visualization.jpg'); }
-.thumbnails a[href*='fabrication'] .thumbimage { background-image: url('assets/thumbs/fabrication.jpg'); }
-.thumbnails a[href*='electronics'] .thumbimage { background-image: url('assets/thumbs/electronics.jpg'); }
-.thumbnails a[href*='screen'] .thumbimage { background-image: url('assets/thumbs/screen.jpg'); }
-.thumbnails a.photography .thumbimage { background-image: url('assets/thumbs/photography.jpg'); }
-.thumbnails a[href*='bitsnbobs'] .thumbimage { background-image: url('assets/thumbs/bitsnbobs.jpg'); }
-
-.thumbnails {
-  max-width: 950px;
-  margin: 0 auto;
-  padding-bottom: 4em;
-  text-align: center;
-}
-
-.thumbnails li {
-  display: inline-block;
-  width: 300px;
-  margin: 0 25px 25px 0;
-  text-align: center;
-}
-
-.thumbnails li:nth-child(3n) {
-  margin-right: 0;
-}
-
-.thumbnails h4 {
-  font-family:'karbonregular',Sans-Serif;
-  font-size: 26px;
-  color: #fff;
-  -webkit-transition: .1s linear text-shadow;
-  -moz-transition: .1s linear text-shadow;
-  transition: .1s linear text-shadow
-}
-
-.thumbnails h5 {
-  font-family:'karbonregularitalic',Sans-Serif;
-  font-size: 16px;
-  color: #fff;
-  opacity: .6;
-  -webkit-transition: .1s linear opacity, .1s linear text-shadow;
-  -moz-transition: .1s linear opacity, .1s linear text-shadow;
-  transition: .1s linear opacity, .1s linear text-shadow;
-}
-
-.thumbnails a:hover {
-  position: relative;
-  bottom: 1px;
-}
-
-.thumbnails a:hover h4 {
-  text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 50px #fff;
-}
-
-.thumbnails a:hover h5 {
-  opacity: .7;
-  text-shadow: 0 0 10px #fff, 0 0 30px #fff;
-}
-
-.thumbnails a:active {
-  position: relative;
-  bottom: -1px;
+  z-index: 100;
 }
 
 @media (min-width: 675px) {
@@ -269,113 +189,56 @@ body > .header h1 a::after {
   }
 }
 
-@media (max-width: 1000px) {
-  .thumbnails {
-    max-width: 625px;
-    padding-bottom: 3em;
-  }
-
-  .thumbnails li:nth-child(3n) {
-    margin-right: 25px;
-  }
-
-  .thumbnails li:nth-child(2n) {
-    margin-right: 0;
-  }
-}
-
 @media (max-width: 900px) {
-  .thumbnails {
-    margin: 0 auto;
-  }
-
-  .intro {
-    position: absolute;
-    opacity: 1 !important;
-    z-index: -1;
-  }
-
   .intro h2 {
-    font-size: 35px;
-    line-height: 40px;
-    max-width: 530px;
+    max-width: 400px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .intro .about {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .intro .about p {
+    margin: 18px 0;
+    max-width: 400px;
+  }
+
+  .intro .about p:last-child {
+    max-width: 460px;
   }
 
   .bio a:hover::after {
-    bottom: 3px;
+    bottom: 2px;
     background: rgba(255,13,5,1);
     -webkit-transform: rotate(-1deg);
     -moz-transform: rotate(-1deg);
     transform: rotate(-1deg);
   }
-
-  .firefly {
-    width: 400px;
-    margin-right: -200px;
-    margin-bottom: -200px;
-    border-radius: 200px;
-  }
 }
 
 @media (max-width: 675px) {
-  html, body {
-    overflow-x: hidden;
-  }
-  
   .intro {
-    clear: both;
-    position: relative;
+    position: static;
+    display: block;
     height: auto;
     padding-top: 15px;
-    z-index: inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   .bio {
     display: block;
     margin: 7em 0;
   }
+}
 
-  .bio a {
-    border-bottom: 1px solid #222;
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition: none;
-  }
-
-  .bio a::after {
-    display: none;
-  }
-
-  .bio a:hover {
-    bottom: 1px;
-    border-bottom: 1px solid #777;
-  }
-
-  .intro h2 {
-    width: 420px;
-  }
-
-  .arrow {
-    display: none;
-  }
-
-  .wrapper {
-    position: static;
-    margin-top: 120px;
-  }
-
-  .thumbnails {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .thumbnails li {
-    margin: 0 0 25px 0;
-    width: 100%;
-  }
-
-  .thumbnails img {
-    width: 100%;
+@media (max-width: 600px) {
+  .bio {
+    margin: 3em 0;
   }
 }
 
@@ -384,46 +247,33 @@ body > .header h1 a::after {
     overflow: hidden;
   }
 
-  .intro h2 {
-    width: 200px;
-  }
-
   .bio {
     margin: 0;
   }
-
-  .thumbnails li {
-    margin: 0 auto 25px auto;
-  }
-
-  .thumbnails a .thumbimage {
-    background-size: 5700px 101%;
-  }
 }
 
-@media (max-height: 400px) and (min-width: 675px) {
+@media (max-height: 500px) and (min-width: 675px) {
   .intro {
-    height: 400px;
-    z-index: -1;
-  }
-
-  .arrow {
-    display: none;
-  }
-
-  .wrapper {
-    top: 400px;
+    height: 440px;
   }
 }
 
-@media (max-height: 950px) {
-  .thumbnails {
-    padding-bottom: 3em;
-  }
+html.touch .aboutimage {
+  display: none;
 }
 
-@-moz-document url-prefix() {
-  .frame .intro, .navigation li a {
-    font-family:'karbonlight',Sans-Serif;
-  }
-}
+@font-face {
+  font-family: 'Metric-Regular';
+  src: url('assets/fonts/Metric-Regular.eot?#iefix') format('embedded-opentype'), url('assets/fonts/Metric-Regular.otf') format('opentype'), url('assets/fonts/Metric-Regular.woff') format('woff'), url('assets/fonts/Metric-Regular.ttf') format('truetype'), url('assets/fonts/Metric-Regular.svg#Metric-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Metric-Light';
+  src: url('assets/fonts/Metric-Light.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Metric-Light.otf') format('opentype'), url('assets/fonts/Metric-Light.woff') format('woff'), url('assets/fonts/Metric-Light.ttf') format('truetype'), url('assets/fonts/Metric-Light.svg#Metric-Light') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Metric-Medium';
+  src: url('assets/fonts/Metric-Medium.eot?#iefix') format('embedded-opentype'), url('assets/fonts/Metric-Medium.otf') format('opentype'), url('assets/fonts/Metric-Medium.woff') format('woff'), url('assets/fonts/Metric-Medium.ttf')  format('truetype'), url('assets/fonts/Metric-Medium.svg#Metric-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal; }

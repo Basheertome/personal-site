@@ -1,7 +1,0 @@
-.page > p a::after {
-	background-color: #666;
-}
-
-html {
-	background: #1a1a1a url('fabrication-header.jpg') no-repeat top center;
-}

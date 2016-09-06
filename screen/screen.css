@@ -1,7 +1,0 @@
-.page > p a::after {
-	background-color: #2242FF;
-}
-
-html {
-	background: #1a1a1a url('screen-header.jpg') no-repeat top center;
-}

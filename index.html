@@ -7,70 +7,43 @@
 <html lang="en">
 <head>
 	<!-- @include _header -->
-	<!-- @stylesheet present-index -->
-	<!-- @javascript $id present -->
+	<!-- @javascript $id paper-full.min -->
+	<script type="text/paperscript" canvas="canvas">
+	    var path = new Path();
+	    path.strokeColor = 'rgba(255,255,255,.1)';
+
+	    if ($('html').hasClass('touch')) {
+	    	var windowWidth = document.documentElement.clientWidth;
+	    	var windowHeight = document.documentElement.clientHeight;
+
+	    	for (i=0; i<10; i++) {
+	    		var randomPoint = new Point(Math.round(Math.random() * windowWidth), Math.round(Math.random() * windowHeight));
+	    		path.add(randomPoint);
+	    	}
+
+	    	path.smooth('continuous');
+	    } else {
+		    function onMouseMove(event) {
+		        path.add(event.point);
+		        path.smooth('continuous');
+		    }
+		}
+	</script>
 </head>
 <body>
 
 <!-- @include _nav -->
 
 <div class="intro">
-	<img class="firefly" src="assets/firefly.gif" alt="" />
-	<div class="bio"><h2>Hi, I'm Basheer. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer crafting physical connections between people and technology.</h2></div>
-	<img class="arrow" src="assets/arrow.gif" alt="" />
+	<div class="bio">
+		<h2>Hi, I'm <span>Basheer<div class="aboutimage"></div></span>. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer cozying up to a calm, warm future with cooking &amp; technology.</h2>
+		<div class="about">
+			<p>I use a blend of filmmaking tools, electronics prototyping, and form finding techniques in order to create new hardware interfaces that transform purely digital processes into analog methods of interaction.</p>
+			<p>More often than not, you'll find me pointing my <a href="http://click.basheertome.com/land/" target="_blank">camera</a> into light sources, blowtorching <a href="http://thatwasdelicious.com/" target="_blank">food</a>, hoarding <a href="http://dragdrop.co/" target="_blank">imagery</a>, or rewatching Lurpak <a href="https://www.youtube.com/watch?v=dIl3pfnB_VA" target="_blank">butter commercials</a>.</p>
+		</div>
+	</div>
 </div>
 
-<div class="wrapper"><div class="page">
-	<ul class="thumbnails">
-		<li><a href="/hue/">
-			<div class="thumbimage"></div>
-			<h4>Hue</h4>
-			<h5>Toasts your bread by color</h5>
-		</a>
-		<!-- <li><a href="/cardinal/">
-			<div class="thumbimage"></div>
-			<h4>Cardinal</h4>
-			<h5>Analog watch with a digital heart</h5>
-		</a> -->
-		<li><a href="/chroma/">
-			<div class="thumbimage"></div>
-			<h4>Chroma</h4>
-			<h5>Digital kitchen timer</h5>
-		</a>
-		<li><a href="/instinct/">
-			<div class="thumbimage"></div>
-			<h4>Instinct</h4>
-			<h5>Haptic, gps-infused handlebars</h5>
-		</a>
-		<li><a href="/research/">
-			<div class="thumbimage"></div>
-			<h4>Research</h4>
-			<h5>Work from the Media Lab</h5>
-		</a>
-		<li><a href="/screen/">
-			<div class="thumbimage"></div>
-			<h4>Screen</h4>
-			<h5>Pixel-based design and code</h5>
-		</a>
-		<li><a href="/electronics/">
-			<div class="thumbimage"></div>
-			<h4>Electronics</h4>
-			<h5>Dive into soldering and pcb design</h5>
-		</a>
-		<li><a href="http://click.basheertome.com/land/" target="_blank" class="photography">
-			<div class="thumbimage"></div>
-			<h4>Photography</h4>
-			<h5>Visual memories you might have had</h5>
-		</a>
-		<li><a href="/bitsnbobs/">
-			<div class="thumbimage"></div>
-			<h4>Bits n' Bobs</h4>
-			<h5>Short films and side projects</h5>
-		</a>
-	</ul>
-</div></div>
-
-<audio loop autoplay><source src="assets/loop.mp3"></audio>
-<div class="mute"></div>
+<canvas id="canvas" resize></canvas>
   
 <!-- @include _footer -->
