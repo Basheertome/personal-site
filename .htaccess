@@ -1,6 +1,6 @@
 Options -Indexes
 
-Redirect 301 /about /
+Redirect 301 /about http://basheertome.com
 Redirect 301 /archive http://student.basheertome.com/bitsnbobs
 Redirect 301 /visualization http://student.basheertome.com/bitsnbobs
 Redirect 301 /fabrication http://student.basheertome.com/electronics
