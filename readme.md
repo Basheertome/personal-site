@@ -1,4 +1,4 @@
 Portfolio
 =========
 
-The code for my portfolio site built with [Hammer](http://hammerformac.com/).
+The code for my personal site built with [Hammer](http://hammerformac.com/).
