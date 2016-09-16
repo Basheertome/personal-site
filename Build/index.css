@@ -149,6 +149,10 @@ canvas[resize] {
   max-width: 550px;
 }
 
+.intro .about p a {
+  display: inline-block;
+}
+
 .intro .about p a::after {
   background: #999;
 }
