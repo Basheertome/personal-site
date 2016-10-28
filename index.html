@@ -11,6 +11,10 @@
 	<script type="text/paperscript" canvas="canvas">
 	    var path = new Path();
 	    path.strokeColor = 'white';
+	    function onMouseMove(event) {
+	        path.add(event.point);
+	        path.smooth('continuous');
+	    }
 
 	    if ($('html').hasClass('touch')) {
 	    	var windowWidth = document.documentElement.clientWidth;
@@ -22,12 +26,7 @@
 	    	}
 
 	    	path.smooth('continuous');
-	    } else {
-		    function onMouseMove(event) {
-		        path.add(event.point);
-		        path.smooth('continuous');
-		    }
-		}
+	    }
 	</script>
 </head>
 <body>
