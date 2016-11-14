@@ -130,6 +130,22 @@ canvas[resize] {
   text-align: left;
 }
 
+.intro h2::after {
+  content: "▕";
+  display: inline-block;
+  position: relative;
+  left: -0.65em;
+  top: 0.1em;
+  color: #fff;
+  animation: blink 1.5s infinite;  
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .intro .about {
   position: relative;
   display: block;
