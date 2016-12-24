@@ -188,7 +188,7 @@ canvas[resize] {
   left: 100%;
   top: calc(100% - 7px);
   display: block;
-  background: transparent url('me.jpg') no-repeat left top;
+  background: transparent no-repeat left top;
   background-position: 50%;
   background-size: 1900% 100%;
   width: 600px;
