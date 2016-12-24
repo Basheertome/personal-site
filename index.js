@@ -39,6 +39,8 @@ $(document).ready(function(){
 		});
 	}
 
+	$('.aboutimage').css('background-image', 'url("assets/me.jpg")');
+
 });
 
 function mouseX(event, that) {
