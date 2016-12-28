@@ -34,13 +34,27 @@ body > .header .links li:nth-child(2) a::after {
   margin: 0 auto;
   padding: 50px;
   text-align: left;
-  overflow: auto;
+  overflow: visible;
 }
 
 .page .header {
   padding: .5em 0;
   margin-bottom: 2.75em;
   text-align: center;
+  position: relative;
+}
+
+.page .header img {
+  position: absolute;
+  top: -65px;
+  left: calc(50% - 245px);
+  width: 471px;
+  height: 235px;
+  opacity: 0.08;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .page ul {
@@ -323,7 +337,26 @@ body > .header .links li:nth-child(2) a::after {
     margin-bottom: .2em;
   }
 
+  .page .header img {
+    top: -15px;
+    left: calc(50% - 165px);
+    width: 305px;
+    height: 153px;
+  }
+
   .main .experience h4 strong {
     margin-bottom: -1.1em;
+  }
+
+  .rainbow {
+    background: none;
+    color: rgba(0,0,0,1) !important;
+    animation: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .page .header img {
+    top: 25px;
   }
 }
