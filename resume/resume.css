@@ -51,7 +51,7 @@ body > .header .links li:nth-child(2) a::after {
   margin-bottom: 0;
 }
 
-.page li span {
+.page li > span {
   display: inline-block;
   width: calc(100% - 135px);
 }
@@ -218,6 +218,35 @@ body > .header .links li:nth-child(2) a::after {
   line-height: 18px;
 }
 
+.rainbow {
+  display: inline;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #22f), color-stop(1, #2ff));
+  background-image: gradient(linear, left top, right top, color-stop(0, #22f), color-stop(1, #2ff));
+  background-size: 400% 100%;
+  color: rgba(0,0,0,.25) !important;
+  border-bottom: none !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation: rainbow 1s linear infinite;
+  animation: rainbow 1s linear infinite;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+@-webkit-keyframes rainbow { 
+  0% { background-position:0% 50% }
+  50% { background-position:100% 50% }
+  100% { background-position:0% 50% }
+}
+
+@keyframes rainbow { 
+  0% { background-position:0% 50% }
+  50% { background-position:100% 50% }
+  100% { background-position:0% 50% }
+}
+
 @media (max-width: 900px) {
   body {
     padding: 0 0 25px 0;
@@ -225,7 +254,7 @@ body > .header .links li:nth-child(2) a::after {
 }
 
 @media (max-width: 700px) {
-  .page li span {
+  .page li > span {
     display: block;
     width: 100%;
     max-width: 500px;
