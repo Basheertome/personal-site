@@ -5,6 +5,10 @@ ol,ul { list-style: none; }
 img {border: 0;}
 a {text-decoration: none;}
 
+html {
+  background: #fff;
+}
+
 body {
   background: #fff;
   color: #000;
