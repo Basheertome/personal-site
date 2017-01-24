@@ -109,6 +109,11 @@ body > .header .links li:nth-child(2) a::after {
   font-style: italic;
 }
 
+.speaking h4, .speaking h4 emphasis {
+  font-size: 18px;
+  line-height: 20px;
+}
+
 .page h5 {
   display: inline-block;
   vertical-align: top;
@@ -328,12 +333,7 @@ body > .header .links li:nth-child(2) a::after {
     line-height: 25px;
   }
 
-  .page h4 strong {
-    font-size: 21px;
-  }
-
   .page h4 emphasis {
-    font-size: 20px;
     margin-bottom: .2em;
   }
 
