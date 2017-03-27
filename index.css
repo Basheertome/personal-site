@@ -66,6 +66,11 @@ canvas[resize] {
   position: relative;
 }
 
+.bio-container {
+  display: inline-block;
+  text-align: left;
+}
+
 .bio span {
   position: relative;
   color: #bfbfbf;
@@ -201,6 +206,16 @@ canvas[resize] {
   user-select: none;
   pointer-events: none;
   z-index: 100;
+}
+
+@media (min-width: 1500px) {
+  .bio {
+    text-align: center;
+  }
+
+  .bio-container {
+    width: 1500px;
+  }
 }
 
 @media (min-width: 675px) {
