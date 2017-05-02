@@ -44,6 +44,7 @@ $(document).ready(function(){
 	$('#daydream').click(function(event) {
 		event.preventDefault();
 		$('.gallery').toggleClass('visible');
+		$('html, body').animate({scrollTop: "+=200"});
 	});
 
 });
