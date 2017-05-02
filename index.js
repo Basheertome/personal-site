@@ -38,13 +38,13 @@ $(document).ready(function(){
 			$('.aboutimage').css({'background-position': (hoverx * -1 * $('.aboutimage').width())});
 		});
 
-		$('#daydream').click(function(event) {
-			event.preventDefault();
-			$('.gallery').toggleClass('visible');
-		});
+		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
 
-	$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
+	$('#daydream').click(function(event) {
+		event.preventDefault();
+		$('.gallery').toggleClass('visible');
+	});
 
 });
 
