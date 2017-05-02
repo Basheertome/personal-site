@@ -4,12 +4,13 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   background: #404040;
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
   pointer-events: text;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 body > .header a {
@@ -30,25 +31,31 @@ body > .header h1 a:hover::after {
   background: rgba(255,13,5,1);
 }
 
-canvas[resize] {
-  position: fixed;
-  display: table;
+.canvas {
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  overflow-x: hidden;
   z-index: 9999;
-  opacity: .1;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   pointer-events: none;
 }
 
+canvas[resize] {
+  display: table;
+  width: 100%;
+  height: 100%;
+  opacity: .1;
+}
+
 .intro {
   position: absolute;
   display: table;
-  width: 100%;
+  width: calc(100% - 100px);
   height: 100%;
   top: 0;
   left: 0;
@@ -56,7 +63,6 @@ canvas[resize] {
   text-align: left;
   opacity: 0;
   color: #bfbfbf;
-  overflow-x: hidden;
   z-index: -1;
 }
 
@@ -64,16 +70,20 @@ canvas[resize] {
   display: table-cell;
   vertical-align: middle;
   position: relative;
+  white-space: nowrap;
 }
 
 .bio-container {
   display: inline-block;
   text-align: left;
+  white-space: normal;
+  vertical-align: middle;
 }
 
 .bio span {
   position: relative;
   color: #bfbfbf;
+  cursor: pointer;
 }
 
 .bio span::after {
@@ -179,6 +189,68 @@ canvas[resize] {
   background: #999;
 }
 
+#daydream {
+  color: #efefef;
+}
+
+.gallery {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 0 50px;
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 2s ease-in-out opacity;
+  -moz-transition: 2s ease-in-out opacity;
+  transition: 2s ease-in-out opacity;
+}
+
+.gallery.visible {
+  max-width: inherit;
+  max-height: inherit;
+  opacity: 1;
+  overflow: inherit;
+}
+
+.gallery img {
+  max-height: 300px;
+  margin-right: 20px;
+  box-shadow: 10px 10px rgba(0,0,0,.1);
+  -webkit-transition: .1s ease-in-out -webkit-transform;
+  -moz-transition: .1s ease-in-out -moz-transform;
+  transition: .1s ease-in-out transform;
+}
+
+.gallery img:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+  box-shadow: 0 20px 20px 10px rgba(0,0,0,.2);
+  z-index: 1000;
+}
+
+.gallery img:last-child {
+  margin-right: 0px;
+}
+
+::-webkit-scrollbar {width: 4px; height: 4px;}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 4px rgba(80,80,80,1);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: rgba(255,255,255,1);}
+::-webkit-scrollbar-corner {
+    background-color: transparent;}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;}
+
 .intro .about p a:nth-of-type(1):hover::after {
   background: rgba(69,198,91,1); }
 .intro .about p a:nth-of-type(2):hover::after {
@@ -199,6 +271,7 @@ canvas[resize] {
   width: 600px;
   height: 340px;
   opacity: 0;
+  box-shadow: 0 20px 20px 10px rgba(0,0,0,.2);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-user-select: none;
@@ -208,13 +281,9 @@ canvas[resize] {
   z-index: 100;
 }
 
-@media (min-width: 1500px) {
+@media (max-height: 500px) and (min-width: 675px) {
   .bio {
-    text-align: center;
-  }
-
-  .bio-container {
-    width: 1500px;
+    height: 440px;
   }
 }
 
@@ -222,6 +291,58 @@ canvas[resize] {
   html.touch .intro {
     position: absolute;
     opacity: 1 !important;
+  }
+}
+
+@media (max-width: 675px), (max-height: 500px) {
+  .intro {
+    position: static;
+    display: block;
+    height: auto;
+    width: 100%;
+    padding-top: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .bio {
+    display: block;
+  }
+
+  .gallery {
+    display: block;
+    white-space: normal;
+    margin: 30px 0 0 0;
+    text-align: center;
+  }
+
+  .gallery img {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-height: inherit;
+  }
+
+  .gallery img:last-child {
+    margin-bottom: 0px;
+  }
+
+  .gallery img:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+    z-index: inherit;
+  }
+}
+
+@media (min-width: 1500px) {
+  .bio {
+    text-align: center;
+  }
+
+  .bio-container {
+    width: 1500px;
   }
 }
 
@@ -255,20 +376,14 @@ canvas[resize] {
   }
 }
 
-@media (max-width: 675px) {
-  .intro {
-    position: static;
-    display: block;
-    height: auto;
-    padding-top: 15px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+@media (max-width: 750px) {
+  .aboutimage,
+  .bio span::after {
+    display: none;
   }
 
-  .bio {
-    display: block;
-    margin: 7em 0;
+  .bio span {
+    cursor: inherit;
   }
 }
 
@@ -285,12 +400,6 @@ canvas[resize] {
 
   .bio {
     margin: 0;
-  }
-}
-
-@media (max-height: 500px) and (min-width: 675px) {
-  .intro {
-    height: 440px;
   }
 }
 

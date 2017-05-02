@@ -37,9 +37,14 @@ $(document).ready(function(){
 		$(window).resize(function(event) { 
 			$('.aboutimage').css({'background-position': (hoverx * -1 * $('.aboutimage').width())});
 		});
+
+		$('#daydream').click(function(event) {
+			event.preventDefault();
+			$('.gallery').toggleClass('visible');
+		});
 	}
 
-	$('.aboutimage').css('background-image', 'url("assets/me.jpg")');
+	$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 
 });
 

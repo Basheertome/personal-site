@@ -11,28 +11,26 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style type="text/css">html { background: #404040; }</style>
 <link rel="shortcut icon" href="assets/favicon.ico" />
-<link rel='stylesheet' href='assets/4c711a93436b6f94b2a558b190f9fc6c.css'>
+<link rel='stylesheet' href='assets/508566bb2258c6e0afc6922ed009787e.css'>
 <script src='assets/f1184e572762ce0de60f686a41230cae.js'></script>
-	<script src='assets/c6d5ba76085695ae6fae0befc7dfd8a7.js'></script>
+	<script src='assets/2c680ef0d5313bc3e0914e4c417b7177.js'></script>
 	<script type="text/paperscript" canvas="canvas">
 	    var path = new Path();
 	    path.strokeColor = 'white';
+
+	    var windowWidth = document.documentElement.clientWidth;
+	    var windowHeight = document.documentElement.clientHeight;
+
+	    for (i=0; i<10; i++) {
+	    	var randomPoint = new Point(Math.round(Math.random() * windowWidth), Math.round(Math.random() * windowHeight));
+	    	path.add(randomPoint);
+	    }
+
 	    function onMouseMove(event) {
 	        path.add(event.point);
-	        path.smooth('continuous');
 	    }
 
-	    if ($('html').hasClass('touch')) {
-	    	var windowWidth = document.documentElement.clientWidth;
-	    	var windowHeight = document.documentElement.clientHeight;
-
-	    	for (i=0; i<10; i++) {
-	    		var randomPoint = new Point(Math.round(Math.random() * windowWidth), Math.round(Math.random() * windowHeight));
-	    		path.add(randomPoint);
-	    	}
-
-	    	path.smooth('continuous');
-	    }
+	    path.smooth('continuous');
 	</script>
 </head>
 <body>
@@ -48,16 +46,28 @@
 </div></div>
 
 <div class="intro">
-	<div class="bio"><div class="bio-container">
-		<h2>Hi, I'm <span>Basheer<div class="aboutimage"></div></span>. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer cozying up to a calm, warm future with cooking &amp; technology.</h2>
-		<div class="about">
-			<p>I use a blend of filmmaking tools, electronics prototyping, and form finding techniques in order to create new hardware interfaces that transform purely digital processes into analog methods of interaction.</p>
-			<p>More often than not, you'll find me pointing my <a href="http://click.basheertome.com/" target="_blank">camera</a> into light sources, blowtorching <a href="http://click.basheertome.com/food/" target="_blank">food</a>, hoarding <a href="http://dragdrop.co/" target="_blank">imagery</a>, or rewatching Lurpak <a href="https://www.youtube.com/watch?v=dIl3pfnB_VA" target="_blank">butter commercials</a>.</p>
+	<div class="bio">
+		<div class="bio-container">
+			<h2>Hi, I'm <span>Basheer<div class="aboutimage"></div></span>. I'm a <a href="http://en.wikipedia.org/wiki/Hardware_Interface_Design" target="_blank">hardware interface</a> designer cozying up to a calm, warm future with cooking &amp; technology.</h2>
+			<div class="about">
+				<p>I use a blend of filmmaking tools, electronics prototyping, and form finding techniques in order to create new hardware interfaces that transform purely digital processes into analog methods of interaction.</p>
+				<p>I'm currently at Google where I've been the design lead on the <a href="#" id="daydream">Daydream Controller</a>, shepherding it from sketch to production.</p>
+				<p>More often than not, you'll find me pointing my <a href="http://click.basheertome.com/" target="_blank">camera</a> into light sources, blowtorching <a href="http://click.basheertome.com/food/" target="_blank">food</a>, hoarding <a href="http://dragdrop.co/" target="_blank">imagery</a>, or rewatching Lurpak <a href="https://www.youtube.com/watch?v=dIl3pfnB_VA" target="_blank">butter commercials</a>.</p>
+			</div>
 		</div>
-	</div></div>
+		<div class="gallery">
+			<img src="assets/images/daydream-1.jpg" />
+			<img src="assets/images/daydream-2.jpg" />
+			<img src="assets/images/daydream-3.jpg" />
+			<img src="assets/images/daydream-4.jpg" />
+			<img src="assets/images/daydream-5.jpg" />
+			<img src="assets/images/daydream-6.jpg" />
+			<img src="assets/images/daydream-7.jpg" />
+		</div>
+	</div>
 </div>
 
-<canvas id="canvas" resize></canvas>
+<div class="canvas"><canvas id="canvas" resize></canvas></div>
   
 <script src='assets/24ed13af4e8edb911393208405189926.js'></script>
 </body>
