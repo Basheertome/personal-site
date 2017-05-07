@@ -41,13 +41,21 @@ $(document).ready(function(){
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
 
+	if (window.location.hash.split('#')[1] == 'daydream') {
+		toggleDaydream()
+	}
+
 	$('#daydream').click(function(event) {
 		event.preventDefault();
-		$('.gallery').toggleClass('visible');
-		$('html, body').animate({scrollTop: "+=200"});
+		toggleDaydream();
 	});
 
 });
+
+function toggleDaydream() {
+	$('.gallery').toggleClass('visible');
+	$('html, body').animate({scrollTop: "+=200"});
+}
 
 function mouseX(event, that) {
 	return (Math.floor((event.pageX - that.offset().left) / that.width() * 18)) - 1;
