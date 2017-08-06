@@ -281,7 +281,7 @@ canvas[resize] {
   z-index: 100;
 }
 
-@media (max-height: 500px) and (min-width: 675px) {
+@media (max-height: 600px) and (min-width: 675px) {
   .bio {
     height: 440px;
   }
@@ -294,7 +294,13 @@ canvas[resize] {
   }
 }
 
-@media (max-width: 675px), (max-height: 500px) {
+@media (max-width: 900px), (max-height: 600px) {
+  body > .header {
+    position: static;
+  }
+}
+
+@media (max-width: 675px), (max-height: 600px) {
   .intro {
     position: static;
     display: block;
