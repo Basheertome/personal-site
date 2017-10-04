@@ -53,7 +53,7 @@ $(document).ready(function(){
 });
 
 function toggleDaydream() {
-	$('.gallery').toggleClass('visible');
+	$('body').toggleClass('gvisible');
 	$('html, body').animate({scrollTop: "+=200"});
 }
 

@@ -194,10 +194,10 @@ canvas[resize] {
 }
 
 .gallery {
-  display: inline-block;
+  display: block;
   vertical-align: middle;
-  white-space: nowrap;
-  margin: 0 50px;
+  white-space: normal;
+  margin: 30px 0 0 0;
   opacity: 0;
   max-width: 0;
   max-height: 0;
@@ -207,7 +207,22 @@ canvas[resize] {
   transition: 2s ease-in-out opacity;
 }
 
-.gallery.visible {
+body.gvisible .intro {
+  position: static;
+  display: block;
+  height: auto;
+  width: 100%;
+  padding-top: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.gvisible > .header {
+  position: static;
+}
+
+body.gvisible .gallery {
   max-width: inherit;
   max-height: inherit;
   opacity: 1;
@@ -215,24 +230,14 @@ canvas[resize] {
 }
 
 .gallery img {
-  max-height: 300px;
-  margin-right: 20px;
-  box-shadow: 10px 10px rgba(0,0,0,.1);
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 0 20px 0;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
   -webkit-transition: .1s ease-in-out -webkit-transform;
   -moz-transition: .1s ease-in-out -moz-transform;
   transition: .1s ease-in-out transform;
-}
-
-.gallery img:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  transform: scale(1.1);
-  box-shadow: 0 20px 20px 10px rgba(0,0,0,.2);
-  z-index: 1000;
-}
-
-.gallery img:last-child {
-  margin-right: 0px;
 }
 
 ::-webkit-scrollbar {width: 4px; height: 4px;}
@@ -282,6 +287,9 @@ canvas[resize] {
 }
 
 @media (max-height: 500px) and (min-width: 675px) {
+  body.gvisible .bio {
+    height: 440px;
+  }
   .bio {
     height: 440px;
   }
@@ -309,40 +317,21 @@ canvas[resize] {
   .bio {
     display: block;
   }
-
-  .gallery {
-    display: block;
-    white-space: normal;
-    margin: 30px 0 0 0;
-    text-align: center;
-  }
-
-  .gallery img {
-    margin-right: 0px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-height: inherit;
-  }
-
-  .gallery img:last-child {
-    margin-bottom: 0px;
-  }
-
-  .gallery img:hover {
-    -webkit-transform: none;
-    -moz-transform: none;
-    transform: none;
-    z-index: inherit;
-  }
 }
 
 @media (min-width: 1500px) {
-  .bio {
-    text-align: center;
-  }
-
   .bio-container {
-    width: 1500px;
+    width: 1400px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .gallery img {
+    display: inline;
+    margin: 0;
+  }
+  .gallery {
+    margin-bottom: 20px;
   }
 }
 
