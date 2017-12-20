@@ -173,12 +173,11 @@ canvas[resize] {
 
 .intro .about p {
   margin: 18px 0;
-  max-width: 460px;
+  max-width: 480px;
 }
 
 .intro .about p:last-child {
   margin-bottom: 0;
-  max-width: 550px;
 }
 
 .intro .about p a {
@@ -189,7 +188,8 @@ canvas[resize] {
   background: #999;
 }
 
-#daydream {
+#daydream,
+#c100 {
   color: #efefef;
 }
 
@@ -353,7 +353,7 @@ body.gvisible .gallery {
   }
 
   .intro .about p:last-child {
-    max-width: 460px;
+    max-width: 420px;
   }
 
   .bio a:hover::after {
