@@ -83,7 +83,6 @@ canvas[resize] {
 .bio span {
   position: relative;
   color: #bfbfbf;
-  cursor: pointer;
 }
 
 .bio span::after {
@@ -92,7 +91,7 @@ canvas[resize] {
   bottom: 2px; left: 1px;
   width: 100%;
   height: 1px;
-  background: #5a5a5a;
+  background: #717171;
 }
 
 .bio a {
@@ -110,7 +109,7 @@ canvas[resize] {
   bottom: 2px; left: 1px;
   width: 100%;
   height: 1px;
-  background: #5a5a5a;
+  background: #717171;
   -webkit-transform-origin: left center;
   -webkit-transition: .075s linear all;
   -moz-transition: .075s linear all;
@@ -128,6 +127,10 @@ canvas[resize] {
   -webkit-transform: rotate(-1deg);
   -moz-transform: rotate(-1deg);
   transform: rotate(-1deg);
+}
+
+.bio a:nth-of-type(2):hover::after {
+  background: rgba(255,228,50,1);
 }
 
 .bio a:active {
@@ -263,6 +266,14 @@ body.gvisible .gallery {
 .intro .about p a:nth-of-type(3):hover::after {
   background: rgba(255,228,50,1); }
 .intro .about p a:nth-of-type(4):hover::after {
+  background: rgba(0,73,215,1); }
+.intro .about p a:nth-of-type(5):hover::after {
+  background: rgba(69,198,91,1); }
+.intro .about p a:nth-of-type(6):hover::after {
+  background: rgba(255,11,89,1); }
+.intro .about p a:nth-of-type(7):hover::after {
+  background: rgba(255,228,50,1); }
+.intro .about p a:nth-of-type(8):hover::after {
   background: rgba(0,73,215,1); }
 
 .aboutimage {

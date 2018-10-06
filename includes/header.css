@@ -217,11 +217,7 @@ html.touch .ghost {
   }
 
   body > .header h1 {
-    margin-bottom: 1em;
-  }
-
-  body > .header .links {
-    padding-bottom: 20px;
+    margin-bottom: 1.2em;
   }
 }
 
@@ -241,17 +237,13 @@ html.touch .ghost {
     margin-bottom: .5em;
   }
 
-  body > .header li:nth-child(2n-1) {
+  body > .header li {
     text-align: left;
-    margin-right: 3em;
-  }
-  body > .header li:nth-child(2n) {
-    text-align: right;
+    margin-right: 2.25em;
   }
 
-  body > .header li:nth-child(2n)::after {
-    content:"\a";
-    white-space: pre;
+  body > .header li:last-child {
+    margin-right: 0;
   }
 }
 
