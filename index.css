@@ -88,7 +88,7 @@ canvas[resize] {
 .bio span::after {
   content: "";
   position: absolute;
-  bottom: 2px; left: 1px;
+  bottom: 5px; left: 1px;
   width: 100%;
   height: 1px;
   background: #717171;
@@ -106,7 +106,7 @@ canvas[resize] {
 .bio a::after {
   content: "";
   position: absolute;
-  bottom: 2px; left: 1px;
+  bottom: 5px; left: 1px;
   width: 100%;
   height: 1px;
   background: #717171;
@@ -170,7 +170,7 @@ canvas[resize] {
   margin: 0;
   font-family: 'Metric-Regular', sans-serif;
   font-size: 17px;
-  line-height: 20px;
+  line-height: 22px;
   text-align: left;
 }
 
@@ -355,7 +355,7 @@ body.gvisible .gallery {
 
   .intro .about {
     font-size: 15px;
-    line-height: 18px;
+    line-height: 20px;
   }
 
   .intro .about p {
