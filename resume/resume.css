@@ -36,7 +36,7 @@ body > .header a {
 
 .page .header {
   padding: .5em 0;
-  margin-bottom: 2.75em;
+  margin: 2.75em 0;
   text-align: center;
   position: relative;
 }
@@ -310,7 +310,7 @@ body > .header a {
   }
 
   .page .header img {
-    top: -15px;
+    top: -30px;
     left: calc(50% - 165px);
     width: 305px;
     height: 153px;
@@ -322,9 +322,38 @@ body > .header a {
 }
 
 @media (max-width: 500px) {
-  .page .header img {
-    top: 25px;
-  }
+	.page .header {
+		margin: 4em 0 0 0;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html, body, .page {
+		background: #404040;
+	}
+
+  	body > .header a,
+  	.page h1,
+  	.page h5,
+  	.main span > p,
+  	.page li span h5 {
+  		color: #bfbfbf;
+  	}
+
+  	.main h4 a,
+  	.page h4 strong,
+  	.page h4 emphasis,
+  	.main a {
+  		color: #fff;
+  	}
+
+  	.page .header img {
+  		opacity: 0.20;
+  	}
+
+  	.main a {
+  		border-bottom: 1px solid rgba(255,255,255,.25);
+  	}
 }
 
 @font-face {
