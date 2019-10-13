@@ -191,8 +191,8 @@ canvas[resize] {
   background: #999;
 }
 
-#daydream,
-#c100 {
+
+.intro .about p:nth-child(2) a {
   color: #efefef;
 }
 
