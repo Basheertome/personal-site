@@ -50,10 +50,46 @@ $(document).ready(function(){
 		toggleDaydream();
 	});
 
+	if (window.location.hash.split('#')[1] == 'pixelbuds') {
+		togglePixelbuds()
+	}
+
+	$('#pixelbuds').click(function(event) {
+		event.preventDefault();
+		togglePixelbuds();
+	});
+
 });
 
 function toggleDaydream() {
-	$('body').toggleClass('gvisible');
+	var daydreamState = !$('.daydream').is(':hidden');
+
+	$('.gallery div').each(function(i){
+		$(this).hide();
+	});
+
+	if (daydreamState) {
+		$('body').removeClass('gvisible');
+	} else {
+		$('.daydream').css("display","block");
+		$('body').addClass('gvisible');
+	}
+	$('html, body').animate({scrollTop: "+=200"});
+}
+
+function togglePixelbuds() {
+	var pixelbudsState = !$('.pixelbuds').is(':hidden');
+
+	$('.gallery div').each(function(i){
+		$(this).hide();
+	});
+
+	if (pixelbudsState) {
+		$('body').removeClass('gvisible');
+	} else {
+		$('.pixelbuds').css("display","block");
+		$('body').addClass('gvisible');
+	}
 	$('html, body').animate({scrollTop: "+=200"});
 }
 
