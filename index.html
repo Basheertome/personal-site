@@ -1,13 +1,21 @@
-<!-- $id index -->
-<!-- $title Basheer Tome | Hardware Interface Designer -->
-<!-- $description I'm a hybrid industrial & interaction designer with a focus on making products beautifully designed even after the first button press. -->
-<!-- $keywords interaction, industrial, design, user experience, basheer, tome, san, francisco, california -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- @include _header -->
-	<!-- @javascript $id paper-full.min -->
+	<title>Basheer Tome | Hardware Interface Designer</title>
+	<meta name="description" content="I'm a hybrid industrial & interaction designer with a focus on making products beautifully designed even after the first button press." />
+	<meta name="keywords" content="interaction, industrial, design, user experience, basheer, tome, san, francisco, california" />
+	<meta name="apple-mobile-web-app-title" content="Basheer Tome">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /> 
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<style type="text/css">html { background: #404040; }</style>
+	<link rel="shortcut icon" href="assets/favicon.ico" />
+	<link rel='stylesheet' href='header.css'>
+	<link rel='stylesheet' href='index.css'>
+	<script src='assets/js/jquery.min.js'></script>
+	<script src='index.js'></script>
+	<script src='assets/js/paper-full.min.js'></script>
 	<script type="text/paperscript" canvas="canvas">
 	    var path = new Path();
 	    path.strokeColor = 'white';
@@ -28,9 +36,15 @@
 	</script>
 </head>
 <body>
-
-<!-- @include _nav -->
-
+<div class="header ghost"><div class="headcenter">
+	<h1><a href="/">Basheer Tome</a></h1>
+	<ul class="links">
+		<li><a href="https://c100.co/" target="_blank">c100</a></li>
+		<li><a href="https://walnut.co/" target="_blank">walnut</a></li>
+		<li><script type="text/javascript">document.write("<n uers=\"znvygb:onfurre\100onfurre\056pb\" qngn-gbbygvc=\"rznvy\">".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));</script><noscript><a href="mailto:email@enablejavascript.com" title="email"></noscript>Email</a></li>
+		<li><a href="https://www.twitter.com/basheertome" target="_blank">twitter</a></li>
+	</ul>
+</div></div>
 <div class="intro">
 	<div class="bio">
 		<div class="bio-container">
@@ -67,7 +81,7 @@
 		</div>
 	</div>
 </div>
-
 <div class="canvas"><canvas id="canvas" resize></canvas></div>
-  
-<!-- @include _footer -->
+<script src='assets/js/stats.js'></script>
+</body>
+</html>
