@@ -17,14 +17,6 @@ body {
 	font-family: "Myriad Pro", sans-serif;
 }
 
-body > .header {
-  text-align: left;
-}
-
-body > .header a {
-  color: #444;
-}
-
 .page {
   background: #fff;
   max-width: 635px;
@@ -73,6 +65,10 @@ body > .header a {
   font-weight: 300;
   line-height: 45px;
   margin-left: -2px;
+}
+
+.page h1 a {
+  color: #222;
 }
 
 .page h2 {
@@ -329,11 +325,11 @@ body > .header a {
 
 @media (prefers-color-scheme: dark) {
 	html, body, .page {
-		background: #404040;
+		background: #101010;
 	}
 
   	body > .header a,
-  	.page h1,
+  	.page h1 a,
   	.page h5,
   	.main span > p,
   	.page li span h5 {
@@ -348,7 +344,8 @@ body > .header a {
   	}
 
   	.page .header img {
-  		opacity: 0.20;
+  		opacity: 0.07;
+      filter: invert();
   	}
 
   	.main a {

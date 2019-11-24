@@ -1,34 +1,16 @@
 html {
   height: 100%;
-  background: #404040;
+  background: #101010;
 }
 
 body {
-  background: #404040;
+  background: #101010;
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
   pointer-events: text;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-body > .header a {
-  color: #bfbfbf;
-}
-
-body > .header h1 a::after {
-  background: rgba(119,119,119,1);
-}
-
-body > .header h1 a::after {
-  -webkit-transform: rotate(-1deg) scale(1,1);
-  -moz-transform: rotate(-1deg) scale(1,1);
-  transform: rotate(-1deg) scale(1,1);
-}
-
-body > .header h1 a:hover::after {
-  background: rgba(255,13,5,1);
 }
 
 .canvas {
@@ -71,6 +53,7 @@ canvas[resize] {
   vertical-align: middle;
   position: relative;
   white-space: nowrap;
+  text-align: center;
 }
 
 .bio-container {
@@ -210,19 +193,20 @@ canvas[resize] {
   transition: 2s ease-in-out opacity;
 }
 
+body.gvisible .bio {
+  display: block;
+  width: 100%;
+}
+
 body.gvisible .intro {
   position: static;
   display: block;
   height: auto;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 70px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-body.gvisible > .header {
-  position: static;
 }
 
 body.gvisible .gallery {
@@ -230,13 +214,14 @@ body.gvisible .gallery {
   max-height: inherit;
   opacity: 1;
   overflow: inherit;
+  margin-top: 50px;
 }
 
 .gallery img {
   display: block;
   width: 100%;
   max-width: 800px;
-  margin: 0 0 20px 0;
+  margin: 0 auto 20px auto;
   box-shadow: 5px 5px 5px rgba(0,0,0,.1);
   -webkit-transition: .1s ease-in-out -webkit-transform;
   -moz-transition: .1s ease-in-out -moz-transform;
@@ -246,6 +231,7 @@ body.gvisible .gallery {
 .daydream,
 .pixelbuds {
   display: none;
+  min-width: 100%;
 }
 
 ::-webkit-scrollbar {width: 4px; height: 4px;}
@@ -324,7 +310,7 @@ body.gvisible .gallery {
     display: block;
     height: auto;
     width: 100%;
-    padding-top: 15px;
+    padding-top: 70px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -379,9 +365,7 @@ body.gvisible .gallery {
     -moz-transform: rotate(-1deg);
     transform: rotate(-1deg);
   }
-}
 
-@media (max-width: 750px) {
   .aboutimage,
   .bio span::after {
     display: none;
