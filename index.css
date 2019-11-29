@@ -321,22 +321,6 @@ body.gvisible .gallery {
   }
 }
 
-@media (min-width: 1500px) {
-  .bio-container {
-    width: 1400px;
-  }
-}
-
-@media (min-width: 1750px) {
-  .gallery img {
-    display: inline;
-    margin: 0;
-  }
-  .gallery {
-    margin-bottom: 20px;
-  }
-}
-
 @media (max-width: 900px) {
   .intro h2 {
     max-width: 400px;
