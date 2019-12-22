@@ -65,7 +65,7 @@ canvas[resize] {
 
 .bio span {
   position: relative;
-  color: #bfbfbf;
+  color: #fff;
 }
 
 .bio span::after {
@@ -79,7 +79,7 @@ canvas[resize] {
 
 .bio a {
   position: relative;
-  color: #bfbfbf;
+  color: #fff;
   bottom: 0px;
   -webkit-transition: .1s linear bottom;
   -moz-transition: .1s linear bottom;
@@ -137,7 +137,6 @@ canvas[resize] {
   position: relative;
   left: -0.65em;
   top: 0.1em;
-  color: #fff;
   animation: blink 1.5s infinite;  
 }
 
@@ -172,11 +171,6 @@ canvas[resize] {
 
 .intro .about p a::after {
   background: #999;
-}
-
-
-.intro .about p:nth-child(2) a {
-  color: #efefef;
 }
 
 .gallery {
