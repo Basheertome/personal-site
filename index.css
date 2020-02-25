@@ -125,9 +125,10 @@ canvas[resize] {
   display: block;
   max-width: 500px;
   margin: 0;
-  font-family: 'Metric-Light', sans-serif;
+  font-family: 'Metric-Regular', sans-serif;
   font-size: 32px;
   line-height: 39px;
+  letter-spacing: -0.2px;
   text-align: left;
 }
 
@@ -157,7 +158,7 @@ canvas[resize] {
 }
 
 .intro .about p {
-  margin: 18px 0;
+  margin: 24px 0;
   max-width: 480px;
 }
 
@@ -304,7 +305,7 @@ body.gvisible .gallery {
     display: block;
     height: auto;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 100px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -318,8 +319,8 @@ body.gvisible .gallery {
 @media (max-width: 900px) {
   .intro h2 {
     max-width: 400px;
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   .intro .about {
@@ -328,7 +329,7 @@ body.gvisible .gallery {
   }
 
   .intro .about p {
-    margin: 18px 0;
+    margin: 20px 0;
     max-width: 400px;
   }
 
