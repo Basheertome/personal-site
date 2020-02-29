@@ -223,8 +223,7 @@ body.gvisible .gallery {
   transition: .1s ease-in-out transform;
 }
 
-.daydream,
-.pixelbuds {
+.gallery div {
   display: none;
   min-width: 100%;
 }
