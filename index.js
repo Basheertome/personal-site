@@ -59,6 +59,15 @@ $(document).ready(function(){
 		togglePixelbuds();
 	});
 
+	if (window.location.hash.split('#')[1] == 'ceramics') {
+		toggleCeramics()
+	}
+
+	$('#ceramics').click(function(event) {
+		event.preventDefault();
+		toggleCeramics();
+	});
+
 });
 
 function toggleDaydream() {
@@ -88,6 +97,22 @@ function togglePixelbuds() {
 		$('body').removeClass('gvisible');
 	} else {
 		$('.pixelbuds').css("display","block");
+		$('body').addClass('gvisible');
+	}
+	$('html, body').animate({scrollTop: "+=200"});
+}
+
+function toggleCeramics() {
+	var ceramicsState = !$('.ceramics').is(':hidden');
+
+	$('.gallery div').each(function(i){
+		$(this).hide();
+	});
+
+	if (ceramicsState) {
+		$('body').removeClass('gvisible');
+	} else {
+		$('.ceramics').css("display","block");
 		$('body').addClass('gvisible');
 	}
 	$('html, body').animate({scrollTop: "+=200"});
