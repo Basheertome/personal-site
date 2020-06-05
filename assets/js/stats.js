@@ -1,5 +1,3 @@
-<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-<script>
 (function(f, a, t, h, o, m){
 	a[h]=a[h]||function(){
 		(a[h].q=a[h].q||[]).push(arguments)
@@ -11,5 +9,3 @@
 })(document, window, '//stats.basheer.co/tracker.js', 'fathom');
 fathom('set', 'siteId', 'OTTTC');
 fathom('trackPageview');
-</script>
-<!-- / Fathom -->
