@@ -106,14 +106,14 @@ canvas[resize] {
 .bio a:hover::after {
   height: 3px;
   bottom: 2px;
-  background: rgba(255,13,5,1);
+  background: rgba(199,104,62,1);
   -webkit-transform: rotate(-1deg);
   -moz-transform: rotate(-1deg);
   transform: rotate(-1deg);
 }
 
 .bio a:nth-of-type(2):hover::after {
-  background: rgba(255,228,50,1);
+  background: rgba(207,194,174,1);
 }
 
 .bio a:active {
@@ -245,21 +245,21 @@ body.gvisible .gallery {
     display: none;}
 
 .intro .about p a:nth-of-type(1):hover::after {
-  background: rgba(69,198,91,1); }
+  background: rgba(165,136,45,1); }
 .intro .about p a:nth-of-type(2):hover::after {
-  background: rgba(255,11,89,1); }
+  background: rgba(146,102,55,1); }
 .intro .about p a:nth-of-type(3):hover::after {
-  background: rgba(255,228,50,1); }
+  background: rgba(207,194,174,1); }
 .intro .about p a:nth-of-type(4):hover::after {
-  background: rgba(0,73,215,1); }
+  background: rgba(230,212,197,1); }
 .intro .about p a:nth-of-type(5):hover::after {
-  background: rgba(69,198,91,1); }
+  background: rgba(165,136,45,1); }
 .intro .about p a:nth-of-type(6):hover::after {
-  background: rgba(255,11,89,1); }
+  background: rgba(146,102,55,1); }
 .intro .about p a:nth-of-type(7):hover::after {
-  background: rgba(255,228,50,1); }
+  background: rgba(207,194,174,1); }
 .intro .about p a:nth-of-type(8):hover::after {
-  background: rgba(0,73,215,1); }
+  background: rgba(230,212,197,1); }
 
 .aboutimage {
   position: absolute;
@@ -338,7 +338,7 @@ body.gvisible .gallery {
 
   .bio a:hover::after {
     bottom: 2px;
-    background: rgba(255,13,5,1);
+    background: rgba(199,104,62,1);
     -webkit-transform: rotate(-1deg);
     -moz-transform: rotate(-1deg);
     transform: rotate(-1deg);
