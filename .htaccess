@@ -1,5 +1,6 @@
 Options -Indexes
 
+Redirect 301 /portfolio https://basheer.co/portfolio.pdf
 Redirect 301 /about https://basheer.co
 Redirect 301 /archive https://student.basheer.co/bitsnbobs
 Redirect 301 /visualization https://student.basheer.co/bitsnbobs
