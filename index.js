@@ -1,20 +1,17 @@
-$(document).ready(function(){
-	
-	$('.intro').animate({'opacity': 1}, 1000);
-
+$(document).ready(function(){	
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
 	} else {
 		hoverx = 8;
 
-		$('.bio h2 span').mouseover(function(event) {
+		$('.intro h2 span').mouseover(function(event) {
 			hoverg = mouseX(event, $(this));
 			$('.aboutimage').animate({'opacity': 1}, 75);
 		}).mouseleave(function(event) {
 			$('.aboutimage').animate({'opacity': 0}, 150);
 		});
 
-		$('.bio h2 span').mousemove(function(event) {
+		$('.intro h2 span').mousemove(function(event) {
 			var x = mouseX(event, $(this));
 
 			if (x > hoverg) {
@@ -41,82 +38,18 @@ $(document).ready(function(){
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
 
-	if (window.location.hash.split('#')[1] == 'daydream') {
-		toggleDaydream()
-	}
-
-	$('#daydream').click(function(event) {
-		event.preventDefault();
-		toggleDaydream();
+	$('.gallery').click(function() {
+		$(this).children().each(function() {
+			let index = $(this).css('z-index');
+			if (index < 3) {
+				index++;
+			} else {
+				index = 1;
+			}
+			$(this).css('z-index', index);
+		});
 	});
-
-	if (window.location.hash.split('#')[1] == 'pixelbuds') {
-		togglePixelbuds()
-	}
-
-	$('#pixelbuds').click(function(event) {
-		event.preventDefault();
-		togglePixelbuds();
-	});
-
-	if (window.location.hash.split('#')[1] == 'ceramics') {
-		toggleCeramics()
-	}
-
-	$('#ceramics').click(function(event) {
-		event.preventDefault();
-		toggleCeramics();
-	});
-
 });
-
-function toggleDaydream() {
-	var daydreamState = !$('.daydream').is(':hidden');
-
-	$('.gallery div').each(function(i){
-		$(this).hide();
-	});
-
-	if (daydreamState) {
-		$('body').removeClass('gvisible');
-	} else {
-		$('.daydream').css("display","block");
-		$('body').addClass('gvisible');
-	}
-	$('html, body').animate({scrollTop: "+=200"});
-}
-
-function togglePixelbuds() {
-	var pixelbudsState = !$('.pixelbuds').is(':hidden');
-
-	$('.gallery div').each(function(i){
-		$(this).hide();
-	});
-
-	if (pixelbudsState) {
-		$('body').removeClass('gvisible');
-	} else {
-		$('.pixelbuds').css("display","block");
-		$('body').addClass('gvisible');
-	}
-	$('html, body').animate({scrollTop: "+=200"});
-}
-
-function toggleCeramics() {
-	var ceramicsState = !$('.ceramics').is(':hidden');
-
-	$('.gallery div').each(function(i){
-		$(this).hide();
-	});
-
-	if (ceramicsState) {
-		$('body').removeClass('gvisible');
-	} else {
-		$('.ceramics').css("display","block");
-		$('body').addClass('gvisible');
-	}
-	$('html, body').animate({scrollTop: "+=200"});
-}
 
 function mouseX(event, that) {
 	return (Math.floor((event.pageX - that.offset().left) / that.width() * 18)) - 1;
