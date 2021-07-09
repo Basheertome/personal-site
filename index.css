@@ -9,7 +9,6 @@ body {
   -moz-user-select: text;
   user-select: text;
   pointer-events: text;
-  touch-action: manipulation;
   overflow-x: hidden;
   opacity: 0;
   -webkit-overflow-scrolling: touch;
@@ -274,6 +273,7 @@ html.touch .aboutimage {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .gallery .image {
