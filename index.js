@@ -49,6 +49,12 @@ $(document).ready(function(){
 			$(this).css('z-index', index);
 		});
 	});
+	
+	$('.gallery').bind('touchend', function(e) {
+		e.preventDefault();
+		$(this).click();
+		// This line still calls the standard click event, in case the user needs to interact with the element that is being clicked on, but still avoids zooming in cases of double clicking.
+	})
 });
 
 function mouseX(event, that) {
