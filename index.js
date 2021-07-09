@@ -38,7 +38,8 @@ $(document).ready(function(){
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
 
-	$('.gallery').click(function() {
+	$('.gallery').bind('touchend', function(e) {
+		e.preventDefault();
 		$(this).children().each(function() {
 			let index = $(this).css('z-index');
 			if (index < 3) {
@@ -49,12 +50,6 @@ $(document).ready(function(){
 			$(this).css('z-index', index);
 		});
 	});
-	
-	$('.gallery').bind('touchend', function(e) {
-		e.preventDefault();
-		$(this).click();
-		// This line still calls the standard click event, in case the user needs to interact with the element that is being clicked on, but still avoids zooming in cases of double clicking.
-	})
 });
 
 function mouseX(event, that) {
