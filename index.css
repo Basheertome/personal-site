@@ -152,6 +152,11 @@ a:nth-of-type(8n):hover::after{
   vertical-align: middle;
 }
 
+.intro h2 div {
+  display: inline;
+  color: white;
+}
+
 .intro h2 span {
   position: relative;
   color: #fff;
