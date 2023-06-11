@@ -48,7 +48,7 @@ canvas[resize] {
 .first-padder {
   display: block;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   max-height: 500px;
 }
 
@@ -140,6 +140,7 @@ a:nth-of-type(8n):hover::after{
   width: calc(100% - 100px);
   height: auto;
   padding: 0 50px;
+  margin: 0 auto;
   text-align: center;
   color: #bfbfbf;
 }
@@ -293,7 +294,18 @@ html.touch .aboutimage {
   overflow: hidden;
 }
 
-.gallery img {
+.intro .image {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  max-height: 280px;
+  margin: 0 auto 50px auto;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image img {
   display: block;
   width: 100%;
   height: 100%;
@@ -455,6 +467,7 @@ html.touch .gallery:hover .image::after {
 
 @media (max-width: 600px) {
   .intro {
+    max-width: 380px;
     padding: 0 50px;
     width: calc(100% - 100px);
   }
