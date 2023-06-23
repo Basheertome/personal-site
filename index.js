@@ -38,7 +38,7 @@ $(document).ready(function(){
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
 
-	$('.gallery').bind('touchend', function(e) {
+	$('.gallery').bind('click', function(e) {
 		e.preventDefault();
 		$(this).children().each(function() {
 			let index = $(this).css('z-index');
