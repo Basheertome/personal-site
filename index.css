@@ -1,3 +1,10 @@
+* { margin:0; padding:0; outline: 0;}
+html { min-height: 100%; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+ol,ul { list-style: none; }
+img {border: 0;}
+a {text-decoration: none;}
+
 html {
   height: 100%;
   background: #101010;
@@ -5,6 +12,7 @@ html {
 
 body {
   background: #101010;
+  color: #fff;
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
@@ -16,6 +24,10 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   animation: fade 1.5s forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @keyframes fade {
@@ -185,7 +197,7 @@ html.touch .intro h2 span::after {
   display: block;
   max-width: 500px;
   margin: 0;
-  font-family: 'Metric-Regular', sans-serif;
+  font-family: 'Metric', sans-serif;
   font-size: 32px;
   line-height: 39px;
   letter-spacing: -0.2px;
@@ -403,6 +415,17 @@ html.touch .gallery:hover .image::after {
     height: 0;
     display: none;}
 
+::selection {
+  background: rgba(255,216,0,.7);
+  color: rgba(0,0,0,.7);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: rgba(255,216,0,.7);
+  color: rgba(0,0,0,.7);
+  text-shadow: none;
+}
+
 @media (max-width: 1000px) {
   .aboutimage,
   .intro h2 span::after {
@@ -552,17 +575,7 @@ html.touch .gallery:hover .image::after {
 }
 
 @font-face {
-  font-family: 'Metric-Regular';
-  src: url('assets/fonts/Metric-Regular.eot?#iefix') format('embedded-opentype'), url('assets/fonts/Metric-Regular.otf') format('opentype'), url('assets/fonts/Metric-Regular.woff') format('woff'), url('assets/fonts/Metric-Regular.ttf') format('truetype'), url('assets/fonts/Metric-Regular.svg#Metric-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'Metric-Light';
-  src: url('assets/fonts/Metric-Light.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Metric-Light.otf') format('opentype'), url('assets/fonts/Metric-Light.woff') format('woff'), url('assets/fonts/Metric-Light.ttf') format('truetype'), url('assets/fonts/Metric-Light.svg#Metric-Light') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'Metric-Medium';
-  src: url('assets/fonts/Metric-Medium.eot?#iefix') format('embedded-opentype'), url('assets/fonts/Metric-Medium.otf') format('opentype'), url('assets/fonts/Metric-Medium.woff') format('woff'), url('assets/fonts/Metric-Medium.ttf')  format('truetype'), url('assets/fonts/Metric-Medium.svg#Metric-Medium') format('svg');
+  font-family: 'Metric';
+  src: url('assets/fonts/Metric-Regular.woff') format('woff'), url('assets/fonts/Metric-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal; }
