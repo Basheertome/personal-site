@@ -251,7 +251,7 @@ html.touch .aboutimage {
   max-width: 480px;
   padding-right: 20px;
   margin-top: 24px;
-  font-family: 'Metric-Regular', sans-serif;
+  font-family: 'Metric', sans-serif;
   font-size: 17px;
   line-height: 22px;
   text-align: left;
@@ -269,7 +269,7 @@ html.touch .aboutimage {
   max-width: 480px;
   margin: 0 auto;
   padding: 0 70px 0 50px;
-  font-family: 'Metric-Regular', sans-serif;
+  font-family: 'Metric', sans-serif;
   font-size: 17px;
   line-height: 22px;
   text-align: center;
