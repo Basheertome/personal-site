@@ -67,8 +67,8 @@ canvas[resize] {
 .mid-padder {
   display: block;
   width: 100%;
-  height: 15vh;
-  max-height: 300px;
+  height: 10vh;
+  max-height: 200px;
 }
 
 .last-padder {
@@ -444,11 +444,6 @@ html.touch .gallery:hover .image::after {
     max-height: 400px;
   }
 
-  .mid-padder {;
-    height: 10vh;
-    max-height: 200px;
-  }
-
   .last-padder {
     height: 8vh;
     max-height: 160px;
@@ -461,7 +456,7 @@ html.touch .gallery:hover .image::after {
     max-height: 300px;
   }
 
-  .mid-padder {;
+  .mid-padder {
     height: 7vh;
     max-height: 140px;
   }
@@ -537,7 +532,7 @@ html.touch .gallery:hover .image::after {
     height: 100px;
   }
 
-  .mid-padder {;
+  .mid-padder {
     height: 80px;
   }
 
@@ -555,7 +550,7 @@ html.touch .gallery:hover .image::after {
     height: 80px;
   }
 
-  .mid-padder {;
+  .mid-padder {
     height: 60px;
   }
 
