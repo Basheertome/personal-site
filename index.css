@@ -318,6 +318,10 @@ html.touch .aboutimage {
   overflow: hidden;
 }
 
+video::-webkit-media-controls {
+  display: none;
+}
+
 .image img {
   display: block;
   width: 100%;
