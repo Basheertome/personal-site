@@ -1,6 +1,19 @@
 $(document).ready(function(){	
 	if ('ontouchstart' in document.documentElement) {
 		$('html').addClass('touch');
+
+		$('.gallery').bind('click', function(e) {
+			e.preventDefault();
+			$(this).children().each(function() {
+				let index = $(this).css('z-index');
+				if (index < 3) {
+					index++;
+				} else {
+					index = 1;
+				}
+				$(this).css('z-index', index);
+			});
+		});
 	} else {
 		hoverx = 8;
 
@@ -37,19 +50,6 @@ $(document).ready(function(){
 
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
 	}
-
-	$('.gallery').bind('click', function(e) {
-		e.preventDefault();
-		$(this).children().each(function() {
-			let index = $(this).css('z-index');
-			if (index < 3) {
-				index++;
-			} else {
-				index = 1;
-			}
-			$(this).css('z-index', index);
-		});
-	});
 });
 
 function mouseX(event, that) {

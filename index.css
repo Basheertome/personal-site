@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  position: relative;
   background: #101010;
   color: #fff;
   -webkit-user-select: text;
@@ -37,7 +38,7 @@ body {
 }
 
 .canvas {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -288,7 +289,6 @@ html.touch .aboutimage {
 .gallery {
   position: relative;
   margin: 60px auto 70px auto;
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -308,6 +308,7 @@ html.touch .aboutimage {
 }
 
 .intro .image {
+  position: relative;
   display: block;
   width: 100%;
   max-width: 500px;
@@ -316,6 +317,7 @@ html.touch .aboutimage {
   box-shadow: 5px 5px 5px rgba(0,0,0,.1);
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
 }
 
 video::-webkit-media-controls {
@@ -358,8 +360,6 @@ video::-webkit-media-controls {
 
 html.touch .gallery:hover .image img {
   opacity: 1 !important; }
-html.touch .gallery:hover .image::after {
-  opacity: 0 !important; }
 
 .gallery:nth-of-type(2n-1) .image:nth-child(1) {
   top: 20px;
