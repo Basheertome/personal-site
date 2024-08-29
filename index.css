@@ -199,13 +199,17 @@ html.touch .intro h2 span::after {
   max-width: 500px;
   margin: 0;
   font-family: 'Metric', sans-serif;
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 34px;
+  line-height: 40px;
   letter-spacing: -0.2px;
   text-align: left;
 }
 
-.intro h2::after {
+.intro h2 #last {
+  display: inline-block;
+}
+
+.intro h2 #blink::after {
   content: "▕";
   display: inline-block;
   position: relative;
@@ -491,8 +495,8 @@ html.touch .gallery:hover .image img {
 @media (max-width: 600px) {
   .intro {
     max-width: 380px;
-    padding: 0 50px;
-    width: calc(100% - 100px);
+    padding: 0 40px;
+    width: calc(100% - 80px);
   }
 
   .intro h2 {
@@ -533,7 +537,7 @@ html.touch .gallery:hover .image img {
 
 @media (max-width: 450px) {
   .first-padder {
-    height: 100px;
+    height: 80px;
   }
 
   .mid-padder {
@@ -550,10 +554,6 @@ html.touch .gallery:hover .image img {
 }
 
 @media (max-width: 350px) {
-  .first-padder {
-    height: 80px;
-  }
-
   .mid-padder {
     height: 60px;
   }
