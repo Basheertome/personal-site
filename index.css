@@ -68,8 +68,8 @@ canvas[resize] {
 .mid-padder {
   display: block;
   width: 100%;
-  height: 10vh;
-  max-height: 200px;
+  height: 7vh;
+  max-height: 140px;
 }
 
 .last-padder {
@@ -108,6 +108,19 @@ a::after {
   -webkit-transition: .075s linear all;
   -moz-transition: .075s linear all;
   transition: .075s linear all;
+}
+
+.grid a::after {
+  content: none !important;
+}
+
+.grid a {
+  display: inline-block;
+  max-width: 30%;
+}
+
+.grid img {
+  width: 100%;
 }
 
 html.touch a {
@@ -267,7 +280,8 @@ html.touch .aboutimage {
   margin-bottom: 5px;
 }
 
-.about {
+.about,
+.grid {
   position: relative;
   display: block;
   width: calc(100% - 120px);
@@ -279,11 +293,16 @@ html.touch .aboutimage {
   line-height: 22px;
   text-align: center;
   color: #bfbfbf;
+  z-index: 1;
 }
 
 .about p {
   text-align: left;
   margin: 24px 0;
+}
+
+.about p:first-child {
+  margin-top: 0;
 }
 
 .about p:last-child {
@@ -465,8 +484,8 @@ html.touch .gallery:hover .image img {
   }
 
   .mid-padder {
-    height: 7vh;
-    max-height: 140px;
+    height: 5vh;
+    max-height: 100px;
   }
 
   .last-padder {
@@ -518,7 +537,8 @@ html.touch .gallery:hover .image img {
     line-height: 20px;
   }
 
-  .about {
+  .about,
+  .grid {
     max-width: 380px;
     padding: 0 50px;
     width: calc(100% - 100px);
@@ -541,7 +561,7 @@ html.touch .gallery:hover .image img {
   }
 
   .mid-padder {
-    height: 80px;
+    height: 60px;
   }
 
   .last-padder {
@@ -555,7 +575,7 @@ html.touch .gallery:hover .image img {
 
 @media (max-width: 350px) {
   .mid-padder {
-    height: 60px;
+    height: 40px;
   }
 
   .last-padder {
@@ -567,7 +587,8 @@ html.touch .gallery:hover .image img {
     width: calc(100% - 80px);
   }
 
-  .about {
+  .about,
+  .grid {
     padding: 0 40px;
     width: calc(100% - 80px);
   }
