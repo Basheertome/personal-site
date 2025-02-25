@@ -49,6 +49,15 @@ $(document).ready(function(){
 		});
 
 		$('.aboutimage').css('background-image', 'url("assets/images/me.jpg")');
+
+
+		$(".grid a").hover(function() {
+			let randomX = Math.floor(Math.random() * 21) - 10;
+			let randomY = Math.floor(Math.random() * 21) - 10;
+			$(this).css("transform", `translate(${randomX}px, ${randomY}px)`);
+		}, function() {
+			$(this).css("transform", "translate(0, 0)");
+		});
 	}
 });
 

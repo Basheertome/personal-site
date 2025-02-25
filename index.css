@@ -117,6 +117,7 @@ a::after {
 .grid a {
   display: inline-block;
   max-width: 30%;
+  transition: transform 0.3s ease !important;
 }
 
 .grid img {
