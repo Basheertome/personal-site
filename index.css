@@ -7,12 +7,12 @@ a {text-decoration: none;}
 
 html {
   height: 100%;
-  background: #101010;
+  background: #221b13;
 }
 
 body {
   position: relative;
-  background: #101010;
+  background: #221b13;
   color: #fff;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -55,7 +55,7 @@ canvas[resize] {
   display: table;
   width: 100%;
   height: 100%;
-  opacity: .1;
+  opacity: .2;
 }
 
 .first-padder {
@@ -103,7 +103,7 @@ a::after {
   bottom: 5px; left: 1px;
   width: 100%;
   height: 1px;
-  background: #717171;
+  background: #685c58;
   -webkit-transform-origin: left center;
   -webkit-transition: .075s linear all;
   -moz-transition: .075s linear all;
@@ -144,23 +144,6 @@ a:hover::after {
   transform: rotate(-1deg);
 }
 
-a:nth-of-type(8n-7):hover::after {
-  background: rgba(165,136,45,1); }
-a:nth-of-type(8n-6):hover::after{
-  background: rgba(146,102,55,1); }
-a:nth-of-type(8n-5):hover::after{
-  background: rgba(207,194,174,1); }
-a:nth-of-type(8n-4):hover::after{
-  background: rgba(230,212,197,1); }
-a:nth-of-type(8n-3):hover::after{
-  background: rgba(165,136,45,1); }
-a:nth-of-type(8n-2):hover::after{
-  background: rgba(146,102,55,1); }
-a:nth-of-type(8n-1):hover::after{
-  background: rgba(207,194,174,1); }
-a:nth-of-type(8n):hover::after{
-  background: rgba(230,212,197,1); }
-
 .intro {
   position: relative;
   display: block;
@@ -169,7 +152,7 @@ a:nth-of-type(8n):hover::after{
   padding: 0 50px;
   margin: 0 auto;
   text-align: center;
-  color: #bfbfbf;
+  color: #83766d;
 }
 
 .container {
@@ -191,7 +174,7 @@ a:nth-of-type(8n):hover::after{
 }
 
 html.touch .intro h2 span {
-  color: #bfbfbf;
+  color: #83766d;
 }
 
 .intro h2 span::after {
@@ -200,7 +183,7 @@ html.touch .intro h2 span {
   bottom: 5px; left: 1px;
   width: 100%;
   height: 1px;
-  background: #717171;
+  background: #685c58;
 }
 
 html.touch .intro h2 span::after {
@@ -221,21 +204,6 @@ html.touch .intro h2 span::after {
 
 .intro h2 #last {
   display: inline-block;
-}
-
-.intro h2 #blink::after {
-  content: "▕";
-  display: inline-block;
-  position: relative;
-  left: -0.65em;
-  top: 0.1em;
-  animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 .aboutimage {
@@ -293,7 +261,7 @@ html.touch .aboutimage {
   font-size: 17px;
   line-height: 22px;
   text-align: center;
-  color: #bfbfbf;
+  color: #83766d;
   z-index: 1;
 }
 
@@ -461,7 +429,7 @@ html.touch .gallery:hover .image img {
   }
 
   .intro h2 span {
-    color: #bfbfbf;
+    color: #83766d;
     cursor: inherit;
   }
 }

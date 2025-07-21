@@ -347,15 +347,18 @@ body {
 
 @media (prefers-color-scheme: dark) {
 	html, body, .page {
-		background: #101010;
+		background: #221b13;
 	}
 
-  	body > .header a,
-  	.page h1 a,
+  	.page h1 a {
+      color: #fff;
+    }
+
+    body > .header a,
   	.page h5,
   	.main span > p,
   	.page li span h5 {
-  		color: #bfbfbf;
+  		color: #83766d;
   	}
 
   	.main h4 a,
