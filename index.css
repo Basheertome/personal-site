@@ -173,10 +173,6 @@ a:hover::after {
   color: #fff;
 }
 
-html.touch .intro h2 span {
-  color: #83766d;
-}
-
 .intro h2 span::after {
   content: "";
   position: absolute;
@@ -425,11 +421,10 @@ html.touch .gallery:hover .image img {
 @media (max-width: 1000px) {
   .aboutimage,
   .intro h2 span::after {
-    display: none;
+    display: none !important;
   }
 
   .intro h2 span {
-    color: #83766d;
     cursor: inherit;
   }
 }
@@ -483,7 +478,7 @@ html.touch .gallery:hover .image img {
 @media (max-width: 600px) {
   .intro {
     max-width: 380px;
-    padding: 0 40px;
+    padding: 0 50px;
     width: calc(100% - 80px);
   }
 
