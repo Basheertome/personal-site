@@ -16,30 +16,25 @@
 	<link rel='stylesheet' href='index.css'>
 	<script src='assets/js/jquery.min.js'></script>
 	<script src='index.js'></script>
-	<script src='assets/js/paper-full.min.js'></script>
-	<script type="text/paperscript" canvas="canvas">
-	    var path = new Path();
-	    path.strokeColor = '#A2654F';
-
-	    var windowWidth = document.documentElement.clientWidth;
-	    var windowHeight = document.documentElement.clientHeight;
-
-	    for (i=0; i<10; i++) {
-	    	var randomPoint = new Point(Math.round(Math.random() * windowWidth), Math.round(Math.random() * windowHeight));
-	    	path.add(randomPoint);
-	    }
-
-	    function onMouseMove(event) {
-	        path.add(event.point);
-	    }
-
-	    path.smooth('continuous');
+	<script>
+		(function () {
+			var orig = HTMLCanvasElement.prototype.getContext;
+			HTMLCanvasElement.prototype.getContext = function (type, attributes) {
+				if (type === '2d') {
+					attributes = Object.assign({}, attributes, { willReadFrequently: true });
+				}
+				return orig.call(this, type, attributes);
+			};
+		})();
 	</script>
+	<script src='assets/js/paper-full.min.js'></script>
 </head>
 <body>
 	<div class="first-padder"></div>
 	<div class="intro"><div class="container">
-		<video class="image" autoplay loop muted playsinline src="assets/images/sizzle.mp4" type="video/mp4"></video>
+		<div class="image">
+			<video autoplay loop muted playsinline src="assets/images/sizzle.mp4" type="video/mp4"></video>
+		</div>
 		<h2>Hi, I'm <span>Basheer<div class="aboutimage"></div></span>.<br />I'm a designer at <div id="last"><a href="https://sesame.com/" target="_blank">Sesame</a>.</div></h2>
 		<p class="links">
 			<span>✺ <script type="text/javascript">document.write("<n uers=\"znvygb:onfurre\x40onfurre\x2epb\" qngn-gbbygvc=\"rznvy\">Rznvy<\x2fn>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));</script><noscript><a href="mailto:email@enablejavascript.com" title="email">Email</a></noscript></span>
@@ -79,7 +74,84 @@
 		<p>After hours, you'll find me at the wheel throwing pots thicker than I'd like, pointing my <a href="https://click.basheer.co/" target="_blank">camera</a> into the sun, or watching these <a href="https://www.wk.com/work/lurpak-smoooth/" target="_blank">butter</a> <a href="https://wklondon.com/work/weave-your-magic/" target="_blank">commercials</a>.</p>
 	</div>
 	<div class="last-padder"></div>
-	<div class="canvas"><canvas id="canvas" resize></canvas></div>
+	<div class="canvas"><canvas id="canvas"></canvas></div>
+	<script>
+		(function () {
+			var canvas = document.getElementById('canvas');
+			if (!canvas || !window.paper) return;
+
+			paper.setup(canvas);
+
+			var path = new paper.Path();
+			path.strokeColor = '#A2654F';
+
+			function documentSize() {
+				var el = document.documentElement;
+				var body = document.body;
+				var w = Math.max(el.scrollWidth, el.clientWidth);
+				var h = Math.max(el.scrollHeight, el.clientHeight);
+				if (body) {
+					w = Math.max(w, body.scrollWidth);
+					h = Math.max(h, body.scrollHeight);
+				}
+				return { width: w, height: h };
+			}
+
+			function initialPointCount(docW, docH) {
+				var vw = window.innerWidth;
+				var vh = window.innerHeight;
+				var viewportArea = Math.max(vw * vh, 1);
+				var docArea = docW * docH;
+				var n = Math.round(14 + 16 * Math.sqrt(docArea / viewportArea));
+				return Math.min(72, Math.max(18, n));
+			}
+
+			function setViewToDocument() {
+				var size = documentSize();
+				paper.view.viewSize = new paper.Size(size.width, size.height);
+				var wrap = document.querySelector('.canvas');
+				if (wrap) {
+					wrap.style.minHeight = size.height + 'px';
+				}
+				return size;
+			}
+
+			function seedPath() {
+				var size = setViewToDocument();
+				path.removeSegments();
+				var n = initialPointCount(size.width, size.height);
+				for (var i = 0; i < n; i++) {
+					path.add(new paper.Point(
+						Math.round(Math.random() * size.width),
+						Math.round(Math.random() * size.height)
+					));
+				}
+				path.smooth('continuous');
+			}
+
+			function scheduleSeed() {
+				requestAnimationFrame(seedPath);
+			}
+
+			if (document.readyState === 'complete') {
+				scheduleSeed();
+			} else {
+				window.addEventListener('load', scheduleSeed);
+			}
+
+			var resizeTimer;
+			window.addEventListener('resize', function () {
+				clearTimeout(resizeTimer);
+				resizeTimer = setTimeout(function () {
+					setViewToDocument();
+				}, 150);
+			});
+
+			paper.view.onMouseMove = function (event) {
+				path.add(event.point);
+			};
+		})();
+	</script>
 	<script src='assets/js/stats.js'></script>
 </body>
 </html>
