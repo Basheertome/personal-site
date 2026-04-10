@@ -107,8 +107,9 @@
 				var vh = window.innerHeight;
 				var viewportArea = Math.max(vw * vh, 1);
 				var docArea = docW * docH;
-				var n = Math.round(14 + 16 * Math.sqrt(docArea / viewportArea));
-				return Math.min(72, Math.max(18, n));
+				// Match old feel (~10 points in one viewport), scale with document length/area
+				var n = Math.round(10 * Math.sqrt(docArea / viewportArea));
+				return Math.min(40, Math.max(8, n));
 			}
 
 			function setViewToDocument() {
