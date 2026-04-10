@@ -500,14 +500,14 @@ html.touch .gallery:hover .image img {
 
 @media (max-width: 600px) {
   .intro {
-    max-width: 380px;
-    padding: 0 50px;
-    width: calc(100% - 80px);
+    box-sizing: border-box;
+    padding: 0 35px;
+    width: 100%;
   }
 
   .intro h2 {
     max-width: 380px;
-    padding-right: 0;
+    padding: 0 15px;
     font-size: 24px;
     line-height: 30px;
   }
@@ -515,7 +515,7 @@ html.touch .gallery:hover .image img {
   .intro .links {
     margin-top: 20px;
     max-width: 380px;
-    padding-right: 0;
+    padding: 0 15px;
   }
 
   .intro .links,
