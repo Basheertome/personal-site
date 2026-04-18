@@ -7,12 +7,17 @@ a {text-decoration: none;}
 
 html {
   height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background: #221b13;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 body {
   position: relative;
-  background: #221b13;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background: transparent;
   color: #fff;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -28,6 +33,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Height from visualViewport sync in index.html; + overscan hides iOS hairline under floating bar */
+  height: calc(var(--vv-h, 100lvh) + 16px);
+  z-index: -2;
+  background: #221b13 url("assets/images/background.jpg") center / cover no-repeat;
+  pointer-events: none;
+  opacity: 0.8;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 @keyframes fade {
@@ -363,7 +384,7 @@ video::-webkit-media-controls {
 .gallery:hover .image:hover::after {
   opacity: 0; }
 .gallery:hover .image::after {
-  opacity: 0.3; }
+  opacity: 0.8; }
 
 html.touch .gallery:hover .image img {
   opacity: 1 !important; }

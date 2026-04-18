@@ -6,11 +6,33 @@
 	<meta name="description" content="I love spending my days crafting products that are imbued with style, story, & calm engineering. The best ones balance all their compromises such that they elegantly complement each other." />
 	<meta name="keywords" content="resume, product, manager, interaction, industrial, design, user experience, basheer, tome, oakland, san, francisco, california" />
 	<meta name="apple-mobile-web-app-title" content="Basheer Tome">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+	<script>
+		(function () {
+			function syncIOSViewportBg() {
+				var root = document.documentElement;
+				var vv = window.visualViewport;
+				var innerH = window.innerHeight;
+				if (vv) {
+					/* Taller of visual vs layout viewport — avoids a gap above the bottom chrome */
+					root.style.setProperty('--vv-h', Math.max(vv.height, innerH) + 'px');
+				} else {
+					root.style.setProperty('--vv-h', innerH + 'px');
+				}
+			}
+			syncIOSViewportBg();
+			window.addEventListener('resize', syncIOSViewportBg);
+			window.addEventListener('orientationchange', syncIOSViewportBg);
+			if (window.visualViewport) {
+				window.visualViewport.addEventListener('resize', syncIOSViewportBg);
+				window.visualViewport.addEventListener('scroll', syncIOSViewportBg);
+			}
+		})();
+	</script>
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<style type="text/css">html { background: #101010; }</style>
+	<style type="text/css">html { background: #221b13; }</style>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
