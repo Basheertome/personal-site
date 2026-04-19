@@ -112,16 +112,33 @@
 			var path = new paper.Path();
 			path.strokeColor = '#A2654F';
 
-			function documentSize() {
+			function documentWidthPx() {
 				var el = document.documentElement;
 				var body = document.body;
-				var w = Math.max(el.scrollWidth, el.clientWidth);
-				var h = Math.max(el.scrollHeight, el.clientHeight);
-				if (body) {
-					w = Math.max(w, body.scrollWidth);
-					h = Math.max(h, body.scrollHeight);
+				var w = Math.max(el.clientWidth, el.scrollWidth);
+				if (body) w = Math.max(w, body.scrollWidth);
+				return w;
+			}
+
+			/* In-flow bottom (last spacer). scrollHeight is unreliable on iOS and can shrink the canvas to ~one viewport. */
+			function layoutHeightPx() {
+				var anchor = document.querySelector('.last-padder');
+				var docEl = document.documentElement;
+				var body = document.body;
+				var st = window.pageYOffset || docEl.scrollTop || (body && body.scrollTop) || 0;
+				if (anchor) {
+					return Math.max(1, Math.ceil(anchor.getBoundingClientRect().bottom + st));
 				}
-				return { width: w, height: h };
+				var h = Math.max(docEl.scrollHeight, docEl.clientHeight);
+				if (body) h = Math.max(h, body.scrollHeight);
+				return h;
+			}
+
+			/* Optional: keep strokes off the bottom strip where iOS UI overlaps (small; layout height must be correct first). */
+			function scribbleBottomInsetPx() {
+				var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+					(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+				return isIOS ? 72 : 0;
 			}
 
 			function initialPointCount(docW, docH) {
@@ -135,13 +152,17 @@
 			}
 
 			function setViewToDocument() {
-				var size = documentSize();
-				paper.view.viewSize = new paper.Size(size.width, size.height);
+				var w = documentWidthPx();
+				var layoutH = layoutHeightPx();
+				var inset = scribbleBottomInsetPx();
+				var paintH = Math.max(1, layoutH - inset);
+				paper.view.viewSize = new paper.Size(w, paintH);
 				var wrap = document.querySelector('.canvas');
 				if (wrap) {
-					wrap.style.minHeight = size.height + 'px';
+					wrap.style.minHeight = paintH + 'px';
+					wrap.style.removeProperty('height');
 				}
-				return size;
+				return { width: w, height: paintH };
 			}
 
 			function seedPath() {
@@ -168,12 +189,18 @@
 			}
 
 			var resizeTimer;
-			window.addEventListener('resize', function () {
+			function debouncedResize() {
 				clearTimeout(resizeTimer);
-				resizeTimer = setTimeout(function () {
-					setViewToDocument();
-				}, 150);
-			});
+				resizeTimer = setTimeout(setViewToDocument, 150);
+			}
+			window.addEventListener('resize', debouncedResize);
+			if (window.ResizeObserver) {
+				var ro = new ResizeObserver(debouncedResize);
+				['.intro', '.about'].forEach(function (sel) {
+					var n = document.querySelector(sel);
+					if (n) ro.observe(n);
+				});
+			}
 
 			paper.view.onMouseMove = function (event) {
 				path.add(event.point);
