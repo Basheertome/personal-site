@@ -7,14 +7,13 @@ a {text-decoration: none;}
 
 html {
   height: 100%;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
   background: #221b13;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 body {
   position: relative;
+  isolation: isolate;
   min-height: 100vh;
   min-height: -webkit-fill-available;
   background: transparent;
@@ -35,32 +34,53 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Only the background and decorative canvas extend beneath Duo Safari's controls. */
+/* Keep page content inside the native safe area. */
 .page-content {
-  margin-left: var(--duo-inset-left, 0px);
-  margin-right: var(--duo-inset-right, 0px);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
-html[data-duo-wide] {
-  overflow-x: hidden;
-  touch-action: pan-y pinch-zoom;
+:root {
+  --edge-fade: 0px;
+  --edge-radius: 0px;
 }
 
-body::before {
-  content: "";
+/* Short touch viewports get a soft transition into the browser's brown surround. */
+@media (hover: none) and (pointer: coarse) and (max-width: 700px) and (max-height: 700px) {
+  :root {
+    --edge-fade: clamp(100px, 28vmin, 140px);
+    --edge-radius: clamp(56px, 18vmin, 80px);
+  }
+}
+
+.background-frame {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--duo-viewport-width, 100%);
-  /* Stable while Safari expands or collapses its address bar. */
-  height: 100vh;
-  height: 100lvh;
-  z-index: -2;
-  background: #221b13 url("assets/images/background.jpg") center / cover no-repeat;
+  inset: 0;
+  z-index: -1;
   pointer-events: none;
+  border-radius: var(--edge-radius);
+  overflow: clip;
+}
+
+.background-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Stable while Safari expands or collapses its address bar. */
+  min-height: 100lvh;
+  background: #221b13 url("assets/images/background.jpg") center / cover no-repeat;
   opacity: 0.8;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+}
+
+/* One rounded field keeps the horizontal and vertical fades smooth at the corners. */
+.background-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 var(--edge-fade) calc(var(--edge-fade) * .3) #221b13,
+    inset 0 0 calc(var(--edge-fade) * .25) calc(var(--edge-fade) * .12) #221b13;
 }
 
 @keyframes fade {
