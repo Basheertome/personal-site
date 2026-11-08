@@ -35,12 +35,23 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Only the background and decorative canvas extend beneath Duo Safari's controls. */
+.page-content {
+  margin-left: var(--duo-inset-left, 0px);
+  margin-right: var(--duo-inset-right, 0px);
+}
+
+html[data-duo-wide] {
+  overflow-x: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: var(--duo-viewport-width, 100%);
   /* Height from visualViewport sync in index.html; + overscan hides iOS hairline under floating bar */
   height: calc(var(--vv-h, 100lvh) + 16px);
   z-index: -2;

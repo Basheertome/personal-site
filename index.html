@@ -43,6 +43,63 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
 	<script>
 		(function () {
+			var viewport = document.querySelector('meta[name="viewport"]');
+			var visual = window.visualViewport;
+			// Work around Duo Safari's narrower device-width viewport. Explicit widths
+			// let fixed backgrounds paint under its 84-point column of controls.
+			if (!visual || !/iPhone/.test(navigator.userAgent) ||
+				!/Safari\//.test(navigator.userAgent) || /CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent)) return;
+
+			var root = document.documentElement;
+			var original = viewport.content;
+			function alignDuoViewport() {
+				if (!root.hasAttribute('data-duo-wide')) return;
+				var x = parseFloat(root.style.getPropertyValue('--duo-inset-left')) || 0;
+				// With controls on the left, Safari initially leaves the extra width
+				// off the right edge. Scroll it into place beneath the controls.
+				if (Math.abs(window.scrollX - x) > 0.5) {
+					window.scrollTo({ left: x, top: window.scrollY, behavior: 'instant' });
+				}
+			}
+			function updateDuoViewport() {
+				var scale = visual.scale || 1;
+				var width = visual.width * scale;
+				var height = visual.height * scale;
+				// Match the outer display's *visible* viewport, not screen.width:
+				// Safari reports the outer screen size even when the phone is open.
+				var portrait = Math.abs(width - 382) < 1 && height > 500 && height < 680;
+				var landscape = Math.abs(width - 594) < 1 && height > 300 && height < 470;
+				var standalone = navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+				var active = !standalone && (portrait || landscape);
+				var content = original;
+				var left = landscape && window.screen.orientation && window.screen.orientation.type === 'landscape-primary';
+				if (active) {
+					content = original.replace(/width\s*=\s*[^,;]+/i, 'width=' + ((portrait ? 466 : 678) / scale));
+					content += ',height=device-height,minimum-scale=1';
+				}
+				if (viewport.content !== content) viewport.content = content;
+				if (active) {
+					root.setAttribute('data-duo-wide', '');
+					root.style.setProperty('--duo-viewport-width', ((portrait ? 466 : 678) / scale) + 'px');
+					root.style.setProperty('--duo-inset-left', (left ? 84 / scale : 0) + 'px');
+					root.style.setProperty('--duo-inset-right', (left ? 0 : 84 / scale) + 'px');
+				} else {
+					root.removeAttribute('data-duo-wide');
+					root.style.removeProperty('--duo-viewport-width');
+					root.style.removeProperty('--duo-inset-left');
+					root.style.removeProperty('--duo-inset-right');
+				}
+				window.requestAnimationFrame(alignDuoViewport);
+			}
+			updateDuoViewport();
+			window.addEventListener('resize', updateDuoViewport);
+			window.addEventListener('orientationchange', updateDuoViewport);
+			window.addEventListener('pageshow', updateDuoViewport);
+			visual.addEventListener('resize', updateDuoViewport);
+			window.addEventListener('scrollend', alignDuoViewport);
+			if (window.screen.orientation) window.screen.orientation.addEventListener('change', updateDuoViewport);
+		})();
+		(function () {
 			function syncIOSViewportBg() {
 				var root = document.documentElement;
 				var vv = window.visualViewport;
@@ -91,6 +148,7 @@
 	<script src='assets/js/paper-full.min.js'></script>
 </head>
 <body>
+	<main class="page-content">
 	<div class="first-padder"></div>
 	<div class="intro"><div class="container">
 		<div class="image">
@@ -135,6 +193,7 @@
 		<p>After hours, you'll find me at the wheel throwing pots thicker than I'd like, pointing my <a href="https://click.basheer.co/" target="_blank">camera</a> into the sun, or watching these <a href="https://www.wk.com/work/lurpak-smoooth/" target="_blank">butter</a> <a href="https://wklondon.com/work/weave-your-magic/" target="_blank">commercials</a>.</p>
 	</div>
 	<div class="last-padder"></div>
+	</main>
 	<div class="canvas"><canvas id="canvas"></canvas></div>
 	<script>
 		(function () {
