@@ -52,8 +52,9 @@ body::before {
   top: 0;
   left: 0;
   width: var(--duo-viewport-width, 100%);
-  /* Height from visualViewport sync in index.html; + overscan hides iOS hairline under floating bar */
-  height: calc(var(--vv-h, 100lvh) + 16px);
+  /* Stable while Safari expands or collapses its address bar. */
+  height: 100vh;
+  height: 100lvh;
   z-index: -2;
   background: #221b13 url("assets/images/background.jpg") center / cover no-repeat;
   pointer-events: none;
